@@ -1,0 +1,56 @@
+body {
+  overflow: hidden;
+}
+
+/* To style the log in field and inputs */
+#registerDiv {
+  position: relative;
+  top: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 750px;
+  height: 110%;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 40px;
+  background-color: white;
+  display: flex;
+  flex-direction: column; /* stack inputs + buttons vertically */
+  gap: 20px; /* space between rows */
+}
+
+/* Make the first row (inputs) sit side by side */
+#registerDiv input {
+  margin-top: 15px;
+  padding: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+#buttonDiv{
+  position: absolute;
+  bottom: 200px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+/* Style the buttons */
+#buttonDiv button{
+  bottom: 40px;
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #c1e150;
+  color: white;
+}
+
+#buttonDiv button:hover {
+  background-color: #b8d64f;
+}

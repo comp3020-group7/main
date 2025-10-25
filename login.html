@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>Log-in</title>
+		<link rel="stylesheet" href="css/loginStyle.css">
+	</head>
+	<body>
+		<div id="titleDiv">
+			<h1>Title</h1>
+			<img src="images/logoPlaceholder.png">
+		</div>
+
+		<div id="loginDiv">
+			<div>
+				<input id="usernameInput" placeholder="username">
+				<input id="passwordInput" placeholder="password">
+			</div>
+			<button id="loginBtn">Log-in</button>
+			<button id="registerBtn">Register</button>
+		</div>
+
+		<div id="socialsDiv">
+			<img src="images/instagram.png">
+			<img src="images/facebook.png">
+			<img src="images/x.png">
+		</div>
+
+		<div id="warningDiv">
+			<img src="images/warning.png">
+			<p>
+				Login invalid, double check that username and password are correct.
+			</p>
+		</div>
+
+		<div id="newsDiv">
+			<h4>Patch Notes</h4>
+			<p>
+				↳ V 2.5.13 Fixed the dashboard calendar not adjusting for leap days <br>
+				↳ V 2.5.12 Made the font on the meal page easier to read
+			</p>
+		</div>
+
+		<div id="versionDiv">
+			<p>
+				V 2.5.13
+			</p>
+		</div>
+	</body>
+	<script>
+		document.getElementById("loginBtn").addEventListener("click", () => {
+			window.location.href = "dashboard.html";
+		});
+
+		document.getElementById("registerBtn").addEventListener("click", () => {
+			window.location.href = "registration.html";
+		});
+	</script>
+</html>

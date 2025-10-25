@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Advanced Registration</title>
+		<link rel="stylesheet" href="css/registrationStyle.css">
+	</head>
+    <body>
+        <div id="registerDiv">
+			<input id="birthdayInput" placeholder="birthday">
+			<input id="heightInput" placeholder="height">
+			<input id="weightInput" placeholder="weight">
+			<input id="goalWeightInput" placeholder="goal weight">
+			<input id="activityDayInput" placeholder="activity days per week">
+			<div id="buttonDiv">
+				<button id="submitBtn">
+					Finish Setup
+				</button>
+			</div>
+		</div>
+    </body>
+	<script>
+		document.getElementById("submitBtn").addEventListener("click", () => {
+			window.location.href = "dashboard.html";
+		});
+	</script>
+</html>

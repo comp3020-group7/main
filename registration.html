@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>Registration</title>
+		<link rel="stylesheet" href="css/registrationStyle.css">
+	</head>
+	<body>
+		<div id="registerDiv">
+			<input id="usernameInput" placeholder="username">
+			<input id="emailInput" placeholder="email">
+			<input id="passwordInput" placeholder="password">
+			<input id="confirmPasswordInput" placeholder="confirm password">
+			<div id="buttonDiv">
+				<button id="advancedRegistrationBtn">
+					Advanced Setup
+				</button>
+				<button id="submitBtn">
+					Finish Setup
+				</button>
+			</div>
+		</div>
+	</body>
+	<script>
+		document.getElementById("submitBtn").addEventListener("click", () => {
+			window.location.href = "dashboard.html";
+		});
+		document.getElementById("advancedRegistrationBtn").addEventListener("click", () => {
+			window.location.href = "advancedRegistration.html";
+		});
+	</script>
+</html>
