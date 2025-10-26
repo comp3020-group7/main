@@ -1,0 +1,11 @@
+body {          /* removes default margin so positioning is accurate */
+  overflow: hidden;
+}
+
+#menuBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 100px;
+  height: 100px;
+}
