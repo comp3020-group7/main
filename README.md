@@ -1,6 +1,5 @@
 # main
 
-
 ## Contributors Group 7
 Jian Yang (yangj18@myumanitoba.ca)
 YaWen Huang (huangyw@myumanitoba.ca)
@@ -34,5 +33,3 @@ when ever you reference a variable, the names have these weird -- infront, it br
 ### transfering data between pages
 So far session storage has been the best for between page transfers, its basically a json file, theres a small demo on the login page for when clicking into dashboard.
 localstorage can be used for saving data when operating within just one html file, be careful to back data up into session storage if you want it to be persistent between pages.
-
-## Milestone 3 
