@@ -85,10 +85,10 @@ button {
 
 .title img{
   position: relative;
-  left: 0;
   width:auto;
   height: 160px;
-  margin-left: 0px;
+  left: 0;
+  padding-right: 15px;
 }
 
 .socials {

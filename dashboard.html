@@ -7,11 +7,20 @@
 		<div>
 			<h1 id="greetingMsg">Welcome to the Dashboard !</h1>
 		</div>
-		<img id="menuBtn" src="images/menuButt.png" >
+    <img id="menuBtn" src="images/menuButt.png" >
+
+    <div id="menu" class="menuPopup">
+      <button id="mealTrackingBtn">Meal Tracking</button>
+      <button id="trackAWorkoutBtn">Track a Workout</button>
+      <button id="communityPageBtn">Community Page</button>
+      <button id="createAPostBtn">Createa a Post</button>
+    </div>
 	</body>
 	<script>
 		const username = sessionStorage.getItem('username');
 		const greeting = document.getElementById('greetingMsg');
+    const menuPopup = document.getElementById('menu');
+    let menuVisible = false;
 
 		if(username){
 			greeting.textContent = `Welcome to the Dashboard ${username} !`;
@@ -19,8 +28,35 @@
 			greeting.textContent = "Welcome to the Dashboard";
 		}
 
-		document.getElementById("menuBtn").addEventListener("click", () => {
-			window.location.href = "index.html";
+    document.getElementById("mealTrackingBtn").addEventListener("click", () => {
+			//window.location.href = "";
 		});
+
+    document.getElementById("trackAWorkoutBtn").addEventListener("click", () => {
+      window.location.href = "workout.html";
+		});
+
+    document.getElementById("communityPageBtn").addEventListener("click", () => {
+			//window.location.href = "";
+		});
+
+    document.getElementById("createAPostBtn").addEventListener("click", () => {
+			//window.location.href = "";
+		});
+
+		document.getElementById("menuBtn").addEventListener("click", () => {
+			toggleMenu();
+		});
+
+    function toggleMenu(){
+      if(menuVisible){
+        menuPopup.classList.remove("menuPopupOpen");
+        menuVisible = false;
+      }
+      else{
+        menuPopup.classList.add("menuPopupOpen");
+        menuVisible = true;
+      }
+    }
 	</script>
 </html>
