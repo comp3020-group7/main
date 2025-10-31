@@ -13,30 +13,13 @@ button {
   transition: all 0.2s ease;
 }
 
-#menuBtn {
-  position: absolute;
-  right: 20;
-  bottom: 20;
-  width: 100;
-  height: 100;
-}
-
-#popup {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: var(--colour-text);
-  justify-content: center; align-items: center;
-}
-
-#versionDiv{
+.version {
   position: absolute;
   right: 5px;
   bottom: 5px;
 }
 
-#warningDiv {
+.warning {
   position: absolute;
   width: 200px;
   height: 250px;
@@ -57,13 +40,13 @@ button {
   gap: 20px;
 }
 
-#warningDiv img{
+.warning img{
   margin-top: 10px;
   width: 50px;
   height: 50px;
 }
 
-#newsDiv {
+.news {
   position: absolute;
   width: 200px;
   height: 250px;
@@ -80,7 +63,7 @@ button {
   gap: 5px;
 }
 
-#titleDiv {
+.title {
   position: absolute;
   top: 50;
   width: 100%;
@@ -95,12 +78,12 @@ button {
   box-sizing: border-box;
 }
 
-#titleDiv h1 {
+.title h1 {
   margin: 0;
   text-align: center;
 }
 
-#titleDiv img{
+.title img{
   position: relative;
   left: 0;
   width:auto;
@@ -108,20 +91,20 @@ button {
   margin-left: 0px;
 }
 
-#socialsDiv {
+.socials {
   position: absolute;
   left: 10px;
   bottom: 10px;
 }
 
-#socialsDiv img {
+.socials img {
   width: 50px;
   height: 50px;
   padding-left: 5px;
 }
 
 /* To style the log in field and inputs */
-#loginDiv {
+.login {
   position: fixed;
   top: 100%;
   left: 50%;
@@ -138,7 +121,7 @@ button {
 }
 
 /* Make the first row (inputs) sit side by side */
-#loginDiv input {
+.login input {
   flex: 1; /* equal widths */
   padding: 8px;
   font-size: 14px;
@@ -158,7 +141,7 @@ button {
 }
 
 /* Style the buttons */
-#loginDiv button {
+.login button {
   width: 100%;
   padding: 10px;
   font-size: 15px;
@@ -169,6 +152,6 @@ button {
   color: var(--colour-background);
 }
 
-#loginDiv button:hover {
+.login button:hover {
   background-color: var(--colour-primary-dark);
 }
