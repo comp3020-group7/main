@@ -157,6 +157,49 @@ body {
   padding: 10px;
 }
 
+.exerciseWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* keeps label aligned left */
+  margin-bottom: 20px;
+}
+
+.exerciseBox {
+    width: 400px;
+    height: 50px;
+    outline-color: var(--colour-background-dark);
+    outline-style: solid;
+    outline-width: thin;
+    margin-left: 150px;
+    margin-top: 50px;
+    /* font-size: 20px; */
+    /* display: flex; */
+    align-items: flex-end;
+    background-color: var(--colour-background);
+}
+
+/* Inner text inside the box */
+.exerciseBox::after {
+  content: attr(data-name); /* use JS to set this attr */
+  position: absolute;
+  /* bottom: 10px;    distance from bottom */ 
+  left: 160px;     /* slight offset from left edge */
+  font-size: 18px;
+  font-weight: 600;
+  align-items: flex-end;
+    margin-top: 25px;
+
+  color: var(--colour-primary-dark, #333);
+}
+
+.setsLabel {
+  margin-top: 6px;
+  margin-left: 150px;
+  font-size: 15px;
+  color: var(--colour-text, #222);
+
+}
+
 
 
 /* .logout-btn:hover {
