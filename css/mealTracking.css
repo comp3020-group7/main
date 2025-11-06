@@ -1,6 +1,8 @@
 @import url(/css/palette.css);
 @import url(/css/sharedStyle.css);
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Silkscreen:wght@400;700&display=swap');
 
+/* #---------- Common settings ----------*/
 * {
 	padding: 0;
 	margin: 0;
@@ -11,7 +13,19 @@ html {
 	font-size: 62.5%;
 }
 
-/* *overview page* */
+.btn {
+	cursor: pointer;
+}
+
+.btn:hover {
+	color: #f1750998;
+}
+
+li {
+	list-style: none;
+}
+
+/* #---------- overview page ----------*/
 .app {
 	max-width: 120rem;
 	height: 80vh;
@@ -50,6 +64,18 @@ html {
 	align-items: center;
 	gap: 0.5rem;
 	margin: 0 3rem;
+	position: relative;
+}
+
+.date .flatpickr-calendar {
+	position: absolute;
+	margin-top: 4rem;
+	left: 0;
+	z-index: 999;
+}
+
+.date-picker {
+	display: none;
 }
 
 .meals {
@@ -59,6 +85,7 @@ html {
 }
 
 .meal {
+	padding: 1rem;
 	margin: 1rem;
 	flex: 1;
 	display: flex;
@@ -66,6 +93,111 @@ html {
 	justify-content: center;
 	text-align: center;
 	background-color: var(--colour-green);
+	border-radius: 1rem;
+}
+
+.meal-section {
+	padding: 1rem;
+	background-color: #ffffffbf;
+}
+
+.meal-section-header {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #fff;
+	border-top-left-radius: 1rem;
+	border-top-right-radius: 1rem;
+}
+
+.meal-header-text-title {
+	font-family: 'Silkscreen', monospace;
+	font-size: 2.5rem;
+	margin: 0.5rem;
+}
+
+.meal-logo-img {
+	width: 6rem;
+	height: 4rem;
+}
+
+.meal-header-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.meal-section-macro-summary {
+	flex: 0.8;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem 3rem;
+	background-color: #f1f7f2;
+	font-size: 0.5rem;
+	color: #3f4373;
+}
+
+.macro-summary-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.8rem;
+	width: 100%;
+	font-size: 1.5rem;
+}
+
+.macro-summary-item-text {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.meal-section-food-items {
+	flex: 2;
+	border-bottom-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	background-color: #fffffff4;
+}
+
+.food-item-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.food-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 3rem;
+	margin-bottom: 0.5rem;
+	font-size: 1.8rem;
+	border-radius: 1rem;
+	padding: 0 1rem;
+	background-color: #8fb7986a;
+}
+
+.food-item-quantity-input {
+	width: 30%;
+	border-radius: 3rem;
+	background-color: #fff;
+	border-color: #fff;
+	padding-left: 1.5rem;
+	text-align: center;
+	opacity: 0.7;
+}
+
+.food-item-quantity-input:focus {
+	color: #8fb7986a;
+}
+
+.food-item-delete-btn:hover {
+	color: #f1750998;
 }
 
 .side-panel {
@@ -157,4 +289,24 @@ html {
 	color: #fff;
 	font-weight: 700;
 	background-color: var(--colour-primary-dark);
+}
+
+.set-goal-btn-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.set-goal-btn {
+	width: 70%;
+	height: 5rem;
+	color: var(--colour-background);
+	background-color: var(--colour-primary-dark);
+	padding: 0 3rem;
+	border-radius: 10rem;
+}
+
+.set-goal-btn:hover {
+	background-color: #fff;
+	font-size: 1.5rem;
 }
