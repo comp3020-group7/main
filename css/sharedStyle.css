@@ -122,6 +122,7 @@ body {
 	font-style: bold;
 	border: none;
 	background-color: var(--colour-primary-dark);
+  border-radius: 0px;
 }
 
 .navBar button:hover {

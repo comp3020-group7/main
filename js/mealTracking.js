@@ -50,9 +50,10 @@ trackAWorkoutBtn.addEventListener("click", () => {
 });
 
 communityPageBtn.addEventListener("click", () => {
-  //window.location.href = "";
+  window.location.href = "community.html";
 });
 
 createAPostBtn.addEventListener("click", () => {
-  //window.location.href = "";
+  sessionStorage.setItem("makeAPostFlag", true);
+  window.location.href = "community.html";
 });
