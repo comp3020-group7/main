@@ -13,7 +13,11 @@ html {
 	font-size: 62.5%;
 }
 
-.welcome-msg {
+body {
+  overflow: hidden;
+}
+
+.greetingMsg {
 	font-size: 2.4rem;
 	margin: 2rem;
 	color: var(--colour-primary-dark);

@@ -9,7 +9,6 @@
 		<link rel="stylesheet" href="./css/dashboard.css" />
 		<link rel="stylesheet" href="./css/palette.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
-    <link rel="stylesheet" href="./css/dashboardStyle.css" />
     <link rel="stylesheet" href="./css/sharedStyle.css" />
 	</head>
 	<body>
@@ -29,22 +28,15 @@
 		</header>
 
 		<!-- navBar -->
-		<!-- integrate with Anna's code later -->
 		<div class="navBar">
-			<!-- <button id="mealTrackingBtn">Track a Meal</button>
+			<button id="mealTrackingBtn">Track a Meal</button>
 			<button id="trackAWorkoutBtn">Track a Workout</button>
 			<button id="communityPageBtn">Community Page</button>
-			<button id="createAPostBtn">Create a Post</button> -->
-
-			<a href="./dashboard.html" class="navbar-link selected">Dashboard</a>
-			<a href="./mealTracking.html" class="navbar-link">Track a Meal</a>
-			<a href="./workout.html" class="navbar-link">Track a Workout</a>
-			<a href="./workout.html" class="navbar-link">Community Page</a>
-			<a href="./workout.html" class="navbar-link">Create a Post</a>
+			<button id="createAPostBtn">Create a Post</button>
 		</div>
 
 		<!-- Main DashBoard section -->
-		<h2 class="welcome-msg">Dashboard</h2>
+		<h2 class="greetingMsg">Dashboard</h2>
 
 		<main class="app">
 			<!-- Left column -->
@@ -196,16 +188,16 @@
 			</div>
 		</main>
 	</body>
-
     <script>
       const username = sessionStorage.getItem('username');
-      const greeting = document.getElementById('greetingMsg');
-      let menuVisible = false;
+      const greeting = document.getElementsByClassName('greetingMsg')[0];
   
       if(username){
         greeting.textContent = `Welcome to the Dashboard ${username} !`;
+        console.log("logged in");
       } else {
         greeting.textContent = "Welcome to the Dashboard";
+        console.log("not logged in")
       }
   
       document.getElementById("mealTrackingBtn").addEventListener("click", () => {
@@ -217,13 +209,13 @@
       });
   
       document.getElementById("communityPageBtn").addEventListener("click", () => {
-        //window.location.href = "";
+        window.location.href = "community.html";
       });
   
       document.getElementById("createAPostBtn").addEventListener("click", () => {
-        //window.location.href = "";
+        sessionStorage.setItem("makeAPostFlag", true);
+        window.location.href = "community.html";
       });
     </script>
 	</body>
-	
 </html>
