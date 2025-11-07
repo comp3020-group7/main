@@ -11,7 +11,7 @@ _Meal Tracking Overview Page_
 _Meal Tracking - Add Food Page_
 
 - [ ] back button seems redundant now
-- [ ] after user clicked add food button what should they see
+- [ ] after user clicked add food button what should they see, maybe not labelled by meal but by types of food? ie recently, often etc.
 - [ ]
 
 - _Meal Tracking - Set Goal Page_
@@ -21,7 +21,7 @@ _Meal Tracking - Add Food Page_
 
 _DashBoard Page_
 
-- [ ]
+- [ ] water intake, after user entered value where does it go??
 - [ ]
 - [ ]
 

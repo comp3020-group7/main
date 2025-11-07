@@ -32,7 +32,7 @@ a {
 /* #---------- overview page ----------*/
 .app {
 	max-width: 120rem;
-	height: 80vh;
+	height: 75vh;
 	margin: 1rem auto;
 	display: grid;
 	grid-template-columns: 8fr 2fr;
