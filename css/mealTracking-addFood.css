@@ -1,5 +1,5 @@
-@import url(/css/sharedStyle.css);
-@import url(/css/palette.css);
+@import url(./sharedStyle.css);
+@import url(./palette.css);
 
 /* #---------- Common settings ----------*/
 * {
