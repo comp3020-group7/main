@@ -3,8 +3,10 @@ TODO:
 _Meal Tracking Overview Page_
 
 - [x] set up date picker (flatpickr)
+- [ ] discuss: should user be allowed to change quantity on overview page??
 - [ ] selected date -> local storage
 - [ ] Item 2
+- [ ]
 
 _Meal Tracking - Add Food Page_
 

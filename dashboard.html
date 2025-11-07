@@ -6,7 +6,7 @@
 		<title>DashBoard</title>
 		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-		<link rel="stylesheet" href="./css/mealTracking.css" />
+		<link rel="stylesheet" href="./css/dashboard.css" />
 		<link rel="stylesheet" href="./css/palette.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
     <link rel="stylesheet" href="./css/dashboardStyle.css" />
@@ -28,15 +28,173 @@
 			</div>
 		</header>
 
-		<div id="menu" class="navBar">
-      <button id="mealTrackingBtn">Track a Meal</button>
-      <button id="trackAWorkoutBtn">Track a Workout</button>
-      <button id="communityPageBtn">Community Page</button>
-      <button id="createAPostBtn">Create a Post</button>
-    </div>
+		<!-- navBar -->
+		<!-- integrate with Anna's code later -->
+		<div class="navBar">
+			<!-- <button id="mealTrackingBtn">Track a Meal</button>
+			<button id="trackAWorkoutBtn">Track a Workout</button>
+			<button id="communityPageBtn">Community Page</button>
+			<button id="createAPostBtn">Create a Post</button> -->
+
+			<a href="./dashboard.html" class="navbar-link selected">Dashboard</a>
+			<a href="./mealTracking.html" class="navbar-link">Track a Meal</a>
+			<a href="./workout.html" class="navbar-link">Track a Workout</a>
+			<a href="./workout.html" class="navbar-link">Community Page</a>
+			<a href="./workout.html" class="navbar-link">Create a Post</a>
+		</div>
 
 		<!-- Main DashBoard section -->
-		<h2 id="greetingMsg" class="welcome-msg">Dashboard</h2>
+		<h2 class="welcome-msg">Dashboard</h2>
+
+		<main class="app">
+			<!-- Left column -->
+			<div class="left">
+				<!-- Calorie meter (semi ring placeholder) -->
+				<div class="card meter">
+					<img src="./images/userIcon.png" alt="profile icon image" class="meter-icon-image" />
+					<div class="meter-info">
+						<div class="meter-cal">0 / 2000 cals</div>
+						<div class="meter-user-text">[username] • level 4</div>
+					</div>
+				</div>
+
+				<!-- Macro rings -->
+				<div class="card macros">
+					<h2 class="macros-title">Macros</h2>
+					<div class="macro-container">
+						<div class="macro">
+							<div class="ring ring-carbs"></div>
+							<div class="macro-label">
+								<div>Carbs</div>
+								<small>100 / 250 g</small>
+							</div>
+						</div>
+						<div class="macro">
+							<div class="ring ring-protein"></div>
+							<div class="macro-label">
+								<div>Protein</div>
+								<small>100 / 130 g</small>
+							</div>
+						</div>
+						<div class="macro">
+							<div class="ring ring-fat"></div>
+							<div class="macro-label">
+								<div>Fat</div>
+								<small>15 / 60 g</small>
+							</div>
+						</div>
+						<div class="macro">
+							<div class="ring ring-total"></div>
+							<div class="macro-label">
+								<div>Total</div>
+								<small>29% of cals</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Water intake + weight -->
+				<div class="card quick-entries">
+					<div class="entry">
+						<label class="quick-entries-title quick-entries-title-water">Water intake</label>
+						<input class="input" placeholder="e.g., 500 ml" />
+					</div>
+					<div class="entry">
+						<label class="quick-entries-title quick-entries-title-weight">Daily weight</label>
+						<input class="input" placeholder="enter weight (kg)" />
+					</div>
+				</div>
+			</div>
+
+			<!-- Center column -->
+			<div class="center">
+				<div class="card greet">
+					<h2 class="greet-title">Good morning, <span class="username">username</span>!</h2>
+					<div class="today">Today is <span class="date">[DATE]</span></div>
+				</div>
+
+				<!-- Calendar overview -->
+				<div class="card calendar">
+					<header class="calendar-head">
+						<button class="icon-btn" aria-label="Prev">
+							<span class="material-symbols-outlined">chevron_left</span>
+						</button>
+						<h3 class="month">November 2025</h3>
+						<button class="icon-btn" aria-label="Next">
+							<span class="material-symbols-outlined">chevron_right</span>
+						</button>
+					</header>
+					<div class="calendar-grid">
+						<div class="dow">Sun</div>
+						<div class="dow">Mon</div>
+						<div class="dow">Tue</div>
+						<div class="dow">Wed</div>
+						<div class="dow">Thu</div>
+						<div class="dow">Fri</div>
+						<div class="dow">Sat</div>
+						<!-- week 1 -->
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell has-icon"><span class="material-symbols-outlined">directions_run</span></div>
+						<div class="cell"></div>
+						<div class="cell has-icon"><span class="material-symbols-outlined">fitness_center</span></div>
+						<div class="cell has-icon"><span class="material-symbols-outlined">hiking</span></div>
+
+						<!-- week 2 -->
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+
+						<!-- week 2 -->
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+
+						<!-- week 2 -->
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+						<div class="cell"></div>
+					</div>
+				</div>
+
+				<div class="quickview-container">
+					<!-- last meal -->
+					<div class="card last-meal">
+						<h3 class="quickview-title last-meal-title">Your last meal</h3>
+						<div class="meal-row">
+							<img src="./images/mealTracking/food-img/apple.png" alt="" class="meal-thumb-img" />
+							<div class="meal-text">
+								<div class="meal-name">Apple</div>
+								<div class="meal-calories-text">xxx calories</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- last workout -->
+					<div class="card last-workout">
+						<h3 class="quickview-title">Your last workout</h3>
+						<ul class="workout-list">
+							<li>Walk 5km</li>
+							<li>push up 4 sets</li>
+							<li>5 km run</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</main>
 	</body>
 
     <script>

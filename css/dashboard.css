@@ -1,0 +1,292 @@
+@import url(./palette.css);
+@import url(./sharedStyle.css);
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400;500;600&display=swap');
+
+/* ---------- Base styles ---------- */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+.welcome-msg {
+	font-size: 2.4rem;
+	margin: 2rem;
+	color: var(--colour-primary-dark);
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+/* ---------- Layout ---------- */
+.app {
+	margin: 0 1rem;
+	display: grid;
+	grid-template-columns: 2fr 4fr;
+	gap: 2rem;
+	max-height: 100vh;
+}
+
+.left,
+.center,
+.right {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.card {
+	background: #8fb798;
+	border-radius: 2rem;
+	padding: 2rem;
+}
+
+/* ---------- Calorie meter ---------- */
+.meter {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	padding: 2rem;
+}
+
+.meter-icon-image {
+	flex: 1;
+	max-width: 30%;
+}
+
+.meter-info {
+	flex: 1;
+	text-align: left;
+	font-size: 1.4rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	color: rgba(40, 44, 75, 0.8);
+}
+
+.meter-cal {
+	font-size: 2.4rem;
+	font-weight: 600;
+	color: var(--colour-primary-dark);
+}
+
+.meter-user-text {
+	font-size: 2rem;
+}
+
+/* ---------- Macros ---------- */
+.macro-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.4rem;
+}
+
+.macro {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 1.2rem;
+	border-radius: 1.2rem;
+	background: #f3f3f3;
+}
+
+.macros-title {
+	font-size: 2rem;
+	padding-bottom: 0.5rem;
+}
+
+.ring {
+	--progress: 50;
+	--ring-color: var(--colour-primary-dark);
+	width: 6.4rem;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	background: conic-gradient(var(--ring-color) calc(var(--progress) * 1%), #eef1f7 0deg);
+	position: relative;
+}
+
+.ring::after {
+	content: '';
+	position: absolute;
+	inset: 0.9rem;
+	background: #fff;
+	border-radius: 50%;
+}
+
+.ring-carbs {
+	--progress: 50;
+	--ring-color: #128d3f;
+}
+
+.ring-protein {
+	--progress: 50;
+	--ring-color: #cd9f76;
+}
+
+.ring-fat {
+	--progress: 50;
+	--ring-color: #f17509;
+}
+
+.ring-total {
+	--progress: 50;
+	--ring-color: var(--colour-primary-dark);
+}
+
+.macro-label {
+	display: flex;
+	flex-direction: column;
+	font-size: 1.6rem;
+}
+
+/* ---------- Quick entries ---------- */
+.quick-entries {
+	display: grid;
+	gap: 1.5rem;
+}
+
+.entry {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+
+.quick-entries-title {
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+.entry .input {
+	padding: 1rem 1.4rem;
+	border-radius: 0.8rem;
+	border: none;
+}
+
+/* ---------- Greeting ---------- */
+.greet {
+	color: #fff;
+}
+
+.greet .username {
+	color: #d06609;
+}
+
+.greet-title {
+	font-size: 2.4rem;
+	margin-bottom: 0.6rem;
+}
+
+.greet .username {
+	font-family: 'Silkscreen', monospace;
+}
+
+.today {
+	font-size: 1.8rem;
+}
+
+/* ---------- Calendar ---------- */
+.calendar-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 1.5rem;
+	background-color: #fff;
+	border-radius: 2rem;
+}
+
+.icon-btn {
+	border: none;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+}
+
+.month {
+	font-size: 1.8rem;
+}
+
+.calendar-grid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 0.6rem;
+	font-size: 1.3rem;
+	text-align: center;
+}
+
+.dow {
+	color: var(--colour-primary-dark);
+}
+
+.cell {
+	padding: 1.4rem 0.8rem;
+	min-height: 5.4rem;
+	border-radius: 1rem;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cell.has-icon {
+	background: #fff;
+	border: 3px solid #f17509;
+	color: var(--colour-accent);
+}
+
+/* quickview */
+.quickview-container {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	max-height: 13rem;
+}
+
+/* ----------- last logged meal ------------- */
+.last-meal {
+	flex: 1;
+}
+
+.quickview-title {
+	font-size: 2rem;
+}
+.meal-row {
+	display: flex;
+	gap: 1.2rem;
+	align-items: center;
+}
+
+.meal-thumb-img {
+	width: 7rem;
+	height: 7rem;
+	border-radius: 1rem;
+}
+
+.meal-name {
+	font-size: 2rem;
+}
+
+.meal-calories-text {
+	font-size: 1.5rem;
+	color: #fff;
+}
+
+/* last logged workout */
+.last-workout {
+	flex: 1;
+}
+
+.workout-list {
+	font-size: 1.5rem;
+}
