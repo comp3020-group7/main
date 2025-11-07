@@ -87,4 +87,24 @@ body {
 
 }
 
+.navBar {
+  border: 1px solid var(--colour-primary-dark);
+  width: 100%;
+  background-color: var(--colour-primary-dark);
+}
+
+.navBar button{
+  height: 40px;
+  width: 140px;
+  background-color: white;
+  font-size: 15px;
+  font-style: bold;
+  border: none;
+  background-color: var(--colour-primary-dark);
+}
+
+.navBar button:hover{
+  background-color: var(--colour-primary);
+}
+
 
