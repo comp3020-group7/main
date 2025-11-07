@@ -2,47 +2,25 @@
 
 body {
   overflow: hidden;
+  margin: 0;
 }
 
-#menuBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 150px;
-  height: 150px;
+.navBar {
+  border: 1px solid var(--colour-primary-dark);
+  width: 100%;
+  background-color: var(--colour-primary-dark);
 }
 
-.menuPopup {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  transform: scale(.1);
-  transition: transform 0.4s, top 0.4s, left 0.4s;
-  height: 700px;
-  width: 1000px;
-  border: 3px solid var(--colour-text);  /* thicker outline when focused */
-  border-radius: 10px;
-  background-color: var(--colour-background);
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 30px;
-  justify-content: center;
-  align-content: center;
-  visibility: hidden;
-}
-
-.menuPopup button{
-  height: 250px;
-  width: 300px;
-  border-radius: 15px;
-  background-color: var(--colour-green);
-  font-size: 30px;
+.navBar button{
+  height: 40px;
+  width: 140px;
+  background-color: white;
+  font-size: 15px;
   font-style: bold;
+  border: none;
+  background-color: var(--colour-primary-dark);
 }
 
-.menuPopupOpen{
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  visibility: visible;
+.navBar button:hover{
+  background-color: var(--colour-primary);
 }

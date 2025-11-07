@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="./css/mealTracking.css" />
 		<link rel="stylesheet" href="./css/palette.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <link rel="stylesheet" href="./css/dashboardStyle.css"
 	</head>
 	<body>
 		<!-- topBar -->
@@ -30,6 +31,42 @@
 		<nav class="navbar"></nav>
 
 		<!-- Main DashBoard section -->
-		<h2 class="welcome-msg">Dashboard</h2>
+		<h2 id="greetingMsg" class="welcome-msg">Dashboard</h2>
 	</body>
+    <div id="menu" class="navBar">
+      <button id="mealTrackingBtn">Track a Meal</button>
+      <button id="trackAWorkoutBtn">Track a Workout</button>
+      <button id="communityPageBtn">Community Page</button>
+      <button id="createAPostBtn">Create a Post</button>
+    </div>
+
+    <script>
+      const username = sessionStorage.getItem('username');
+      const greeting = document.getElementById('greetingMsg');
+      let menuVisible = false;
+  
+      if(username){
+        greeting.textContent = `Welcome to the Dashboard ${username} !`;
+      } else {
+        greeting.textContent = "Welcome to the Dashboard";
+      }
+  
+      document.getElementById("mealTrackingBtn").addEventListener("click", () => {
+        window.location.href = "mealTracking.html";
+      });
+  
+      document.getElementById("trackAWorkoutBtn").addEventListener("click", () => {
+        window.location.href = "workout.html";
+      });
+  
+      document.getElementById("communityPageBtn").addEventListener("click", () => {
+        //window.location.href = "";
+      });
+  
+      document.getElementById("createAPostBtn").addEventListener("click", () => {
+        //window.location.href = "";
+      });
+    </script>
+	</body>
+	
 </html>
