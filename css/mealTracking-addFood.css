@@ -34,6 +34,11 @@ li {
 	color: var(--colour-primary-dark);
 }
 
+.go-back-link {
+	text-decoration: underline;
+	color: #8fb798;
+}
+
 /* layout */
 .content {
 	max-width: 110rem;

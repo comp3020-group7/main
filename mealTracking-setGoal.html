@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>mealTracking-setGoal</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Material+Symbols+Outlined"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="./css/mealTracking-setGoal.css" />
+	</head>
+	<body>
+		<!-- topBar (taken from Yawen's code) -->
+		<header class="topBar">
+			<div>
+				<img src="images/activ8logo.png" />
+				<h1 class="appName">Activ8</h1>
+			</div>
+			<div class="rightButts">
+				<a href="dashboard.html" class="profileButt">
+					<img src="images/userIcon.png" />
+				</a>
+				<!-- <a href="login.html" class="logoutButt">Logout</a> -->
+				<button class="logoutButt" onclick="window.location.href='login.html'">Logout</button>
+			</div>
+		</header>
+
+		<!-- main add food section -->
+		<h2 class="welcome-msg"><a href="/mealTracking.html" class="go-back-link">Track a Meal</a> > Set Nutrition Goal</h2>
+		<div class="content">
+			<!-- Left: main contents -->
+			<div class="panel">
+				<div class="panel-item panel-set-calory">
+					<span class="panel-item-title">set calory:</span>
+					<input type="text" class="panel-item-input panel-item-input-calory" placeholder="Enter your target calory" />
+				</div>
+				<div class="panel-item panel-set-macro">
+					<span class="panel-item-title">set macro:</span>
+					<div class="panel-item-input-macro-container">
+						<div class="panel-item-input-item panel-item-input-macro-carbs">
+							<div class="panel-item-input-item-title">Carbs:</div>
+							<input type="text" class="panel-item-item-macro-input" placeholder="Enter your target carbs" />
+						</div>
+						<div class="panel-item-input-item panel-item-input-macro-protein">
+							<div class="panel-item-input-item-title">Protein:</div>
+							<input type="text" class="panel-item-item-macro-input" placeholder="Enter your target carbs" />
+						</div>
+						<div class="panel-item-input-item panel-item-input-macro-fats">
+							<div class="panel-item-input-item-title">Fats:</div>
+							<input type="text" class="panel-item-item-macro-input" placeholder="Enter your target carbs" />
+						</div>
+					</div>
+				</div>
+				<div class="panel-item panel-buttons-container">
+					<button class="panel-button btn panel-button-clear">Clear</button>
+					<button class="panel-button btn panel-button-confirm">Confirm</button>
+				</div>
+			</div>
+
+			<!-- Right: back arrow -->
+			<div class="side">
+				<a href="./mealTracking.html" class="back-btn" title="Back">
+					<span class="material-symbols-outlined">arrow_back</span>
+				</a>
+			</div>
+		</div>
+	</body>
+</html>

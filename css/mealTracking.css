@@ -288,7 +288,7 @@ a {
 	transform-origin: var(--half-size) var(--half-size);
 	stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
 	transition: stroke-dasharray 0.3s linear 0s;
-	stroke: #5394fd;
+	stroke: var(--colour-green);
 }
 /**************** progress circle ends ****************/
 
@@ -331,15 +331,21 @@ a {
 }
 
 .set-goal-btn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	width: 70%;
 	height: 5rem;
 	color: var(--colour-background);
 	background-color: var(--colour-primary-dark);
+	font-size: 1.5rem;
+
 	padding: 0 3rem;
 	border-radius: 10rem;
 }
 
 .set-goal-btn:hover {
 	background-color: #fff;
-	font-size: 1.5rem;
+	font-size: 1.8rem;
 }
