@@ -1,45 +1,43 @@
-@import url("palette.css");
+@import url('palette.css');
 
 /*** top bar CSS ***/
 body {
-    margin: 0;
-    font-family: "Monaco", "Courier New", monospace;
-    background-color: white;
-    color: var(--colour-text);
+	margin: 0;
+	font-family: 'Monaco', 'Courier New', monospace;
+	background-color: white;
+	color: var(--colour-text);
 }
 
 /* the whole horizontal bar */
 .topBar {
-    width: 100%;
-    height: 75px;
-    background-color: var(--colour-primary);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
+	width: 100%;
+	height: 75px;
+	background-color: var(--colour-primary);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 /* app name */
 .topBar h1 {
-    margin: 0;
-    font-size: 28px;
-    color: black;
-    letter-spacing: 1px;
+	margin: 0;
+	font-size: 28px;
+	color: black;
+	letter-spacing: 1px;
 }
 
 /* logo picture */
-.topBar img{
-    height: 60px;          /* slightly smaller than bar height (75px) */
-    width: auto;           /* keeps correct aspect ratio */
-    margin-left: 20px;     /* small space from the left edge */
-    margin-right: 15px;    /* space between logo and text */
-    object-fit: contain;
+.topBar img {
+	height: 60px; /* slightly smaller than bar height (75px) */
+	width: auto; /* keeps correct aspect ratio */
+	margin-left: 20px; /* small space from the left edge */
+	margin-right: 15px; /* space between logo and text */
+	object-fit: contain;
 }
 
-
 .topBar div:first-child {
-  display: flex;
-  align-items: center;  /* centers the logo and text vertically */
+	display: flex;
+	align-items: center; /* centers the logo and text vertically */
 }
 
 /* .appName{
@@ -51,40 +49,75 @@ body {
 } */
 
 .rightButts {
-  display: flex;
-  align-items: center;
-  gap: 80px; /* spacing between icon and button */
+	display: flex;
+	align-items: center;
+	gap: 80px; /* spacing between icon and button */
 }
 
 .logoutButt {
-  background-color: var(--colour-primary-dark);
-  color: var(--colour-background);
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-size: 16px;
-  margin-right: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+	background-color: var(--colour-primary-dark);
+	color: var(--colour-background);
+	padding: 10px 18px;
+	border-radius: 8px;
+	font-size: 16px;
+	margin-right: 20px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
 .profileButt {
-    height: 40px;
-    width: 40px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    transition: transform 0.2s ease, border-color 0.3s ease;
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	transition: transform 0.2s ease, border-color 0.3s ease;
 }
 /*** end of top bar CSS ***/
 
 .menuBtn {
-  position: fixed;
-  bottom: 2%;
-  right: 1.5%;
-  width: 7%;
-  height: auto;
-  cursor: pointer;
-
+	position: fixed;
+	bottom: 2%;
+	right: 1.5%;
+	width: 7%;
+	height: auto;
+	cursor: pointer;
 }
 
+.navBar {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	color: #fff;
+	background-color: var(--colour-primary-dark);
+}
 
+.navbar-link {
+	color: #fff;
+	font-size: 1.5rem;
+	padding: 0.5rem 3rem;
+	border-right: 0.2rem solid #000;
+}
+
+.navbar-link.selected {
+	background-color: var(--colour-primary);
+}
+
+.navbar-link:hover {
+	background-color: var(--colour-primary);
+}
+
+.navBar button {
+	color: #fff;
+	height: 40px;
+	width: 140px;
+	background-color: white;
+	font-size: 15px;
+	font-style: bold;
+	border: none;
+	background-color: var(--colour-primary-dark);
+}
+
+.navBar button:hover {
+	background-color: var(--colour-primary);
+}
