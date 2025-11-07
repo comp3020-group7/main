@@ -5,8 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>MealTrackingPage</title>
 		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 		<link rel="stylesheet" href="./css/mealTracking.css" />
 		<link rel="stylesheet" href="./css/palette.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
 	</head>
 	<body>
 		<!-- topBar -->
@@ -29,15 +31,224 @@
 		<main class="app">
 			<div class="overview">
 				<div class="date-container">
-					<span class="material-symbols-outlined"> arrow_back </span>
-					<p class="date"><span class="material-symbols-outlined"> calendar_month </span> TODAY, Oct. 31</p>
-					<span class="material-symbols-outlined"> arrow_forward </span>
+					<span class="material-symbols-outlined btn arrow arrow-back"> arrow_back </span>
+					<div class="date">
+						<span class="material-symbols-outlined calendar-icon btn"> calendar_month </span>
+						<input type="text" class="date-picker" />
+						<span class="date-label"></span>
+					</div>
+					<span class="material-symbols-outlined btn arrow arrow-forward"> arrow_forward </span>
 				</div>
 				<div class="meals">
-					<div class="meal meal-breakfast">breakfast</div>
-					<div class="meal meal-lunch">lunch</div>
-					<div class="meal meal-dinner">dinner</div>
-					<div class="meal meal-snack">snack</div>
+					<div class="meal meal-breakfast">
+						<div class="meal-section meal-section-header">
+							<div class="meal-header-text-title">Breakfast</div>
+							<div>
+								<img src="/images/mealTracking/meal-logo/breakfast.png" alt="breakfast logo" class="meal-logo-img" />
+								<div class="meal-header-text">
+									<p class="meal-header-text-calory-summary">
+										<span class="meal-header-text-calory-count">0</span> cals
+									</p>
+									<p class="meal-header-text-items-summary">
+										<span class="meal-header-text-items-count">0</span> items
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="meal-section meal-section-macro-summary">
+							<div class="macro-summary-item macro-summary-carbs">
+								<span class="material-symbols-outlined"> nutrition </span>
+								<div class="macro-summary-item-text">
+									<span class="label">Carbs</span>
+									<span class="value">0 g</span>
+								</div>
+							</div>
+							<div class="macro-summary-item macro-summary-carbs">
+								<span class="material-symbols-outlined"> savings </span>
+								<p class="macro-summary-item-text">
+									<span class="label">protein</span>
+									<span class="value">0 g</span>
+								</p>
+							</div>
+							<div class="macro-summary-item macro-summary-carbs">
+								<span class="material-symbols-outlined"> grass </span>
+								<p class="macro-summary-item-text">
+									<span class="label">Fats</span>
+									<span class="value">0 g</span>
+								</p>
+							</div>
+						</div>
+						<div class="meal-section meal-section-food-items">
+							<ul class="food-item-list">
+								<li class="food-item">
+									<span>Apple</span>
+									<input type="number" placeholder="1" class="food-item-quantity-input" />
+									<span class="material-symbols-outlined btn food-item-delete-btn"> close </span>
+								</li>
+							</ul>
+							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container">
+								<span class="material-symbols-outlined add-food-btn"> add_2 </span>
+								<span class="add-food-btn-text">Add Food</span>
+							</a>
+						</div>
+					</div>
+					<div class="meal meal-lunch">
+						<div class="meal-section meal-section-header">
+							<div class="meal-header-text-title">Lunch</div>
+							<div>
+								<img src="/images/mealTracking/meal-logo/lunch.png" alt="lunch logo" class="meal-logo-img" />
+								<div class="meal-header-text">
+									<p class="meal-header-text-calory-summary">
+										<span class="meal-header-text-calory-count">0</span> cals
+									</p>
+									<p class="meal-header-text-items-summary">
+										<span class="meal-header-text-items-count">0</span> items
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="meal-section meal-section-macro-summary">
+							<div class="macro-summary-item macro-summary-carbs">
+								<span class="material-symbols-outlined"> nutrition </span>
+								<div class="macro-summary-item-text">
+									<span class="label">Carbs</span>
+									<span class="value">0 g</span>
+								</div>
+							</div>
+							<div class="macro-summary-item macro-summary-carbs">
+								<span class="material-symbols-outlined"> savings </span>
+								<p class="macro-summary-item-text">
+									<span class="label">protein</span>
+									<span class="value">0 g</span>
+								</p>
+							</div>
+							<div class="macro-summary-item macro-summary-carbs">
+								<span class="material-symbols-outlined"> grass </span>
+								<p class="macro-summary-item-text">
+									<span class="label">Fats</span>
+									<span class="value">0 g</span>
+								</p>
+							</div>
+						</div>
+						<div class="meal-section meal-section-food-items">
+							<ul class="food-item-list">
+								<li class="food-item">
+									<span>Apple</span>
+									<input type="number" placeholder="1" class="food-item-quantity-input" />
+									<span class="material-symbols-outlined btn food-item-delete-btn"> close </span>
+								</li>
+							</ul>
+
+							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container"
+								><span class="material-symbols-outlined add-food-btn"> add_2 </span>
+								<span class="add-food-btn-text">Add Food</span>
+							</a>
+						</div>
+					</div>
+					<div class="meal meal-dinner">
+						<div class="meal-section meal-section-header">
+							<div class="meal-header-text-title">Dinner</div>
+							<div>
+								<img src="/images/mealTracking/meal-logo/dinner.png" alt="dinner logo" class="meal-logo-img" />
+								<div class="meal-header-text">
+									<p class="meal-header-text-calory-summary">
+										<span class="meal-header-text-calory-count">0</span> cals
+									</p>
+									<p class="meal-header-text-items-summary">
+										<span class="meal-header-text-items-count">0</span> items
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="meal-section meal-section-macro-summary">
+							<div class="macro-summary-item macro-summary-carbs">
+								<span class="material-symbols-outlined"> nutrition </span>
+								<div class="macro-summary-item-text">
+									<span class="label">Carbs</span>
+									<span class="value">0 g</span>
+								</div>
+							</div>
+							<div class="macro-summary-item macro-summary-carbs">
+								<span class="material-symbols-outlined"> savings </span>
+								<p class="macro-summary-item-text">
+									<span class="label">protein</span>
+									<span class="value">0 g</span>
+								</p>
+							</div>
+							<div class="macro-summary-item macro-summary-carbs">
+								<span class="material-symbols-outlined"> grass </span>
+								<p class="macro-summary-item-text">
+									<span class="label">Fats</span>
+									<span class="value">0 g</span>
+								</p>
+							</div>
+						</div>
+						<div class="meal-section meal-section-food-items">
+							<ul class="food-item-list">
+								<li class="food-item">
+									<span>Apple</span>
+									<input type="number" placeholder="1" class="food-item-quantity-input" />
+									<span class="material-symbols-outlined btn food-item-delete-btn"> close </span>
+								</li>
+							</ul>
+							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container"
+								><span class="material-symbols-outlined add-food-btn"> add_2 </span>
+								<span class="add-food-btn-text">Add Food</span>
+							</a>
+						</div>
+					</div>
+					<div class="meal meal-snacks">
+						<div class="meal-section meal-section-header">
+							<div class="meal-header-text-title">Snacks</div>
+							<div>
+								<img src="/images/mealTracking/meal-logo/breakfast.png" alt="snacks logo" class="meal-logo-img" />
+								<div class="meal-header-text">
+									<p class="meal-header-text-calory-summary">
+										<span class="meal-header-text-calory-count">0</span> cals
+									</p>
+									<p class="meal-header-text-items-summary">
+										<span class="meal-header-text-items-count">0</span> items
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="meal-section meal-section-macro-summary">
+							<div class="macro-summary-item macro-summary-carbs">
+								<span class="material-symbols-outlined"> nutrition </span>
+								<div class="macro-summary-item-text">
+									<span class="label">Carbs</span>
+									<span class="value">0 g</span>
+								</div>
+							</div>
+							<div class="macro-summary-item macro-summary-carbs">
+								<span class="material-symbols-outlined"> savings </span>
+								<p class="macro-summary-item-text">
+									<span class="label">protein</span>
+									<span class="value">0 g</span>
+								</p>
+							</div>
+							<div class="macro-summary-item macro-summary-carbs">
+								<span class="material-symbols-outlined"> grass </span>
+								<p class="macro-summary-item-text">
+									<span class="label">Fats</span>
+									<span class="value">0 g</span>
+								</p>
+							</div>
+						</div>
+						<div class="meal-section meal-section-food-items">
+							<ul class="food-item-list">
+								<li class="food-item">
+									<span>Apple</span>
+									<input type="number" placeholder="1" class="food-item-quantity-input" />
+									<span class="material-symbols-outlined btn food-item-delete-btn"> close </span>
+								</li>
+							</ul>
+							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container"
+								><span class="material-symbols-outlined add-food-btn"> add_2 </span>
+								<span class="add-food-btn-text">Add Food</span>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="side-panel">
@@ -56,15 +267,14 @@
 					</div>
 				</div>
 
-				<div class="side-panel-item btn set-goal-btn">
-					set-goal-btn <br />
-					(to be implemented)
-				</div>
-				<div class="side-panel-item menu-grid">
-					menu-grid <br />
-					(to be implemented)
+				<div class="side-panel-item set-goal-btn-container">
+					<a href="mealTracking-setGoal.html" class="btn set-goal-btn">
+						<span class="set-goal-btn-text">Set Goals</span>
+					</a>
 				</div>
 			</div>
 		</main>
+		<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+		<script src="./js/mealTracking.js"></script>
 	</body>
 </html>
