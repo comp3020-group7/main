@@ -10,12 +10,12 @@ _Meal Tracking Overview Page_
 
 _Meal Tracking - Add Food Page_
 
-- [ ]
-- [ ]
+- [ ] back button seems redundant now
+- [ ] after user clicked add food button what should they see
 - [ ]
 
 - _Meal Tracking - Set Goal Page_
-- [ ]
+- [ ] back button seems redundant now
 - [ ]
 - [ ]
 
