@@ -1,5 +1,19 @@
 @import url('palette.css');
 
+/* ===================================== Jian's note ===================================== */
+/* had to put those code here because I didn't use px, instead  */
+/* I used rem(which makes sure differennt screen resolution has no effect on) */
+/* the layout of the website, but it caused issue when I style navbar for other pages */
+html {
+	font-size: 62.5%;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* ===================================== Jian's note end ===================================== */
+
 /*** top bar CSS ***/
 body {
 	margin: 0;
@@ -40,14 +54,6 @@ body {
 	align-items: center; /* centers the logo and text vertically */
 }
 
-/* .appName{
-    margin: 0;
-    font-size: 40px;
-    font-weight: 700;
-    color: var(--colour-primary-dark);
-    letter-spacing: 2px;
-} */
-
 .rightButts {
 	display: flex;
 	align-items: center;
@@ -75,14 +81,14 @@ body {
 }
 /*** end of top bar CSS ***/
 
-.menuBtn {
+/* .menuBtn {
 	position: fixed;
 	bottom: 2%;
 	right: 1.5%;
 	width: 7%;
 	height: auto;
 	cursor: pointer;
-}
+} */
 
 .navBar {
 	display: flex;

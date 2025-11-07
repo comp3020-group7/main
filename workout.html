@@ -1,245 +1,226 @@
 <html>
 	<head>
 		<title>Track a Workout</title>
-		<link rel="stylesheet" href="css/workoutStyle.css">
-    <link rel="stylesheet" href="css/sharedStyle.css">
+		<link rel="stylesheet" href="css/workoutStyle.css" />
+		<link rel="stylesheet" href="css/sharedStyle.css" />
+		<link rel="stylesheet" href="./css/sharedStyle.css" />
+		<!-- <link rel="stylesheet" href="css/dashboardStyle.css"> -->
 	</head>
 	<body>
 		<header class="topBar">
-      <div>
-        <img src="images/activ8logo.png">
-        <h1 >Activ8</h1>
-      </div>
-      <div class="rightButts">
-        <a href="dashboard.html" class = "profileButt">
-          <img src="images/userIcon.png">
-        </a>
-        <button class="logoutButt" onclick="window.location.href='index.html'">Logout</button>
-      </div>
-    </header>
-      <div id="menu" class="navBar">
-        <button id="mealTrackingBtn">Track a Meal</button>
-        <button id="trackAWorkoutBtn">Track a Workout</button>
-        <button id="communityPageBtn">Community Page</button>
-        <button id="createAPostBtn">Create a Post</button>
-      </div>
+			<div>
+				<img src="images/activ8logo.png" />
+				<h1>Activ8</h1>
+			</div>
+			<div class="rightButts">
+				<a href="dashboard.html" class="profileButt">
+					<img src="images/userIcon.png" />
+				</a>
+				<!-- <a href="login.html" class="logoutButt">Logout</a> -->
+				<button class="logoutButt" onclick="window.location.href='index.html'">Logout</button>
+			</div>
+		</header>
 
-      <div class="workoutHeading">
-          <h2>Track a Workout</h2>
-      </div>
-      <div class="searchBar">
-          <img src="images/magnifyingGlass.png">
-          <input
-              type="text"
-              id="searchInput"
-              placeholder= "Search an exercise to add to workout"
-          >
-      </div>
-      <div id= "exerciseSearch" class="exerciseSearch">
-      </div>
+		<div class="navBar">
+			<a href="./dashboard.html" class="navbar-link">Dashboard</a>
+			<a href="./mealTracking.html" class="navbar-link">Track a Meal</a>
+			<a href="./workout.html" class="navbar-link selected">Track a Workout</a>
+			<a href="./community.html" class="navbar-link">Community Page</a>
+			<a href="./createPost.html" class="navbar-link">Create a Post</a>
+		</div>
 
-      <div class="resistanceFields">
-          <!-- comment box -->
-      <!-- <div class="commentContainer">
-          <label class="commentLabel">Personal Comment:</label>
-          <div class="commentBox"> </div>
-      </div> -->
+		<div class="workoutHeading">
+			<h2>Track a Workout</h2>
+		</div>
+		<div class="searchBar">
+			<img src="images/magnifyingGlass.png" />
+			<input type="text" id="searchInput" placeholder="Search an exercise to add to workout" />
+		</div>
+		<div id="exerciseSearch" class="exerciseSearch"></div>
 
-      <button class="submitBtn" onclick="window.location.href='dashboard.html'">submit</button>
-      <!-- <img class="menuBtn" src="images/MenuButtLabelled.png" > -->
-      <script id="exerciseData" type="application/json">
-        {
-          "exercises": [
-            {"id": 1,"name": "squat", "type": "resistance training"},
-            {"id": 2, "name": "dumbell squat", "type": "resistance training"},
-            {"id": 3, "name": "pull-up", "type": "resistance training"},
-            {"id": 4, "name": "pushup", "type": "resistance training"},
-            {"id": 5, "name": "run", "type": "cardiovsascular training"},
-            {"id": 5, "name": "walk", "type": "cardiovsascular training"},
-            {"id": 6, "name": "bike", "type": "cardiovsascular training"},
-            {"id": 7, "name": "bench press", "type": "resistance training"},
-            {"id": 8, "name": "seated shoulder press", "type": "resistance training"},
-            {"id": 9, "name": "swim", "type": "cardiovsascular training"},
-            {"id": 10, "name": "bicep curl", "type": "resistance training"},
-            {"id": 11, "name": "tricep extension", "type": "resistance training"},
-            {"id": 12, "name": "seated row", "type": "resistance training"},
-            {"id": 13, "name": "walking lunges", "type": "resistance training"}
-          ]
-        }
-      </script>
-      <script>
-        // Parse JSON embedded in the HTML
-        const exerciseJSON = document.getElementById('exerciseData').textContent;
-        const exercises = JSON.parse(exerciseJSON).exercises;
+		<div class="resistanceFields">
+			<!-- comment box -->
+			<!-- <div class="commentContainer">
+            <label class="commentLabel">Personal Comment:</label>
+            <div class="commentBox"> </div>
+        </div> -->
+		</div>
+		<button class="submitBtn" onclick="window.location.href='dashboard.html'">submit</button>
+		<!-- <img class="menuBtn" src="images/MenuButtLabelled.png" > -->
+		<script id="exerciseData" type="application/json">
+			{
+				"exercises": [
+					{"id": 1, "name": "squat", "type": "resistance training"},
+					{"id": 2, "name": "dumbell squat", "type": "resistance training"},
+					{"id": 3, "name": "pull-up", "type": "resistance training"},
+					{"id": 4, "name": "pushup", "type": "resistance training"},
+					{"id": 5, "name": "run", "type": "cardiovsascular training"},
+					{"id": 5, "name": "walk", "type": "cardiovsascular training"},
+					{"id": 6, "name": "bike", "type": "cardiovsascular training"},
+					{"id": 7, "name": "bench press", "type": "resistance training"},
+					{"id": 8, "name": "seated shoulder press", "type": "resistance training"},
+					{"id": 9, "name": "swim", "type": "cardiovsascular training"},
+					{"id": 10, "name": "bicep curl", "type": "resistance training"},
+					{"id": 11, "name": "tricep extension", "type": "resistance training"},
+					{"id": 12, "name": "seated row", "type": "resistance training"},
+					{"id": 13, "name": "walking lunges", "type": "resistance training"}
+				]
+			}
+		</script>
+		<script>
+			// Parse JSON embedded in the HTML
+			const exerciseJSON = document.getElementById('exerciseData').textContent;
+			const exercises = JSON.parse(exerciseJSON).exercises;
 
-        const exerciseInput = document.getElementById('searchInput');
-        const exerciseSearch = document.getElementById('exerciseSearch');
-        const resistanceFields = document.querySelector('.resistanceFields');
+			const exerciseInput = document.getElementById('searchInput');
+			const exerciseSearch = document.getElementById('exerciseSearch');
+			const resistanceFields = document.querySelector('.resistanceFields');
 
-        // Clear placeholder when user clicks on the box (focus)
-        exerciseInput.addEventListener('focus', () => {
-          exerciseInput.placeholder = '';
-          // If there’s text already typed, re-show the box
-          if (exerciseInput.value.trim() !== '' && exerciseSearch.innerHTML.trim() !== '') {
-            exerciseSearch.style.display = 'block';
-          }
-        });
+			// Clear placeholder when user clicks on the box (focus)
+			exerciseInput.addEventListener('focus', () => {
+				exerciseInput.placeholder = '';
+				// If there’s text already typed, re-show the box
+				if (exerciseInput.value.trim() !== '' && exerciseSearch.innerHTML.trim() !== '') {
+					exerciseSearch.style.display = 'block';
+				}
+			});
 
-        // Restore placeholder when they click away and the box is empty (blur)
-        exerciseInput.addEventListener('blur', () => {
-          if (exerciseInput.value === '') {
-            exerciseInput.placeholder = 'Search an exercise to add to workout';
-          }
-        });
+			// Restore placeholder when they click away and the box is empty (blur)
+			exerciseInput.addEventListener('blur', () => {
+				if (exerciseInput.value === '') {
+					exerciseInput.placeholder = 'Search an exercise to add to workout';
+				}
+			});
 
-        // Filter and show exercise matches as user types
-        exerciseInput.addEventListener('input', () => {
-          const query = exerciseInput.value.toLowerCase().trim();
+			// Filter and show exercise matches as user types
+			exerciseInput.addEventListener('input', () => {
+				const query = exerciseInput.value.toLowerCase().trim();
 
-          // If empty search bar, close results box
-          if (query === '') {
-            exerciseSearch.style.display = 'none';
-            exerciseSearch.innerHTML = '';
-            return;
-          }
+				// If empty search bar, close results box
+				if (query === '') {
+					exerciseSearch.style.display = 'none';
+					exerciseSearch.innerHTML = '';
+					return;
+				}
 
-          const filtered = exercises.filter(ex => 
-            ex.name.toLowerCase().includes(query)
-          );
+				const filtered = exercises.filter((ex) => ex.name.toLowerCase().includes(query));
 
-          displayResults(filtered);
-        });
+				displayResults(filtered);
+			});
 
-        // Display results dynamically
-        function displayResults(results) {
-          exerciseSearch.innerHTML = '';
+			// Display results dynamically
+			function displayResults(results) {
+				exerciseSearch.innerHTML = '';
 
-          if (results.length === 0) {
-            exerciseSearch.innerHTML = '<p class="noResults">No exercise matches your search</p>';
-          } else {
-            results.forEach(ex => {
-              const div = document.createElement('div');
-              div.classList.add('exerciseResult');
-              div.textContent = `${ex.name} (${ex.type})`;
+				if (results.length === 0) {
+					exerciseSearch.innerHTML = '<p class="noResults">No exercise matches your search</p>';
+				} else {
+					results.forEach((ex) => {
+						const div = document.createElement('div');
+						div.classList.add('exerciseResult');
+						div.textContent = `${ex.name} (${ex.type})`;
 
-              // When user clicks on an exercise, collapse search
-              div.addEventListener('click', () => {
-                addExerciseBox(ex.name, ex.type);
-                exerciseInput.value = ''; // clear search bar
-                exerciseSearch.innerHTML = ''; // hide results
-                exerciseSearch.style.display = 'none';
-              });
+						// When user clicks on an exercise, collapse search
+						div.addEventListener('click', () => {
+							addExerciseBox(ex.name, ex.type);
+							exerciseInput.value = ''; // clear search bar
+							exerciseSearch.innerHTML = ''; // hide results
+							exerciseSearch.style.display = 'none';
+						});
 
-              exerciseSearch.appendChild(div);
-            });
-          }
-          exerciseSearch.style.display = 'block';
-        }
+						exerciseSearch.appendChild(div);
+					});
+				}
+				exerciseSearch.style.display = 'block';
+			}
 
-        //  Function to create exercise box under search
-        function addExerciseBox(exerciseName, exerciseType) {
-          const wrapper = document.createElement('div');
-          wrapper.classList.add('exerciseWrapper'); // contains the box + labels
+			//  Function to create exercise box under search
+			function addExerciseBox(exerciseName, exerciseType) {
+				const wrapper = document.createElement('div');
+				wrapper.classList.add('exerciseWrapper'); // contains the box + labels
 
-          const box = document.createElement('div');
-          box.classList.add('exerciseBox');
-          box.setAttribute('data-name', exerciseName);
+				const box = document.createElement('div');
+				box.classList.add('exerciseBox');
+				box.setAttribute('data-name', exerciseName);
 
-          const labelsContainer = document.createElement('div');
-          labelsContainer.classList.add('labelsContainer');
+				const labelsContainer = document.createElement('div');
+				labelsContainer.classList.add('labelsContainer');
 
-          // For resistance exercises
-          if (exerciseType.toLowerCase().includes('resistance')) {
-            for (let i = 1; i <= 3; i++) {
-              const setRow = document.createElement('div');
-              setRow.classList.add('setRow');
+				// For resistance exercises
+				if (exerciseType.toLowerCase().includes('resistance')) {
+					for (let i = 1; i <= 3; i++) {
+						const setRow = document.createElement('div');
+						setRow.classList.add('setRow');
 
-              const setLabel = document.createElement('div');
-              setLabel.classList.add('setLabel');
-              setLabel.textContent = `Set ${i}`;
+						const setLabel = document.createElement('div');
+						setLabel.classList.add('setLabel');
+						setLabel.textContent = `Set ${i}`;
 
-              const repsLabel = document.createElement('label');
-              repsLabel.textContent = 'Reps';
-              repsLabel.classList.add('inputLabel');
+						const repsLabel = document.createElement('label');
+						repsLabel.textContent = 'Reps';
+						repsLabel.classList.add('inputLabel');
 
-              const repsInput = document.createElement('input');
-              repsInput.type = 'number';
-              repsInput.min = 0;
-              repsInput.placeholder = '--';
-              repsInput.classList.add('smallInput');
+						const repsInput = document.createElement('input');
+						repsInput.type = 'number';
+						repsInput.min = 0;
+						repsInput.placeholder = '--';
+						repsInput.classList.add('smallInput');
 
-              const weightLabel = document.createElement('label');
-              weightLabel.textContent = 'Weight';
-              weightLabel.classList.add('inputLabel');
+						const weightLabel = document.createElement('label');
+						weightLabel.textContent = 'Weight';
+						weightLabel.classList.add('inputLabel');
 
-              const weightInput = document.createElement('input');
-              weightInput.type = 'number';
-              weightInput.min = 0;
-              weightInput.placeholder = '--';
-              weightInput.classList.add('smallInput');
+						const weightInput = document.createElement('input');
+						weightInput.type = 'number';
+						weightInput.min = 0;
+						weightInput.placeholder = '--';
+						weightInput.classList.add('smallInput');
 
-              setRow.appendChild(setLabel);
-              setRow.appendChild(repsLabel);
-              setRow.appendChild(repsInput);
-              setRow.appendChild(weightLabel);
-              setRow.appendChild(weightInput);
+						setRow.appendChild(setLabel);
+						setRow.appendChild(repsLabel);
+						setRow.appendChild(repsInput);
+						setRow.appendChild(weightLabel);
+						setRow.appendChild(weightInput);
 
-              labelsContainer.appendChild(setRow);
-            }
-          } else if (exerciseType.toLowerCase().includes('cardio')) {
-            // For cardiovascular exercises
-            const labels = ['Distance (km)', 'Time (min)', 'Avg Speed (min/km)'];
-            // const cardioData = documnet.createElement('div'); //div for all cardio data
-            labels.forEach(labelText => {
-              const dataWrapper = document.createElement('div'); //div for each row
-              dataWrapper.classList.add('dataWrapper');
+						labelsContainer.appendChild(setRow);
+					}
+				} else if (exerciseType.toLowerCase().includes('cardio')) {
+					// For cardiovascular exercises
+					const labels = ['Distance (km)', 'Time (min)', 'Avg Speed (min/km)'];
+					// const cardioData = documnet.createElement('div'); //div for all cardio data
+					labels.forEach((labelText) => {
+						const dataWrapper = document.createElement('div'); //div for each row
+						dataWrapper.classList.add('dataWrapper');
 
-              const label = document.createElement('label'); //label inside each row 
-              label.classList.add('cardioLabel');
-              label.textContent = labelText;
+						const label = document.createElement('label'); //label inside each row
+						label.classList.add('cardioLabel');
+						label.textContent = labelText;
 
-              const cardioInput = document.createElement('input'); //input inside each row
-              cardioInput.classList.add('cardioInput');
-              cardioInput.type = 'number';
-              cardioInput.min = 0;
-              cardioInput.placeholder = 'enter value';
+						const cardioInput = document.createElement('input'); //input inside each row
+						cardioInput.classList.add('cardioInput');
+						cardioInput.type = 'number';
+						cardioInput.min = 0;
+						cardioInput.placeholder = 'enter value';
 
-              dataWrapper.appendChild(label);
-              dataWrapper.appendChild(cardioInput);
+						dataWrapper.appendChild(label);
+						dataWrapper.appendChild(cardioInput);
 
-              labelsContainer.appendChild(dataWrapper);
-            });
-          }
+						labelsContainer.appendChild(dataWrapper);
+					});
+				}
 
-          wrapper.appendChild(box);
-          wrapper.appendChild(labelsContainer);
-          resistanceFields.appendChild(wrapper);
-        }
+				wrapper.appendChild(box);
+				wrapper.appendChild(labelsContainer);
+				resistanceFields.appendChild(wrapper);
+			}
 
-        // Hide results when clicking outside
-        document.addEventListener('click', (event) => {
-          const isClickInside = exerciseInput.contains(event.target) || exerciseSearch.contains(event.target);
-          if (!isClickInside) {
-            exerciseSearch.style.display = 'none';
-          }
-        });
-
-        document.getElementById("mealTrackingBtn").addEventListener("click", () => {
-          window.location.href = "mealTracking.html";
-        });
-
-        document.getElementById("trackAWorkoutBtn").addEventListener("click", () => {
-          window.location.href = "workout.html";
-        });
-
-        document.getElementById("communityPageBtn").addEventListener("click", () => {
-          window.location.href = "community.html";
-        });
-
-        document.getElementById("createAPostBtn").addEventListener("click", () => {
-          sessionStorage.setItem("makeAPostFlag", true);
-          window.location.href = "community.html";
-        });
-    </script>
+			// Hide results when clicking outside
+			document.addEventListener('click', (event) => {
+				const isClickInside = exerciseInput.contains(event.target) || exerciseSearch.contains(event.target);
+				if (!isClickInside) {
+					exerciseSearch.style.display = 'none';
+				}
+			});
+		</script>
 	</body>
 </html>
