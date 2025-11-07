@@ -4,6 +4,10 @@ const datePicker = document.querySelector('.date-picker');
 const dateLabel = document.querySelector('.date-label');
 const dateBackArrow = document.querySelector('.arrow-back');
 const dateForwardArrow = document.querySelector('.arrow-forward');
+const mealTrackingBtn = document.getElementById("mealTrackingBtn");
+const trackAWorkoutBtn = document.getElementById("trackAWorkoutBtn");
+const communityPageBtn = document.getElementById("communityPageBtn");
+const createAPostBtn = document.getElementById("createAPostBtn");
 
 // #----------- date picker -----------#
 // initialize flatpickr
@@ -35,4 +39,20 @@ dateForwardArrow.addEventListener('click', () => {
 	const d = dateInput.selectedDates[0] || new Date();
 	d.setDate(d.getDate() + 1);
 	dateInput.setDate(d, true);
+});
+
+mealTrackingBtn.addEventListener("click", () => {
+  window.location.href = "mealTracking.html";
+});
+
+trackAWorkoutBtn.addEventListener("click", () => {
+  window.location.href = "workout.html";
+});
+
+communityPageBtn.addEventListener("click", () => {
+  //window.location.href = "";
+});
+
+createAPostBtn.addEventListener("click", () => {
+  //window.location.href = "";
 });

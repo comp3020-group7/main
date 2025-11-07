@@ -8,6 +8,7 @@
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Material+Symbols+Outlined"
 			rel="stylesheet" />
 		<link rel="stylesheet" href="./css/mealTracking-setGoal.css" />
+    <link rel="stylesheet" href="./css/sharedStyle.css" />
 	</head>
 	<body>
 		<!-- topBar (taken from Yawen's code) -->
@@ -24,6 +25,13 @@
 				<button class="logoutButt" onclick="window.location.href='login.html'">Logout</button>
 			</div>
 		</header>
+
+    <div id="menu" class="navBar">
+      <button id="mealTrackingBtn">Track a Meal</button>
+      <button id="trackAWorkoutBtn">Track a Workout</button>
+      <button id="communityPageBtn">Community Page</button>
+      <button id="createAPostBtn">Create a Post</button>
+    </div>
 
 		<!-- main add food section -->
 		<h2 class="welcome-msg"><a href="/mealTracking.html" class="go-back-link">Track a Meal</a> > Set Nutrition Goal</h2>
@@ -65,4 +73,21 @@
 			</div>
 		</div>
 	</body>
+  <script>
+    document.getElementById("mealTrackingBtn").addEventListener("click", () => {
+      window.location.href = "mealTracking.html";
+    });
+
+    document.getElementById("trackAWorkoutBtn").addEventListener("click", () => {
+      window.location.href = "workout.html";
+    });
+
+    document.getElementById("communityPageBtn").addEventListener("click", () => {
+      //window.location.href = "";
+    });
+
+    document.getElementById("createAPostBtn").addEventListener("click", () => {
+      //window.location.href = "";
+    });
+  </script>
 </html>

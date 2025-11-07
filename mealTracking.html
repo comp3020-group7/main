@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="./css/mealTracking.css" />
 		<link rel="stylesheet" href="./css/palette.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <link rel="stylesheet" href="./css/sharedStyle.css" />
 	</head>
 	<body>
 		<!-- topBar -->
@@ -25,6 +26,13 @@
 				<button class="logoutButt" onclick="window.location.href='login.html'">Logout</button>
 			</div>
 		</header>
+
+    <div id="menu" class="navBar">
+      <button id="mealTrackingBtn">Track a Meal</button>
+      <button id="trackAWorkoutBtn">Track a Workout</button>
+      <button id="communityPageBtn">Community Page</button>
+      <button id="createAPostBtn">Create a Post</button>
+    </div>
 
 		<!-- main mealTracking section -->
 		<h2 class="welcome-msg">Track a Meal</h2>
@@ -277,4 +285,21 @@
 		<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 		<script src="./js/mealTracking.js"></script>
 	</body>
+  <script>
+    document.getElementById("mealTrackingBtn").addEventListener("click", () => {
+      window.location.href = "mealTracking.html";
+    });
+
+    document.getElementById("trackAWorkoutBtn").addEventListener("click", () => {
+      window.location.href = "workout.html";
+    });
+
+    document.getElementById("communityPageBtn").addEventListener("click", () => {
+      //window.location.href = "";
+    });
+
+    document.getElementById("createAPostBtn").addEventListener("click", () => {
+      //window.location.href = "";
+    });
+  </script>
 </html>

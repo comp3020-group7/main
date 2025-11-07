@@ -234,6 +234,25 @@
   width: 130px;
 }
 
+.commentContainer {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    right: 150px; 
+}
+
+.commentLabel {
+    right: 150px;
+}
+
+.commentBox {
+    width: 400px;
+    height: 300px;
+    border-style:thin;
+}
+
+
 
 
 

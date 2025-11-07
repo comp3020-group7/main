@@ -20,6 +20,14 @@
                 <button class="logoutButt" onclick="window.location.href='index.html'">Logout</button>
             </div>
         </header>
+
+        <div id="menu" class="navBar">
+          <button id="mealTrackingBtn">Track a Meal</button>
+          <button id="trackAWorkoutBtn">Track a Workout</button>
+          <button id="communityPageBtn">Community Page</button>
+          <button id="createAPostBtn">Create a Post</button>
+        </div>
+
         <div class="workoutHeading">
             <h2>Track a Workout</h2>
         </div>
@@ -30,18 +38,17 @@
                 id="searchInput"
                 placeholder= "Search an exercise to add to workout"
             >
-            <!-- <h2>Search an exercise to add to workout</h2> -->
+
         </div>
         <div id= "exerciseSearch" class="exerciseSearch">
         </div>
 
         <div class="resistanceFields">
-            
-            <!-- <input
-                type="text"
-                id="reps"
-                placeholder="reps"
-            > -->
+            <!-- comment box -->
+        <!-- <div class="commentContainer">
+            <label class="commentLabel">Personal Comment:</label>
+            <div class="commentBox"> </div>
+        </div> -->
 
         <button class="submitBtn" onclick="window.location.href='dashboard.html'">submit</button>
         <!-- <img class="menuBtn" src="images/MenuButtLabelled.png" > -->
@@ -50,11 +57,19 @@
             "exercises": [
             {"id": 1,"name": "squat", "type": "resistance training"},
             {"id": 2, "name": "dumbell squat", "type": "resistance training"},
-            {"id": 3, "name": "pull up", "type": "resistance training"},
+            {"id": 3, "name": "pull-up", "type": "resistance training"},
             {"id": 4, "name": "pushup", "type": "resistance training"},
             {"id": 5, "name": "run", "type": "cardiovsascular training"},
             {"id": 5, "name": "walk", "type": "cardiovsascular training"},
-            {"id": 6, "name": "bike", "type": "cardiovsascular training"}
+            {"id": 6, "name": "bike", "type": "cardiovsascular training"},
+            {"id": 7, "name": "bench press", "type": "resistance training"},
+            {"id": 8, "name": "seated shoulder press", "type": "resistance training"},
+            {"id": 9, "name": "swim", "type": "cardiovsascular training"},
+            {"id": 10, "name": "bicep curl", "type": "resistance training"},
+            {"id": 11, "name": "tricep extension", "type": "resistance training"},
+            {"id": 12, "name": "seated row", "type": "resistance training"},
+            {"id": 13, "name": "walking lunges", "type": "resistance training"}
+
             
             ]
         }
@@ -129,86 +144,86 @@
     exerciseSearch.style.display = 'block';
   }
 
-  //  Function to create exercise box under search
-  function addExerciseBox(exerciseName, exerciseType) {
-  const wrapper = document.createElement('div');
-  wrapper.classList.add('exerciseWrapper'); // contains the box + labels
+    //  Function to create exercise box under search
+    function addExerciseBox(exerciseName, exerciseType) {
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('exerciseWrapper'); // contains the box + labels
 
-  const box = document.createElement('div');
-  box.classList.add('exerciseBox');
-  box.setAttribute('data-name', exerciseName);
+    const box = document.createElement('div');
+    box.classList.add('exerciseBox');
+    box.setAttribute('data-name', exerciseName);
 
-  const labelsContainer = document.createElement('div');
-  labelsContainer.classList.add('labelsContainer');
+    const labelsContainer = document.createElement('div');
+    labelsContainer.classList.add('labelsContainer');
 
 
     // For resistance exercises
-if (exerciseType.toLowerCase().includes('resistance')) {
-  for (let i = 1; i <= 3; i++) {
-    const setRow = document.createElement('div');
-    setRow.classList.add('setRow');
+    if (exerciseType.toLowerCase().includes('resistance')) {
+        for (let i = 1; i <= 3; i++) {
+            const setRow = document.createElement('div');
+            setRow.classList.add('setRow');
 
-    const setLabel = document.createElement('div');
-    setLabel.classList.add('setLabel');
-    setLabel.textContent = `Set ${i}`;
+            const setLabel = document.createElement('div');
+            setLabel.classList.add('setLabel');
+            setLabel.textContent = `Set ${i}`;
 
-    const repsLabel = document.createElement('label');
-    repsLabel.textContent = 'Reps';
-    repsLabel.classList.add('inputLabel');
+            const repsLabel = document.createElement('label');
+            repsLabel.textContent = 'Reps';
+            repsLabel.classList.add('inputLabel');
 
-    const repsInput = document.createElement('input');
-    repsInput.type = 'number';
-    repsInput.min = 0;
-    repsInput.placeholder = '--';
-    repsInput.classList.add('smallInput');
+            const repsInput = document.createElement('input');
+            repsInput.type = 'number';
+            repsInput.min = 0;
+            repsInput.placeholder = '--';
+            repsInput.classList.add('smallInput');
 
-    const weightLabel = document.createElement('label');
-    weightLabel.textContent = 'Weight';
-    weightLabel.classList.add('inputLabel');
+            const weightLabel = document.createElement('label');
+            weightLabel.textContent = 'Weight';
+            weightLabel.classList.add('inputLabel');
 
-    const weightInput = document.createElement('input');
-    weightInput.type = 'number';
-    weightInput.min = 0;
-    weightInput.placeholder = '--';
-    weightInput.classList.add('smallInput');
+            const weightInput = document.createElement('input');
+            weightInput.type = 'number';
+            weightInput.min = 0;
+            weightInput.placeholder = '--';
+            weightInput.classList.add('smallInput');
 
-    setRow.appendChild(setLabel);
-    setRow.appendChild(repsLabel);
-    setRow.appendChild(repsInput);
-    setRow.appendChild(weightLabel);
-    setRow.appendChild(weightInput);
+            setRow.appendChild(setLabel);
+            setRow.appendChild(repsLabel);
+            setRow.appendChild(repsInput);
+            setRow.appendChild(weightLabel);
+            setRow.appendChild(weightInput);
 
-    labelsContainer.appendChild(setRow);
-  }
-  } else if (exerciseType.toLowerCase().includes('cardio')) {
-    // For cardiovascular exercises
-    const labels = ['Distance', 'Time', 'Avg Speed'];
-    // const cardioData = documnet.createElement('div'); //div for all cardio data
-    labels.forEach(labelText => {
-        const dataWrapper = document.createElement('div'); //div for each row
-        dataWrapper.classList.add('dataWrapper');
+            labelsContainer.appendChild(setRow);
+        }
+    } else if (exerciseType.toLowerCase().includes('cardio')) {
+        // For cardiovascular exercises
+        const labels = ['Distance (km)', 'Time (min)', 'Avg Speed (min/km)'];
+        // const cardioData = documnet.createElement('div'); //div for all cardio data
+        labels.forEach(labelText => {
+            const dataWrapper = document.createElement('div'); //div for each row
+            dataWrapper.classList.add('dataWrapper');
 
-      const label = document.createElement('label'); //label inside each row 
-      label.classList.add('cardioLabel');
-      label.textContent = labelText;
+        const label = document.createElement('label'); //label inside each row 
+        label.classList.add('cardioLabel');
+        label.textContent = labelText;
 
-      const cardioInput = document.createElement('input'); //input inside each row
-      cardioInput.classList.add('cardioInput');
-      cardioInput.type = 'number';
-      cardioInput.min = 0;
-      cardioInput.placeholder = 'enter value';
+        const cardioInput = document.createElement('input'); //input inside each row
+        cardioInput.classList.add('cardioInput');
+        cardioInput.type = 'number';
+        cardioInput.min = 0;
+        cardioInput.placeholder = 'enter value';
 
-      dataWrapper.appendChild(label);
-      dataWrapper.appendChild(cardioInput);
+        dataWrapper.appendChild(label);
+        dataWrapper.appendChild(cardioInput);
 
-      labelsContainer.appendChild(dataWrapper);
-    });
-  }
+        labelsContainer.appendChild(dataWrapper);
+        });
+    }
 
-  wrapper.appendChild(box);
-  wrapper.appendChild(labelsContainer);
-  resistanceFields.appendChild(wrapper);
-  }
+    wrapper.appendChild(box);
+    wrapper.appendChild(labelsContainer);
+    resistanceFields.appendChild(wrapper);
+    }
 
   // Hide results when clicking outside
   document.addEventListener('click', (event) => {
@@ -217,6 +232,23 @@ if (exerciseType.toLowerCase().includes('resistance')) {
       exerciseSearch.style.display = 'none';
     }
   });
+
+  document.getElementById("mealTrackingBtn").addEventListener("click", () => {
+    window.location.href = "mealTracking.html";
+  });
+
+  document.getElementById("trackAWorkoutBtn").addEventListener("click", () => {
+    window.location.href = "workout.html";
+  });
+
+  document.getElementById("communityPageBtn").addEventListener("click", () => {
+    window.location.href = "community.html";
+  });
+
+  document.getElementById("createAPostBtn").addEventListener("click", () => {
+    window.location.href = "community.html";
+  });
+  
 </script>
 
 

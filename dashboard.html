@@ -9,6 +9,8 @@
 		<link rel="stylesheet" href="./css/dashboard.css" />
 		<link rel="stylesheet" href="./css/palette.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <link rel="stylesheet" href="./css/dashboardStyle.css" />
+    <link rel="stylesheet" href="./css/sharedStyle.css" />
 	</head>
 	<body>
 		<!-- topBar -->
@@ -194,4 +196,34 @@
 			</div>
 		</main>
 	</body>
+
+    <script>
+      const username = sessionStorage.getItem('username');
+      const greeting = document.getElementById('greetingMsg');
+      let menuVisible = false;
+  
+      if(username){
+        greeting.textContent = `Welcome to the Dashboard ${username} !`;
+      } else {
+        greeting.textContent = "Welcome to the Dashboard";
+      }
+  
+      document.getElementById("mealTrackingBtn").addEventListener("click", () => {
+        window.location.href = "mealTracking.html";
+      });
+  
+      document.getElementById("trackAWorkoutBtn").addEventListener("click", () => {
+        window.location.href = "workout.html";
+      });
+  
+      document.getElementById("communityPageBtn").addEventListener("click", () => {
+        //window.location.href = "";
+      });
+  
+      document.getElementById("createAPostBtn").addEventListener("click", () => {
+        //window.location.href = "";
+      });
+    </script>
+	</body>
+	
 </html>
