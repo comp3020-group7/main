@@ -1,62 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<title>Dashboard</title>
-		<link rel="stylesheet" href="css/dashboardStyle.css">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DashBoard</title>
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+		<link rel="stylesheet" href="./css/mealTracking.css" />
+		<link rel="stylesheet" href="./css/palette.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
 	</head>
 	<body>
-		<div>
-			<h1 id="greetingMsg">Welcome to the Dashboard !</h1>
-		</div>
-    <img id="menuBtn" src="images/menuButt.png" >
+		<!-- topBar -->
+		<header class="topBar">
+			<div>
+				<img src="images/activ8logo.png" />
+				<h1 class="appName">Activ8</h1>
+			</div>
+			<div class="rightButts">
+				<a href="dashboard.html" class="profileButt">
+					<img src="images/userIcon.png" />
+				</a>
+				<!-- <a href="login.html" class="logoutButt">Logout</a> -->
+				<button class="logoutButt" onclick="window.location.href='login.html'">Logout</button>
+			</div>
+		</header>
 
-    <div id="menu" class="menuPopup">
-      <button id="mealTrackingBtn">Track a Meal</button>
-      <button id="trackAWorkoutBtn">Track a Workout</button>
-      <button id="communityPageBtn">Community Page</button>
-      <button id="createAPostBtn">Create a Post</button>
-    </div>
+		<!-- navBar -->
+		<nav class="navbar"></nav>
+
+		<!-- Main DashBoard section -->
+		<h2 class="welcome-msg">Dashboard</h2>
 	</body>
-	<script>
-		const username = sessionStorage.getItem('username');
-		const greeting = document.getElementById('greetingMsg');
-    const menuPopup = document.getElementById('menu');
-    let menuVisible = false;
-
-		if(username){
-			greeting.textContent = `Welcome to the Dashboard ${username} !`;
-		} else {
-			greeting.textContent = "Welcome to the Dashboard";
-		}
-
-    document.getElementById("mealTrackingBtn").addEventListener("click", () => {
-			//window.location.href = "";
-		});
-
-    document.getElementById("trackAWorkoutBtn").addEventListener("click", () => {
-      window.location.href = "workout.html";
-		});
-
-    document.getElementById("communityPageBtn").addEventListener("click", () => {
-			//window.location.href = "";
-		});
-
-    document.getElementById("createAPostBtn").addEventListener("click", () => {
-			//window.location.href = "";
-		});
-
-		document.getElementById("menuBtn").addEventListener("click", () => {
-			toggleMenu();
-		});
-
-    function toggleMenu(){
-      if(menuVisible){
-        menuPopup.classList.remove("menuPopupOpen");
-        menuVisible = false;
-      }
-      else{
-        menuPopup.classList.add("menuPopupOpen");
-        menuVisible = true;
-      }
-    }
-	</script>
 </html>

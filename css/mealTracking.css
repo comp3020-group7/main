@@ -1,5 +1,5 @@
-@import url(/css/palette.css);
-@import url(/css/sharedStyle.css);
+@import url(./palette.css);
+@import url(./sharedStyle.css);
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Silkscreen:wght@400;700&display=swap');
 
 /* #---------- Common settings ----------*/
