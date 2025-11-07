@@ -6,9 +6,9 @@
 }
 
 .workoutHeading h2 {
-  font-size: 24px;
+  font-size: 30px;
   color: var(--colour-primary-dark);
-  margin: 20;
+  margin: 20px;
 }
 
 .searchBar {
@@ -41,6 +41,21 @@
   flex: 1;
   font-size: 16px;
   background-color: transparent;
+}
+.submitBtn {
+    position: fixed;
+    width: 7%;
+    height: 7%;
+    bottom: 3%;
+    right: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--colour-background);
+    background-color: var(--colour-primary-dark);
 }
 
 .exerciseSearch {
@@ -88,7 +103,7 @@
     outline-style: solid;
     outline-width: thin;
     margin-left: 150px;
-    margin-top: 50px;
+    margin-top: 30px;
     /* font-size: 20px; */
     /* display: flex; */
     align-items: flex-end;
@@ -101,21 +116,124 @@
   position: absolute;
   /* bottom: 10px;    distance from bottom */ 
   left: 160px;     /* slight offset from left edge */
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   align-items: flex-end;
-    margin-top: 25px;
+    margin-top: 12px;
 
   color: var(--colour-primary-dark, #333);
 }
 
-.setsLabel {
-  margin-top: 6px;
+.setsContainer {
+  margin-top: 8px;
+  display: flex;
   margin-left: 150px;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* .setsLabel {
+  margin-top: 6px;
+  /* margin-left: 150px; 
   font-size: 15px;
   color: var(--colour-text, #222);
 
+} */
+
+
+/* Container for labels below box */
+.labelsContainer {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 150px; 
 }
+
+/* Set label style */
+.setLabel{
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--colour-text, #222);
+  margin-left: 5px;
+}
+
+/* Layout for each set row */
+.setRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 5px;
+  /* margin-left: 5px; */
+  background-color: var(--colour-background-dark);
+  padding: 5px;
+  padding-right: 62px;
+  padding-left: 15px;
+  /* outline: thin solid var(--colour-background-dark);
+  outline-offset: 5px; */
+  /* outline-color: var(--colour-primary-dark); */
+}
+
+/* Label styling (Reps, Weight, etc.) */
+.inputLabel {
+  font-size: 14px;
+  color: var(--colour-text, #222);
+}
+
+/* Weights Input box styling */
+.smallInput {
+  width: 55px;
+  height: 22px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  /* padding-left: 5px; */
+  font-size: 14px;
+}
+
+.smallInput:focus {
+  outline: none;
+  border-color: var(--colour-accent, #007BFF);
+  box-shadow: 0 0 3px rgba(0, 123, 255, 0.4);
+}
+
+.cardioInput {
+      width: 250px;
+  height: 25px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  /* padding-left: 5px; */
+  justify-items: end;
+  font-size: 14px;
+}
+
+.cardioInput:focus {
+  outline: none;
+  border-color: var(--colour-accent, #007BFF);
+  box-shadow: 0 0 3px rgba(0, 123, 255, 0.4);
+}
+
+.dataWrapper {
+      margin-top: 5px;
+  display: flex;
+  margin-left: 0;
+  /* flex-direction: column; */
+  gap: 5px;
+  align-items: center; /* keeps input vertically aligned with label */
+  background-color: var(--colour-background-dark);
+  padding-right: 11px;
+  padding: 5px;
+
+
+}
+
+.cardioLabel {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--colour-text, #222);
+  margin-left: 5px;
+  width: 130px;
+}
+
 
 
 
