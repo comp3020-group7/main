@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
 		<!-- <link rel="stylesheet" href="./css/dashboardStyle.css" /> -->
 		<link rel="stylesheet" href="./css/sharedStyle.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" />
 	</head>
 	<body>
 		<!-- topBar -->
@@ -20,9 +21,7 @@
 				<h1 class="appName">Activ8</h1>
 			</div>
 			<div class="rightButts">
-				<a href="dashboard.html" class="profileButt">
-					<img src="images/userIcon.png" />
-				</a>
+				<img src="./images/settings.png" alt="" class="settings-icon" />
 				<!-- <a href="login.html" class="logoutButt">Logout</a> -->
 				<button class="logoutButt" onclick="window.location.href='index.html'">Logout</button>
 			</div>
@@ -37,6 +36,33 @@
 			<a href="./createPost.html" class="navbar-link">Create a Post</a>
 		</div>
 
+		<!-- popup window for settings -->
+		<div class="setting-pop-up">
+			<div class="setting-pop-up-header">
+				<img src="./images/close-btn.png" alt="" class="setting-close-btn" />
+			</div>
+			<div class="setting-pop-up-content">
+				<div class="setting-pop-up-change-username">
+					<span>Change username: </span>
+					<div>
+						<input type="text" class="setting-change-username-input" />
+						<button class="setting-change-username-confirm-btn">confirm</button>
+					</div>
+				</div>
+				<div class="setting-pop-up-change-fontsize">
+					<span>Change font size:</span>
+					<div class="setting-font-size-container">
+						<img src="./images/letter-a-2.png" alt="" class="font-size-letter font-size-letter-1" />
+						<img src="./images/letter-a-2.png" alt="" class="font-size-letter font-size-letter-2 selected" />
+						<img src="./images/letter-a-2.png" alt="" class="font-size-letter font-size-letter-3" />
+					</div>
+				</div>
+				<span>Change color: </span>
+			</div>
+		</div>
+
+		<div class="overlay" id="overlay"></div>
+
 		<!-- Main DashBoard section -->
 		<h2 class="greetingMsg">Dashboard</h2>
 
@@ -45,10 +71,14 @@
 			<div class="left">
 				<!-- Calorie meter (semi ring placeholder) -->
 				<div class="card meter">
-					<img src="./images/userIcon.png" alt="profile icon image" class="meter-icon-image" />
+					<img src="./images/profile-icon.png" alt="profile icon image" class="meter-icon-image" />
 					<div class="meter-info">
-						<div class="meter-cal">0 / 2000 cals</div>
-						<div class="meter-user-text">[username] • level 4</div>
+						<div class="meter-calorie">
+							<span class="meter-calorie-current"> 0 </span> /
+							<span class="meter-calorie-goal">2000</span>
+							<span class="meter-calorie-unit">kcal</span>
+						</div>
+						<div class="meter-username">username</div>
 					</div>
 				</div>
 
@@ -60,28 +90,39 @@
 							<div class="ring ring-carbs"></div>
 							<div class="macro-label">
 								<div>Carbs</div>
-								<small>100 / 250 g</small>
+								<div>
+									<span class="count-label carb-count-label">100</span> /
+									<span class="goal-label carb-goal-label">250</span> g
+								</div>
 							</div>
 						</div>
 						<div class="macro">
 							<div class="ring ring-protein"></div>
 							<div class="macro-label">
-								<div>Protein</div>
-								<small>100 / 130 g</small>
+								<div>
+									<div>Protein</div>
+									<span class="count-label">100</span> / <span class="goal-label carb-goal-label">250</span> g
+								</div>
 							</div>
 						</div>
 						<div class="macro">
 							<div class="ring ring-fat"></div>
 							<div class="macro-label">
-								<div>Fat</div>
-								<small>15 / 60 g</small>
+								<div>
+									<div>Fat</div>
+									<span class="count-label carb-count-label">100</span> /
+									<span class="goal-label carb-goal-label">250</span> g
+								</div>
 							</div>
 						</div>
 						<div class="macro">
 							<div class="ring ring-total"></div>
 							<div class="macro-label">
-								<div>Total</div>
-								<small>29% of cals</small>
+								<div>
+									<div>Total Macro</div>
+									<span class="count-label carb-count-label">100</span> /
+									<span class="goal-label carb-goal-label">250</span> g
+								</div>
 							</div>
 						</div>
 					</div>
@@ -89,13 +130,19 @@
 
 				<!-- Water intake + weight -->
 				<div class="card quick-entries">
-					<div class="entry">
-						<label class="quick-entries-title quick-entries-title-water">Water intake</label>
-						<input class="input" placeholder="e.g., 500 ml" />
-					</div>
-					<div class="entry">
-						<label class="quick-entries-title quick-entries-title-weight">Daily weight</label>
-						<input class="input" placeholder="enter weight (kg)" />
+					<div class="entry water-intake">
+						<span class="quick-entries-title water-intake-title">
+							Water Tracker(ml):
+							<span class="water-intake-count">118</span>
+						</span>
+						<div class="water-intake-button-container">
+							<div>
+								<button class="water-intake-button">+ 50</button>
+								<button class="water-intake-button">+ 100</button>
+								<button class="water-intake-button">+ 200</button>
+							</div>
+							<button class="water-intake-button-cancel">Reset</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -104,64 +151,12 @@
 			<div class="center">
 				<div class="card greet">
 					<h2 class="greet-title">Good morning, <span class="username">username</span>!</h2>
-					<div class="today">Today is <span class="date">[DATE]</span></div>
+					<div class="today">Today is: <span class="date">[DATE]</span></div>
 				</div>
 
 				<!-- Calendar overview -->
 				<div class="card calendar">
-					<header class="calendar-head">
-						<button class="icon-btn" aria-label="Prev">
-							<span class="material-symbols-outlined">chevron_left</span>
-						</button>
-						<h3 class="month">November 2025</h3>
-						<button class="icon-btn" aria-label="Next">
-							<span class="material-symbols-outlined">chevron_right</span>
-						</button>
-					</header>
-					<div class="calendar-grid">
-						<div class="dow">Sun</div>
-						<div class="dow">Mon</div>
-						<div class="dow">Tue</div>
-						<div class="dow">Wed</div>
-						<div class="dow">Thu</div>
-						<div class="dow">Fri</div>
-						<div class="dow">Sat</div>
-						<!-- week 1 -->
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell has-icon"><span class="material-symbols-outlined">directions_run</span></div>
-						<div class="cell"></div>
-						<div class="cell has-icon"><span class="material-symbols-outlined">fitness_center</span></div>
-						<div class="cell has-icon"><span class="material-symbols-outlined">hiking</span></div>
-
-						<!-- week 2 -->
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-
-						<!-- week 2 -->
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-
-						<!-- week 2 -->
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-						<div class="cell"></div>
-					</div>
+					<div id="workoutCalendar" class="workout-calendar"></div>
 				</div>
 
 				<div class="quickview-container">
@@ -169,10 +164,13 @@
 					<div class="card last-meal">
 						<h3 class="quickview-title last-meal-title">Your last meal</h3>
 						<div class="meal-row">
-							<img src="./images/mealTracking/food-img/apple.png" alt="" class="meal-thumb-img" />
+							<img src="./images/sadface.png" alt="" class="meal-thumb-img" />
 							<div class="meal-text">
 								<div class="meal-name">Apple</div>
-								<div class="meal-calories-text">xxx calories</div>
+								<div class="meal-calories-text">
+									<span class="last-meal-count">xxx</span>
+									<span>calories</span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -189,5 +187,8 @@
 				</div>
 			</div>
 		</main>
+		<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+		<script src="./js/dashboard.js"></script>
+		<script src="./js/navbar.js"></script>
 	</body>
 </html>

@@ -40,24 +40,24 @@ const MEAL_SECTION_SELECTORS = {
 };
 
 // #----------- functions -----------#
-function initializeSomeSessionStorageLOL() {
-	if (!sessionStorage.getItem('nutritionGoal')) {
-		sessionStorage.setItem(
-			'nutritionGoal',
-			JSON.stringify({calorieGoal: 2000, carbGoal: 130, proteinGoal: 56, fatsGoal: 60})
-		);
-	}
+// function initializeSomeSessionStorageLOL() {
+// 	if (!sessionStorage.getItem('nutritionGoal')) {
+// 		sessionStorage.setItem(
+// 			'nutritionGoal',
+// 			JSON.stringify({calorieGoal: 2000, carbGoal: 130, proteinGoal: 56, fatsGoal: 60})
+// 		);
+// 	}
 
-	if (!sessionStorage.getItem('dailyTotals')) {
-		sessionStorage.setItem('dailyTotals', JSON.stringify({calories: 0, carbs: 0, protein: 0, fats: 0}));
-	}
+// 	if (!sessionStorage.getItem('dailyTotals')) {
+// 		sessionStorage.setItem('dailyTotals', JSON.stringify({calories: 0, carbs: 0, protein: 0, fats: 0}));
+// 	}
 
-	if (!sessionStorage.getItem('pendingFood')) {
-		sessionStorage.setItem('pendingFood', '[]');
-	}
-}
+// 	if (!sessionStorage.getItem('pendingFood')) {
+// 		sessionStorage.setItem('pendingFood', '[]');
+// 	}
+// }
 
-initializeSomeSessionStorageLOL();
+// initializeSomeSessionStorageLOL();
 
 /**
  * * Update counts, macros, and item list for each meal block.

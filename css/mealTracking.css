@@ -163,6 +163,7 @@ a {
 }
 
 .meal-section-food-items {
+	max-height: 25.2rem;
 	flex: 2;
 	display: flex;
 	flex-direction: column;
@@ -171,6 +172,12 @@ a {
 	border-bottom-left-radius: 1rem;
 	border-bottom-right-radius: 1rem;
 	background-color: #fffffff4;
+	overflow: scroll;
+}
+
+.meal-section-food-items::-webkit-scrollbar {
+	width: 0;
+	height: 0;
 }
 
 .food-item-list {
