@@ -95,7 +95,9 @@
 									<span class="material-symbols-outlined btn food-item-delete-btn"> close </span>
 								</li>
 							</ul>
-							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container">
+							<a
+								href="./mealTracking-addFood.html"
+								class="food-list-add-food-btn-container add-food-btn-text-breakfast">
 								<span class="material-symbols-outlined add-food-btn"> add_2 </span>
 								<span class="add-food-btn-text">Add Food</span>
 							</a>
@@ -148,7 +150,7 @@
 								</li>
 							</ul>
 
-							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container"
+							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container add-food-btn-text-lunch"
 								><span class="material-symbols-outlined add-food-btn"> add_2 </span>
 								<span class="add-food-btn-text">Add Food</span>
 							</a>
@@ -194,13 +196,13 @@
 						</div>
 						<div class="meal-section meal-section-food-items">
 							<ul class="food-item-list">
-								<li class="food-item">
+								<!-- <li class="food-item">
 									<span>Apple</span>
 									<input type="number" placeholder="1" class="food-item-quantity-input" disabled />
 									<span class="material-symbols-outlined btn food-item-delete-btn"> close </span>
-								</li>
+								</li> -->
 							</ul>
-							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container"
+							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container add-food-btn-text-dinner"
 								><span class="material-symbols-outlined add-food-btn"> add_2 </span>
 								<span class="add-food-btn-text">Add Food</span>
 							</a>
@@ -246,13 +248,13 @@
 						</div>
 						<div class="meal-section meal-section-food-items">
 							<ul class="food-item-list">
-								<li class="food-item">
+								<!-- <li class="food-item">
 									<span>Apple</span>
 									<input type="number" placeholder="1" class="food-item-quantity-input" disabled />
 									<span class="material-symbols-outlined btn food-item-delete-btn"> close </span>
-								</li>
+								</li> -->
 							</ul>
-							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container"
+							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container add-food-btn-text-snack"
 								><span class="material-symbols-outlined add-food-btn"> add_2 </span>
 								<span class="add-food-btn-text">Add Food</span>
 							</a>
@@ -263,15 +265,77 @@
 			<div class="side-panel">
 				<div class="side-panel-item progress-circle-container">
 					<!-- progress circle UI component -->
-					<div class="progress-circle-wrapper">
-						<svg width="250" height="250" viewBox="0 0 250 250" class="circular-progress" style="--progress: 75">
+					<div class="progress-circle-wrapper progress-circle-calories active">
+						<svg
+							width="250"
+							height="250"
+							viewBox="0 0 250 250"
+							class="circular-progress circular-value-calorie"
+							style="--progress: 75">
 							<circle class="bg"></circle>
 							<circle class="fg"></circle>
 						</svg>
 						<div class="progress-circle-text">
-							<span>1505</span>
-							<span>/</span>
+							<!-- <span>calories</span> -->
+							<span class="progress-circle-label">Current:</span>
+							<span class="current-count-calories"></span>
+							<span>--------</span>
+							<span class="progress-circle-label">Goal:</span>
 							<span>2000</span>
+						</div>
+					</div>
+					<div class="progress-circle-wrapper progress-circle-fat">
+						<svg
+							width="250"
+							height="250"
+							viewBox="0 0 250 250"
+							class="circular-progress circular-value-fat"
+							style="--progress: 75">
+							<circle class="bg"></circle>
+							<circle class="fg"></circle>
+						</svg>
+						<div class="progress-circle-text">
+							<span class="progress-circle-label">Current:</span>
+							<span class="current-count-fat"></span>
+							<span>------</span>
+							<span class="progress-circle-label">Goal:</span>
+							<span>fat</span>
+						</div>
+					</div>
+					<div class="progress-circle-wrapper progress-circle-protein">
+						<svg
+							width="250"
+							height="250"
+							viewBox="0 0 250 250"
+							class="circular-progress circular-value-protein"
+							style="--progress: 75">
+							<circle class="bg"></circle>
+							<circle class="fg"></circle>
+						</svg>
+						<div class="progress-circle-text">
+							<span class="progress-circle-label">Current:</span>
+							<span class="current-count-protein"></span>
+							<span>------</span>
+							<span class="progress-circle-label">Goal:</span>
+							<span>protein</span>
+						</div>
+					</div>
+					<div class="progress-circle-wrapper progress-circle-carbs">
+						<svg
+							width="250"
+							height="250"
+							viewBox="0 0 250 250"
+							class="circular-progress circular-value-carbs"
+							style="--progress: 75">
+							<circle class="bg"></circle>
+							<circle class="fg"></circle>
+						</svg>
+						<div class="progress-circle-text">
+							<span class="progress-circle-label">Current:</span>
+							<span class="current-count-carbs"></span>
+							<span>------</span>
+							<span class="progress-circle-label">Goal:</span>
+							<span>carbs</span>
 						</div>
 					</div>
 
@@ -290,6 +354,5 @@
 		</main>
 		<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 		<script src="./js/mealTracking.js"></script>
-		<script></script>
 	</body>
 </html>

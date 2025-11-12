@@ -1,5 +1,6 @@
 @import url(./sharedStyle.css);
 @import url(./palette.css);
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400;500;600&display=swap');
 
 /* #---------- Common settings ----------*/
 * {
@@ -32,6 +33,21 @@ li {
 	font-size: 2.4rem;
 	margin: 2rem;
 	color: var(--colour-primary-dark);
+}
+
+.welcome-msg-meal-type {
+	font-size: 2.8rem;
+	background-color: var(--colour-accent-background);
+	padding: 0 1rem;
+	border-radius: 3rem;
+}
+
+.welcome-msg-date {
+	font-family: 'Silkscreen', monospace;
+	font-size: 2.8rem;
+	background-color: var(--colour-accent-background);
+	padding: 0 1rem;
+	border-radius: 3rem;
 }
 
 .go-back-link {
@@ -137,6 +153,65 @@ li {
 	flex-direction: column;
 	gap: 8px;
 }
+
+.card.confirmed {
+	background-color: #c7d2fe;
+}
+
+.card-select-quantity {
+	display: none;
+}
+
+.card-select-quantity.selected {
+	padding-bottom: 0.5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	transition: 0.5s;
+}
+
+.select-quantity-title {
+	background-color: #fff;
+}
+
+/*  */
+.quantity-selector {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	font-size: 1.6rem;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 1rem;
+	padding: 0.4rem 0.8rem;
+	width: fit-content;
+}
+
+.quantity-selector button {
+	border: none;
+	background: #8fb798;
+	color: #fff;
+	border-radius: 50%;
+	width: 2.5rem;
+	height: 2.5rem;
+	cursor: pointer;
+	font-size: 1.4rem;
+	line-height: 1;
+}
+
+.quantity-selector button:hover {
+	background-color: #fa7602;
+}
+
+.quantity-selector .quantity {
+	width: 2rem;
+	text-align: center;
+}
+
+/*  */
 
 .card .title {
 	font-size: 2rem;

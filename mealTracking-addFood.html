@@ -35,7 +35,14 @@
 		</div>
 
 		<!-- main add food section -->
-		<h2 class="welcome-msg"><a href="/mealTracking.html" class="go-back-link">Track a Meal</a> > Add Food</h2>
+		<h2 class="welcome-msg">
+			<a href="/mealTracking.html" class="go-back-link">Track a Meal</a> >
+			<span>
+				Adding food to
+				<span class="welcome-msg-meal-type">xxx</span> for
+				<span class="welcome-msg-date">xxx</span>
+			</span>
+		</h2>
 		<div class="content">
 			<!-- Left: search, tabs, grid -->
 			<section class="panel">
@@ -51,18 +58,44 @@
 				</div>
 
 				<div class="grid">
-					<!-- <div class="card selected">
-						<div class="title">Apple</div>
+					<!-- <div class="card">
+						<div class="title food-name">${food.name}</div>
 						<div class="card-main-section">
-							<img src="./images/mealTracking/food-img/apple.png" alt="food img" class="food-img" />
+							<img src="${food.image || DEFAULT_FOOD_IMAGE}" alt="${food.name}" class="food-img" />
 							<div class="nutrition-fact">
-								<span class="nutrition-fact-cals"><span class="nutrition-fact-cals-val">xxx</span> cals</span>
-								<span class="nutrition-fact-carbs"><span class="nutrition-fact-carbs-val">xxx</span> carbs</span>
-								<span class="nutrition-fact-protein"><span class="nutrition-fact-protein-val">xxx</span> protein</span>
-								<span class="nutrition-fact-fat"><span class="nutrition-fact-fat-val">xxx</span> fat</span>
+								<div class="nutrition-fact-item">
+									<span class="nutrition-fact-label">cals</span>
+									<span class="nutrition-fact-val nutrition-fact-val-calories">${food.calories}</span>
+								</div>
+								<div class="nutrition-fact-item">
+									<span class="nutrition-fact-label">carbs</span>
+									<span class="nutrition-fact-val nutrition-fact-val-carbs">${food.carbs}</span>
+								</div>
+								<div class="nutrition-fact-item">
+									<span class="nutrition-fact-label">protein</span>
+									<span class="nutrition-fact-val nutrition-fact-val-protein">${food.protein}</span>
+								</div>
+								<div class="nutrition-fact-item">
+									<span class="nutrition-fact-label">fats</span>
+									<span class="nutrition-fact-val nutrition-fact-val-fat">${food.fats}</span>
+								</div>
 							</div>
 						</div>
-						<button class="plus" title="Add"><span class="material-symbols-outlined">add</span></button>
+						<button class="plus" title="Add">
+							<span class="material-symbols-outlined">add</span>
+						</button>
+
+						<div class="card-select-quantity card">
+							<span class="title food-name select-quantity-title">adding ${food.name}</span>
+							<div class="quantity-selector">
+								<button class="decrease">-</button>
+								<span class="quantity">1</span>
+								<button class="increase">+</button>
+							</div>
+							<button class="plus confirm" title="Add">
+								<span class="material-symbols-outlined">check</span>
+							</button>
+						</div>
 					</div> -->
 				</div>
 			</section>
