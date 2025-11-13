@@ -1,0 +1,122 @@
+[
+	{
+		"id": 1,
+		"name": "Apple",
+		"category": "Fruit",
+		"serving_size": "100g",
+		"calories": 77,
+		"carbs": 17.4,
+		"fats": 0.2,
+		"protein": 0.3,
+		"label": ["recently"],
+		"image": "./images/mealTracking/food-img/apple.png"
+	},
+	{
+		"id": 2,
+		"name": "Banana",
+		"category": "Fruit",
+		"serving_size": "100g",
+		"calories": 89,
+		"carbs": 23,
+		"fats": 0.3,
+		"protein": 1.1,
+		"label": ["favorite"],
+		"image": "./images/mealTracking/food-img/banana.png"
+	},
+	{
+		"id": 3,
+		"name": "Fried Chicken",
+		"category": "Protein",
+		"serving_size": "100g",
+		"calories": 165,
+		"carbs": 0,
+		"fats": 3.6,
+		"protein": 31,
+		"label": ["favorite"],
+		"image": "./images/mealTracking/food-img/friedchicken.png"
+	},
+	{
+		"id": 4,
+		"name": "Brown Rice",
+		"category": "Carbohydrate",
+		"serving_size": "100g",
+		"calories": 112,
+		"carbs": 23,
+		"fats": 0.8,
+		"protein": 2.6,
+		"label": ["favorite"],
+		"image": "./images/mealTracking/food-img/brownrice.png"
+	},
+	{
+		"id": 5,
+		"name": "Avocado",
+		"category": "Fat",
+		"serving_size": "100g",
+		"calories": 160,
+		"carbs": 9,
+		"fats": 15,
+		"protein": 2,
+		"label": ["recently"],
+		"image": "./images/mealTracking/food-img/avocado.png"
+	},
+	{
+		"id": 6,
+		"name": "Broccoli",
+		"category": "Vegetable",
+		"serving_size": "100g",
+		"calories": 35,
+		"carbs": 7,
+		"fats": 0.4,
+		"protein": 2.8,
+		"label": ["recently"],
+		"image": "./images/mealTracking/food-img/broccoli.png"
+	},
+	{
+		"id": 7,
+		"name": "Salmon",
+		"category": "Protein",
+		"serving_size": "100g",
+		"calories": 208,
+		"carbs": 0,
+		"fats": 13,
+		"protein": 20,
+		"label": ["recently"],
+		"image": "./images/mealTracking/food-img/salmon.png"
+	},
+	{
+		"id": 8,
+		"name": "Sweet Potato",
+		"category": "Carbohydrate",
+		"serving_size": "100g",
+		"calories": 86,
+		"carbs": 20,
+		"fats": 0.1,
+		"protein": 1.6,
+		"label": ["recently"],
+		"image": "./images/mealTracking/food-img/potato.png"
+	},
+	{
+		"id": 9,
+		"name": "Almonds",
+		"category": "Fat",
+		"serving_size": "100g",
+		"calories": 579,
+		"carbs": 22,
+		"fats": 50,
+		"protein": 21,
+		"label": ["favorite"],
+		"image": "./images/mealTracking/food-img/almond.png"
+	},
+	{
+		"id": 10,
+		"name": "Greek Yogurt",
+		"category": "Dairy",
+		"serving_size": "100g",
+		"calories": 59,
+		"carbs": 3.6,
+		"fats": 0.4,
+		"protein": 10,
+		"label": ["favorite"],
+		"image": "./images/mealTracking/food-img/greekyogurt.png"
+	}
+]

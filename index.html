@@ -9,10 +9,10 @@
 			<h1>Activ8</h1>
 		</div>
 
-		<div class="login">
+		<div id="inputForm" class="login">
 			<div>
-				<input id="usernameInput" placeholder="username">
-				<input id="passwordInput" placeholder="password">
+				<input id="usernameInput" autocomplete="off" placeholder="username">
+				<input id="passwordInput" autocomplete="off" type="password" placeholder="password">
 			</div>
 			<button id="loginBtn">Log-in</button>
 			<button id="registerBtn">Register</button>
@@ -24,10 +24,10 @@
 			<img src="images/x.png">
 		</div>
 
-		<div class="warning">
+		<div id="warning" class="warning">
 			<img src="images/warning.png">
-			<p>
-				Login invalid, double check that username and password are correct.
+			<p id="warningMsg">
+				Login info invalid, double check that username and password are correct.
 			</p>
 		</div>
 
@@ -46,11 +46,45 @@
 		</div>
 	</body>
 	<script>
-		const input = document.getElementById("usernameInput");
+		const usernameInput = document.getElementById("usernameInput");
+    const passwordInput = document.getElementById("passwordInput");
+
+    const warning = document.getElementById("warning");
+    const warningMsg = document.getElementById("warningMsg");
+
+    function wipeUserData(){
+      sessionStorage.removeItem("birthday");
+      sessionStorage.removeItem("height");
+      sessionStorage.removeItem("weight");
+      sessionStorage.removeItem("goalWeight");
+      sessionStorage.removeItem("activityDays");
+    }
+    wipeUserData();
+
+    function inputsValid(){
+      const username = usernameInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      //check username and password are valid
+      if (!username){
+        warningMsg.textContent = "Please enter a username";
+        warning.classList.add("warning-open");
+        return false;
+      } else if (!password){
+        warningMsg.textContent = "Please enter a password";
+        warning.classList.add("warning-open");
+        return false;
+      }
+      return true;
+    }
+
 		document.getElementById("loginBtn").addEventListener("click", () => {
-			const username = input.value.trim();
-			sessionStorage.setItem("username", username)
-			window.location.href = "dashboard.html";
+      console.log("dfghjkl")
+      if(inputsValid()){
+        const username = usernameInput.value.trim();
+        sessionStorage.setItem("username", username);
+        window.location.href = "dashboard.html";
+      }
 		});
 
 		document.getElementById("registerBtn").addEventListener("click", () => {

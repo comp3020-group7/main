@@ -4,26 +4,86 @@
 		<link rel="stylesheet" href="css/registrationStyle.css">
 	</head>
 	<body>
-		<div class="register">
-			<input id="usernameInput" placeholder="username">
-			<input id="emailInput" placeholder="email">
-			<input id="passwordInput" placeholder="password">
-			<input id="confirmPasswordInput" placeholder="confirm password">
+		<div id="inputForm" class="register">
+			<input id="usernameInput" autocomplete="off" placeholder="username">
+			<input id="emailInput" autocomplete="off" placeholder="email">
+			<input id="passwordInput" autocomplete="off" placeholder="password">
+			<input id="confirmPasswordInput" autocomplete="off" placeholder="confirm password">
 			<div class="button">
 				<button id="advancedRegistrationBtn">
 					Advanced Setup
 				</button>
+        <button id="backBtn">
+          Back To Login
+        </button>
 				<button id="submitBtn">
 					Finish Setup
 				</button>
 			</div>
 		</div>
+
+    <div id="warning" class="warning">
+			<img src="images/warning.png">
+			<p id="warningMsg">
+				Login info invalid, double check that username and password are correct.
+			</p>
+		</div>
   <script>
+    const usernameInput = document.getElementById("usernameInput");
+    const emailInput = document.getElementById("emailInput");
+    const passwordInput = document.getElementById("passwordInput");
+    const confirmPasswordInput = document.getElementById("confirmPasswordInput");
+
+    const warning = document.getElementById("warning");
+    const warningMsg = document.getElementById("warningMsg");
+
+    function inputsValid(){
+      const username = usernameInput.value.trim();
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+      const confirmPassword = confirmPasswordInput.value.trim();
+
+      //check username and password are valid
+      if (!username){
+        warningMsg.textContent = "Please enter a username";
+        warning.classList.add("warning-open");
+        return false;
+      } else if (!email){
+        warningMsg.textContent = "Please enter an email";
+        warning.classList.add("warning-open");
+        return false;
+      } else if (!password){
+        warningMsg.textContent = "Please enter a password";
+        warning.classList.add("warning-open");
+        return false;
+      } else if (!confirmPassword){
+        warningMsg.textContent = "Please confirm password";
+        warning.classList.add("warning-open");
+        return false;
+      } else if (confirmPassword !== password) {
+        warningMsg.textContent = "Passwords do not match, Please reenter passwords";
+        warning.classList.add("warning-open");
+        return false;
+      }
+      return true;
+    }
+
     document.getElementById("submitBtn").addEventListener("click", () => {
-      window.location.href = "dashboard.html";
+      if (inputsValid()){
+        const username = usernameInput.value.trim();
+        sessionStorage.setItem("username", username);
+        window.location.href = "dashboard.html";
+      }
     });
     document.getElementById("advancedRegistrationBtn").addEventListener("click", () => {
-      window.location.href = "advancedRegistration.html";
+      if (inputsValid()){
+        const username = usernameInput.value.trim();
+        sessionStorage.setItem("username", username);
+        window.location.href = "advancedRegistration.html";
+      }
+    });
+    document.getElementById("backBtn").addEventListener("click", () => {
+      window.location.href = "index.html";
     });
   </script>
 	</body>

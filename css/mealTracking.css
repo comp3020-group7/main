@@ -31,7 +31,7 @@ a {
 
 /* #---------- overview page ----------*/
 .app {
-	max-width: 120rem;
+	max-width: 130rem;
 	height: 75vh;
 	margin: 1rem auto;
 	display: grid;
@@ -98,6 +98,7 @@ a {
 	text-align: center;
 	background-color: var(--colour-green);
 	border-radius: 1rem;
+	width: 20rem;
 }
 
 .meal-section {
@@ -127,6 +128,7 @@ a {
 }
 
 .meal-header-text {
+	font-size: 1.2rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -134,14 +136,13 @@ a {
 }
 
 .meal-section-macro-summary {
-	flex: 0.8;
+	flex: 0.7;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1.5rem 3rem;
+	padding: 1.5rem 1.5rem;
 	background-color: #f1f7f2;
-	font-size: 0.5rem;
 	color: #3f4373;
 }
 
@@ -162,6 +163,7 @@ a {
 }
 
 .meal-section-food-items {
+	max-height: 25.2rem;
 	flex: 2;
 	display: flex;
 	flex-direction: column;
@@ -170,6 +172,12 @@ a {
 	border-bottom-left-radius: 1rem;
 	border-bottom-right-radius: 1rem;
 	background-color: #fffffff4;
+	overflow: scroll;
+}
+
+.meal-section-food-items::-webkit-scrollbar {
+	width: 0;
+	height: 0;
 }
 
 .food-item-list {
@@ -183,11 +191,27 @@ a {
 	justify-content: space-between;
 	align-items: center;
 	height: 3rem;
+	width: 20rem;
 	margin-bottom: 0.5rem;
-	font-size: 1.8rem;
+	font-size: 1.2rem;
 	border-radius: 1rem;
 	padding: 0 1rem;
 	background-color: #8fb7986a;
+}
+
+.food-item-name {
+	display: flex;
+	justify-content: flex-start;
+	flex: 0.8;
+}
+
+.food-item-empty {
+	color: var(--colour-accent-background);
+	background-color: transparent;
+}
+
+.food-item-content {
+	width: 100%;
 }
 
 .food-item-quantity-input {
@@ -225,10 +249,6 @@ a {
 	color: #fff;
 }
 
-.add-food-btn {
-	margin-right: 1rem;
-}
-
 .add-food-btn-text {
 	font-size: 1.5rem;
 }
@@ -261,11 +281,11 @@ a {
 
 /**************** progress circle starts ****************/
 .circular-progress {
+	position: relative;
 	width: 20rem;
 	height: 20rem;
 	display: block;
-	padding: 2rem 0 0 2rem;
-	--size: 20rem;
+	--size: 25rem;
 	--half-size: calc(var(--size) / 2);
 	--stroke-width: 2.5rem;
 	--radius: calc((var(--size) - var(--stroke-width)) / 2);
@@ -288,13 +308,65 @@ a {
 	transform-origin: var(--half-size) var(--half-size);
 	stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
 	transition: stroke-dasharray 0.3s linear 0s;
-	stroke: var(--colour-green);
+	stroke: #3d405b;
 }
 /**************** progress circle ends ****************/
+.circular-value-fat circle.fg {
+	stroke: #81b29a;
+}
+
+.circular-value-protein circle.fg {
+	stroke: #e07a5f;
+}
+
+.circular-value-carbs circle.fg {
+	stroke: #6c584c;
+}
+
+.progress-circle-fat {
+	display: none;
+}
+
+.progress-circle-protein {
+	display: none;
+}
+
+.progress-circle-carbs {
+	display: none;
+}
+
+.progress-circle-wrapper {
+	display: none;
+	position: relative;
+}
+
+.progress-circle-wrapper.active {
+	display: block;
+}
+
+.progress-circle-text {
+	font-family: 'Silkscreen', monospace;
+	font-size: 2rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.progress-circle-label {
+	font-size: 1.5rem;
+	font-style: italic;
+	color: #fff;
+}
 
 .circular-progress-toggle-bar {
 	width: 100%;
 	height: 3rem;
+	margin-top: 3rem;
 	margin-bottom: 1rem;
 	display: flex;
 	justify-content: space-around;
@@ -324,6 +396,11 @@ a {
 	background-color: var(--colour-primary-dark);
 }
 
+.toggle-bar-item:hover {
+	background-color: var(--colour-primary-dark);
+	color: #fff;
+}
+
 .set-goal-btn-container {
 	display: flex;
 	flex-direction: column;
@@ -341,7 +418,7 @@ a {
 	background-color: var(--colour-primary-dark);
 	font-size: 1.5rem;
 
-	padding: 0 3rem;
+	margin-top: 5rem;
 	border-radius: 10rem;
 }
 

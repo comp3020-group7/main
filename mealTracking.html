@@ -80,7 +80,7 @@
 								</p>
 							</div>
 							<div class="macro-summary-item macro-summary-carbs">
-								<span class="material-symbols-outlined"> grass </span>
+								<span class="material-symbols-outlined"> yakitori </span>
 								<p class="macro-summary-item-text">
 									<span class="label">Fats</span>
 									<span class="value">0 g</span>
@@ -91,11 +91,13 @@
 							<ul class="food-item-list">
 								<li class="food-item">
 									<span>Apple</span>
-									<input type="number" placeholder="1" class="food-item-quantity-input" />
+									<input type="number" placeholder="1" class="food-item-quantity-input" disabled />
 									<span class="material-symbols-outlined btn food-item-delete-btn"> close </span>
 								</li>
 							</ul>
-							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container">
+							<a
+								href="./mealTracking-addFood.html"
+								class="food-list-add-food-btn-container add-food-btn-text-breakfast">
 								<span class="material-symbols-outlined add-food-btn"> add_2 </span>
 								<span class="add-food-btn-text">Add Food</span>
 							</a>
@@ -132,7 +134,7 @@
 								</p>
 							</div>
 							<div class="macro-summary-item macro-summary-carbs">
-								<span class="material-symbols-outlined"> grass </span>
+								<span class="material-symbols-outlined"> yakitori </span>
 								<p class="macro-summary-item-text">
 									<span class="label">Fats</span>
 									<span class="value">0 g</span>
@@ -143,12 +145,12 @@
 							<ul class="food-item-list">
 								<li class="food-item">
 									<span>Apple</span>
-									<input type="number" placeholder="1" class="food-item-quantity-input" />
+									<input type="number" placeholder="1" class="food-item-quantity-input" disabled />
 									<span class="material-symbols-outlined btn food-item-delete-btn"> close </span>
 								</li>
 							</ul>
 
-							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container"
+							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container add-food-btn-text-lunch"
 								><span class="material-symbols-outlined add-food-btn"> add_2 </span>
 								<span class="add-food-btn-text">Add Food</span>
 							</a>
@@ -185,7 +187,7 @@
 								</p>
 							</div>
 							<div class="macro-summary-item macro-summary-carbs">
-								<span class="material-symbols-outlined"> grass </span>
+								<span class="material-symbols-outlined"> yakitori </span>
 								<p class="macro-summary-item-text">
 									<span class="label">Fats</span>
 									<span class="value">0 g</span>
@@ -194,13 +196,13 @@
 						</div>
 						<div class="meal-section meal-section-food-items">
 							<ul class="food-item-list">
-								<li class="food-item">
+								<!-- <li class="food-item">
 									<span>Apple</span>
-									<input type="number" placeholder="1" class="food-item-quantity-input" />
+									<input type="number" placeholder="1" class="food-item-quantity-input" disabled />
 									<span class="material-symbols-outlined btn food-item-delete-btn"> close </span>
-								</li>
+								</li> -->
 							</ul>
-							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container"
+							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container add-food-btn-text-dinner"
 								><span class="material-symbols-outlined add-food-btn"> add_2 </span>
 								<span class="add-food-btn-text">Add Food</span>
 							</a>
@@ -210,7 +212,7 @@
 						<div class="meal-section meal-section-header">
 							<div class="meal-header-text-title">Snacks</div>
 							<div>
-								<img src="/images/mealTracking/meal-logo/breakfast.png" alt="snacks logo" class="meal-logo-img" />
+								<img src="/images/mealTracking/meal-logo/snacks.png" alt="snacks logo" class="meal-logo-img" />
 								<div class="meal-header-text">
 									<p class="meal-header-text-calory-summary">
 										<span class="meal-header-text-calory-count">0</span> cals
@@ -237,7 +239,7 @@
 								</p>
 							</div>
 							<div class="macro-summary-item macro-summary-carbs">
-								<span class="material-symbols-outlined"> grass </span>
+								<span class="material-symbols-outlined"> yakitori </span>
 								<p class="macro-summary-item-text">
 									<span class="label">Fats</span>
 									<span class="value">0 g</span>
@@ -246,13 +248,13 @@
 						</div>
 						<div class="meal-section meal-section-food-items">
 							<ul class="food-item-list">
-								<li class="food-item">
+								<!-- <li class="food-item">
 									<span>Apple</span>
-									<input type="number" placeholder="1" class="food-item-quantity-input" />
+									<input type="number" placeholder="1" class="food-item-quantity-input" disabled />
 									<span class="material-symbols-outlined btn food-item-delete-btn"> close </span>
-								</li>
+								</li> -->
 							</ul>
-							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container"
+							<a href="./mealTracking-addFood.html" class="food-list-add-food-btn-container add-food-btn-text-snack"
 								><span class="material-symbols-outlined add-food-btn"> add_2 </span>
 								<span class="add-food-btn-text">Add Food</span>
 							</a>
@@ -263,20 +265,87 @@
 			<div class="side-panel">
 				<div class="side-panel-item progress-circle-container">
 					<!-- progress circle UI component -->
-					<svg width="250" height="250" viewBox="0 0 250 250" class="circular-progress" style="--progress: 75">
-						<circle class="bg"></circle>
-						<circle class="fg"></circle>
-					</svg>
+					<div class="progress-circle-wrapper progress-circle-calories active">
+						<svg
+							width="250"
+							height="250"
+							viewBox="0 0 250 250"
+							class="circular-progress circular-value-calorie"
+							style="--progress: 75">
+							<circle class="bg"></circle>
+							<circle class="fg"></circle>
+						</svg>
+						<div class="progress-circle-text">
+							<!-- <span>calories</span> -->
+							<span class="progress-circle-label">Current:</span>
+							<span class="current-count-calories"></span>
+							<span>--------</span>
+							<span class="progress-circle-label">Goal:</span>
+							<span class="progress-circle-goal-label-calorie">2000</span>
+						</div>
+					</div>
+					<div class="progress-circle-wrapper progress-circle-fat">
+						<svg
+							width="250"
+							height="250"
+							viewBox="0 0 250 250"
+							class="circular-progress circular-value-fat"
+							style="--progress: 75">
+							<circle class="bg"></circle>
+							<circle class="fg"></circle>
+						</svg>
+						<div class="progress-circle-text">
+							<span class="progress-circle-label">Current:</span>
+							<span class="current-count-fat"></span>
+							<span>------</span>
+							<span class="progress-circle-label">Goal:</span>
+							<span class="progress-circle-goal-label-fat">fat</span>
+						</div>
+					</div>
+					<div class="progress-circle-wrapper progress-circle-protein">
+						<svg
+							width="250"
+							height="250"
+							viewBox="0 0 250 250"
+							class="circular-progress circular-value-protein"
+							style="--progress: 75">
+							<circle class="bg"></circle>
+							<circle class="fg"></circle>
+						</svg>
+						<div class="progress-circle-text">
+							<span class="progress-circle-label">Current:</span>
+							<span class="current-count-protein"></span>
+							<span>------</span>
+							<span class="progress-circle-label">Goal:</span>
+							<span class="progress-circle-goal-label-protein">protein</span>
+						</div>
+					</div>
+					<div class="progress-circle-wrapper progress-circle-carbs">
+						<svg
+							width="250"
+							height="250"
+							viewBox="0 0 250 250"
+							class="circular-progress circular-value-carbs"
+							style="--progress: 75">
+							<circle class="bg"></circle>
+							<circle class="fg"></circle>
+						</svg>
+						<div class="progress-circle-text">
+							<span class="progress-circle-label">Current:</span>
+							<span class="current-count-carbs"></span>
+							<span>------</span>
+							<span class="progress-circle-label">Goal:</span>
+							<span class="progress-circle-goal-label-carbs">carbs</span>
+						</div>
+					</div>
 
 					<div class="circular-progress-toggle-bar">
-						<div class="toggle-bar-item toggle-bar-item-calories selected">calories</div>
-						<div class="toggle-bar-item toggle-bar-item-fat">fat</div>
-						<div class="toggle-bar-item toggle-bar-item-protein">protein</div>
-						<div class="toggle-bar-item toggle-bar-item-carbs">carbs</div>
+						<div class="toggle-bar-item btn toggle-bar-item-calories selected">calories</div>
+						<div class="toggle-bar-item btn toggle-bar-item-fat">fat</div>
+						<div class="toggle-bar-item btn toggle-bar-item-protein">protein</div>
+						<div class="toggle-bar-item btn toggle-bar-item-carbs">carbs</div>
 					</div>
-				</div>
 
-				<div class="side-panel-item set-goal-btn-container">
 					<a href="mealTracking-setGoal.html" class="btn set-goal-btn">
 						<span class="set-goal-btn-text">Set Goals</span>
 					</a>
@@ -285,22 +354,5 @@
 		</main>
 		<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 		<script src="./js/mealTracking.js"></script>
-    <script>
-      document.getElementById("mealTrackingBtn").addEventListener("click", () => {
-        window.location.href = "mealTracking.html";
-      });
-  
-      document.getElementById("trackAWorkoutBtn").addEventListener("click", () => {
-        window.location.href = "workout.html";
-      });
-  
-      document.getElementById("communityPageBtn").addEventListener("click", () => {
-        //window.location.href = "";
-      });
-  
-      document.getElementById("createAPostBtn").addEventListener("click", () => {
-        //window.location.href = "";
-      });
-    </script>
 	</body>
 </html>

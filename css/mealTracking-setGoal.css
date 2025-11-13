@@ -55,6 +55,7 @@ li {
 	background: var(--colour-primary);
 	border-radius: 3rem;
 	padding: 2rem;
+	position: relative;
 }
 
 /* left panel */
@@ -194,4 +195,35 @@ li {
 
 .back-btn:hover {
 	background-color: #fa7602;
+}
+
+.popup {
+	display: flex;
+	gap: 1rem;
+	position: absolute;
+	top: 35%;
+	left: 101%;
+	width: 29rem;
+	padding: 2rem;
+}
+
+.popup-close {
+	display: flex;
+	justify-content: flex-end;
+	cursor: pointer;
+	margin-right: 1rem;
+}
+
+.popup-close:hover {
+	color: #fff;
+}
+
+.popup-message-container {
+	background-color: #fff;
+}
+
+.pop-up-message {
+	font-weight: 700;
+	font-size: 1.6rem;
+	color: #676666;
 }

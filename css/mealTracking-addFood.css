@@ -1,5 +1,6 @@
 @import url(./sharedStyle.css);
 @import url(./palette.css);
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400;500;600&display=swap');
 
 /* #---------- Common settings ----------*/
 * {
@@ -34,6 +35,21 @@ li {
 	color: var(--colour-primary-dark);
 }
 
+.welcome-msg-meal-type {
+	font-size: 2.8rem;
+	background-color: var(--colour-accent-background);
+	padding: 0 1rem;
+	border-radius: 3rem;
+}
+
+.welcome-msg-date {
+	font-family: 'Silkscreen', monospace;
+	font-size: 2.8rem;
+	background-color: var(--colour-accent-background);
+	padding: 0 1rem;
+	border-radius: 3rem;
+}
+
 .go-back-link {
 	text-decoration: underline;
 	color: #8fb798;
@@ -54,6 +70,13 @@ li {
 	background: var(--colour-primary);
 	border-radius: 3rem;
 	padding: 2rem;
+	max-height: 49.5rem;
+	overflow: scroll;
+}
+
+.panel::-webkit-scrollbar {
+	width: 0rem;
+	height: 0rem;
 }
 
 /* search */
@@ -112,10 +135,18 @@ li {
 	gap: 1.8rem;
 }
 
+.grid-message {
+	font-size: 1.6rem;
+	text-align: center;
+	padding: 3rem 1rem;
+	color: var(--colour-primary-dark);
+}
+
 .card {
 	background: var(--colour-background);
 	border-radius: 16px;
-	min-height: 16rem;
+	height: 16rem;
+	width: 30rem;
 	padding: 1.4rem;
 	position: relative;
 	display: flex;
@@ -123,8 +154,72 @@ li {
 	gap: 8px;
 }
 
+.card.confirmed {
+	background-color: #c7d2fe;
+}
+
+.card-select-quantity {
+	display: none;
+}
+
+.card-select-quantity.selected {
+	padding-bottom: 0.5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	transition: 0.5s;
+}
+
+.select-quantity-title {
+	background-color: #fff;
+}
+
+/*  */
+.quantity-selector {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	font-size: 1.6rem;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 1rem;
+	padding: 0.4rem 0.8rem;
+	width: fit-content;
+}
+
+.quantity-selector button {
+	border: none;
+	background: #8fb798;
+	color: #fff;
+	border-radius: 50%;
+	width: 2.5rem;
+	height: 2.5rem;
+	cursor: pointer;
+	font-size: 1.4rem;
+	line-height: 1;
+}
+
+.quantity-selector button:hover {
+	background-color: #fa7602;
+}
+
+.quantity-selector .quantity {
+	width: 2rem;
+	text-align: center;
+}
+
+/*  */
+
 .card .title {
 	font-size: 2rem;
+}
+
+.card .serving {
+	font-size: 1.3rem;
+	color: #4b5563;
 }
 
 .card-main-section {
@@ -134,14 +229,24 @@ li {
 }
 
 .nutrition-fact {
+	flex: 1;
+	margin-left: 2rem;
 	font-size: 1.5rem;
-	line-height: 2;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+}
+
+.nutrition-fact-item {
+	display: flex;
+	width: 11rem;
+	justify-content: space-between;
 }
 
 .food-img {
 	width: 50%;
+	max-width: 10rem;
+	max-height: 10rem;
 }
 
 .card .plus {
@@ -159,6 +264,10 @@ li {
 }
 
 .card .plus:hover {
+	background-color: #fa7602;
+}
+
+.card .plus.selected {
 	background-color: #fa7602;
 }
 

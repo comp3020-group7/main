@@ -4,22 +4,87 @@
 		<link rel="stylesheet" href="css/registrationStyle.css">
 	</head>
     <body>
-        <div class="register">
-			<input id="birthdayInput" type="date" placeholder="birthday">
-			<input id="heightInput" placeholder="height (ie 5'10&quot; or 178cm)">
-			<input id="weightInput" placeholder="weight (ie 140lb or 62kg)">
-			<input id="goalWeightInput" placeholder="goal weight (ie 140lb or 62kg)">
-			<input id="activityDayInput" type="number" placeholder="activity days per week (ie 3)" min="1" max="7">
-			<div class="button">
-				<button id="submitBtn">
-					Finish Setup
-				</button>
-			</div>
-		</div>
+      <div id="inputForm" class="register">
+        <input id="birthdayInput" type="date" autocomplete="off" placeholder="birthday">
+        <input id="heightInput" type="number" autocomplete="off" inputmode="numeric" placeholder="height (ie 178cm)" min="0" max="1000">
+        <input id="weightInput" type="number" autocomplete="off" inputmode="numeric" placeholder="weight (ie 76kg)" min="0" max="1000">
+        <input id="goalWeightInput" type="number" autocomplete="off" inputmode="numeric" placeholder="goal weight (ie 76kg)" min="0" max="1000">
+        <input id="activityDayInput" type="number" autocomplete="off" inputmode="numeric" placeholder="activity days per week (ie 3)" min="1" max="7">
+        <div class="button">
+          <button id="submitBtn">
+            Finish Setup
+          </button>
+          <button id="backBtn">
+            Back To Registration
+          </button>
+        </div>
+      </div>
+
+      <div id="warning" class="warning">
+        <img src="images/warning.png">
+        <p id="warningMsg">
+          Registration info invalid, double check that inputs are valid.
+        </p>
+      </div>
     </body>
 	<script>
+    const birthdayInput = document.getElementById("birthdayInput");
+    const heightInput = document.getElementById("heightInput");
+    const weightInput = document.getElementById("weightInput");
+    const goalWeightInput = document.getElementById("goalWeightInput");
+    const activityDayInput = document.getElementById("activityDayInput");
+
+    function inputsValid(){
+      const birthday = birthdayInput.value.trim();
+      const height = heightInput.value.trim();
+      const weight = weightInput.value.trim();
+      const goalWeight = goalWeightInput.value.trim();
+      const activityDays = activityDayInput.value.trim();
+
+      //check username and password are valid
+      if (!birthday || Date.now() < new Date(birthday)){
+        warningMsg.textContent = "Please enter your birthday";
+        warning.classList.add("warning-open");
+        return false;
+      } else if (!height || height < 1 || height > 1000){
+        warningMsg.textContent = "Please enter your height";
+        warning.classList.add("warning-open");
+        return false;
+      } else if (!weight || weight < 1 || weight > 1000){
+        warningMsg.textContent = "Please enter your weight";
+        warning.classList.add("warning-open");
+        return false;
+      } else if (!goalWeight || goalWeight < 1 || goalWeight > 1000){
+        warningMsg.textContent = "Please enter your goal weight";
+        warning.classList.add("warning-open");
+        return false;
+      } else if (!activityDays || activityDays < 1 || activityDays > 7){
+        warningMsg.textContent = "Please enter your desired number of activity days";
+        warning.classList.add("warning-open");
+        return false;
+      }
+      return true;
+    }
+
 		document.getElementById("submitBtn").addEventListener("click", () => {
-			window.location.href = "dashboard.html";
+      if(inputsValid()){
+        const birthday = birthdayInput.value.trim();
+        const height = heightInput.value.trim();
+        const weight = weightInput.value.trim();
+        const goalWeight = goalWeightInput.value.trim();
+        const activityDays = activityDayInput.value.trim();
+
+        sessionStorage.setItem("birthday", birthday);
+        sessionStorage.setItem("height", height);
+        sessionStorage.setItem("weight", weight);
+        sessionStorage.setItem("goalWeight", goalWeight);
+        sessionStorage.setItem("activityDays", activityDays);
+        window.location.href = "dashboard.html";
+      }
 		});
+
+    document.getElementById("backBtn").addEventListener("click", () => {
+      window.location.href = "registration.html";
+    });
 	</script>
 </html>
