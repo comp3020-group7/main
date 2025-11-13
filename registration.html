@@ -13,22 +13,77 @@
 				<button id="advancedRegistrationBtn">
 					Advanced Setup
 				</button>
+        <button id="backBtn">
+          Back To Login
+        </button>
 				<button id="submitBtn">
 					Finish Setup
 				</button>
 			</div>
 		</div>
+
+    <div id="warning" class="warning">
+			<img src="images/warning.png">
+			<p id="warningMsg">
+				Login info invalid, double check that username and password are correct.
+			</p>
+		</div>
   <script>
     const usernameInput = document.getElementById("usernameInput");
-    document.getElementById("submitBtn").addEventListener("click", () => {
+    const emailInput = document.getElementById("emailInput");
+    const passwordInput = document.getElementById("passwordInput");
+    const confirmPasswordInput = document.getElementById("confirmPasswordInput");
+
+    const warning = document.getElementById("warning");
+    const warningMsg = document.getElementById("warningMsg");
+
+    function inputsValid(){
       const username = usernameInput.value.trim();
-      sessionStorage.setItem("username", username);
-      window.location.href = "dashboard.html";
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+      const confirmPassword = confirmPasswordInput.value.trim();
+
+      //check username and password are valid
+      if (!username){
+        warningMsg.textContent = "Please enter a username";
+        warning.classList.add("warning-open");
+        return false;
+      } else if (!email){
+        warningMsg.textContent = "Please enter an email";
+        warning.classList.add("warning-open");
+        return false;
+      } else if (!password){
+        warningMsg.textContent = "Please enter a password";
+        warning.classList.add("warning-open");
+        return false;
+      } else if (!confirmPassword){
+        warningMsg.textContent = "Please confirm password";
+        warning.classList.add("warning-open");
+        return false;
+      } else if (confirmPassword !== password) {
+        warningMsg.textContent = "Passwords do not match, Please reenter passwords";
+        warning.classList.add("warning-open");
+        return false;
+      }
+      return true;
+    }
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      if (inputsValid()){
+        const username = usernameInput.value.trim();
+        sessionStorage.setItem("username", username);
+        window.location.href = "dashboard.html";
+      }
     });
     document.getElementById("advancedRegistrationBtn").addEventListener("click", () => {
-      const username = usernameInput.value.trim();
-      sessionStorage.setItem("username", username);
-      window.location.href = "advancedRegistration.html";
+      if (inputsValid()){
+        const username = usernameInput.value.trim();
+        sessionStorage.setItem("username", username);
+        window.location.href = "advancedRegistration.html";
+      }
+    });
+    document.getElementById("backBtn").addEventListener("click", () => {
+      window.location.href = "index.html";
     });
   </script>
 	</body>
