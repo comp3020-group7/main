@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Silkscreen:wght@400;700&display=swap');
 @import url('palette.css');
 
 /* ===================================== Jian's note ===================================== */
@@ -57,7 +58,21 @@ body {
 .rightButts {
 	display: flex;
 	align-items: center;
-	gap: 80px; /* spacing between icon and button */
+	/* gap: 80px; spacing between icon and button */
+}
+
+.rightButts img {
+	margin-right: 3rem;
+	width: 4rem;
+}
+
+.settings-icon {
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.settings-icon:hover {
+	transform: translateY(-0.5rem);
 }
 
 .logoutButt {
@@ -71,15 +86,133 @@ body {
 	transition: background-color 0.3s ease;
 }
 
-.profileButt {
-	height: 40px;
-	width: 40px;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	transition: transform 0.2s ease, border-color 0.3s ease;
+.settings-icon {
+	width: 1rem;
+	height: 1rem;
 }
 /*** end of top bar CSS ***/
+
+/* setting popup window */
+.setting-pop-up {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #3f4373;
+	width: 100rem;
+	height: 50rem;
+	z-index: 999;
+	border-radius: 3rem;
+	flex-direction: column;
+}
+
+.setting-pop-up-header {
+	height: 8rem;
+	border-top-left-radius: 3rem;
+	border-top-right-radius: 3rem;
+	background-color: var(--colour-primary);
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: 2rem;
+}
+
+.setting-close-btn {
+	cursor: pointer;
+	height: 5rem;
+}
+
+.setting-close-btn:hover {
+	transform: translateY(-0.4rem);
+}
+
+.setting-pop-up-content {
+	padding: 3rem;
+	color: #fff;
+	font-family: 'Silkscreen', monospace;
+	font-size: 3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
+.setting-pop-up-change-username {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.setting-change-username-input {
+	width: 30%;
+	background: #fff;
+	border-radius: 10rem;
+	padding: 0.6rem 1.2rem;
+	border: none;
+	min-height: 4rem;
+}
+
+.setting-change-username-confirm-btn {
+	background-color: #cd9f76;
+	color: #fff;
+	width: 10rem;
+	height: 4rem;
+	font-size: 1.5rem;
+	font-family: 'Silkscreen', monospace;
+	border-radius: 2rem;
+	cursor: pointer;
+}
+
+.setting-change-username-confirm-btn:hover {
+	transform: translateY(-0.3rem);
+}
+
+.setting-font-size-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	gap: 3rem;
+}
+
+.font-size-letter {
+	width: 5rem;
+	cursor: pointer;
+}
+
+.font-size-letter.selected {
+	border: 0.2rem solid #fff;
+}
+
+.font-size-letter:hover {
+	transform: translateY(-0.3rem);
+}
+
+.font-size-letter-1 {
+	width: 4rem;
+	height: 4rem;
+}
+
+.font-size-letter-2 {
+	width: 5rem;
+	height: 5rem;
+}
+
+.font-size-letter-3 {
+	width: 6rem;
+	height: 6rem;
+}
+
+/* this turns backgroun dark when popup window opened */
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7); /* darkness */
+	z-index: 998;
+}
 
 /* .menuBtn {
 	position: fixed;
@@ -122,7 +255,7 @@ body {
 	font-style: bold;
 	border: none;
 	background-color: var(--colour-primary-dark);
-  border-radius: 0px;
+	border-radius: 0px;
 }
 
 .navBar button:hover {

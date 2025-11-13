@@ -35,102 +35,68 @@
 		</div>
 
 		<!-- main add food section -->
-		<h2 class="welcome-msg"><a href="/mealTracking.html" class="go-back-link">Track a Meal</a> > Add Food</h2>
+		<h2 class="welcome-msg">
+			<a href="/mealTracking.html" class="go-back-link">Track a Meal</a> >
+			<span>
+				Adding food to
+				<span class="welcome-msg-meal-type">xxx</span> for
+				<span class="welcome-msg-date">xxx</span>
+			</span>
+		</h2>
 		<div class="content">
 			<!-- Left: search, tabs, grid -->
 			<section class="panel">
 				<div class="search">
 					<span class="material-symbols-outlined">search</span>
-					<input type="text" placeholder="Search foods…" />
+					<input type="text" placeholder="Search foods…" class="food-search-input" />
 				</div>
 
 				<div class="tabs">
-					<div class="tab active">ALL</div>
-					<div class="tab">Breakfast</div>
-					<div class="tab">Lunch</div>
-					<div class="tab">Dinner</div>
-					<div class="tab">Snacks</div>
+					<div class="tab switch-tab-all active">ALL</div>
+					<div class="tab switch-tab-recently">Recently</div>
+					<div class="tab switch-tab-favorite">Favorite</div>
 				</div>
 
 				<div class="grid">
-					<div class="card selected">
-						<div class="title">Apple</div>
+					<!-- <div class="card">
+						<div class="title food-name">${food.name}</div>
 						<div class="card-main-section">
-							<img src="./images/mealTracking/food-img/apple.png" alt="food img" class="food-img" />
+							<img src="${food.image || DEFAULT_FOOD_IMAGE}" alt="${food.name}" class="food-img" />
 							<div class="nutrition-fact">
-								<span>xxx cals</span>
-								<span>xxx carbs</span>
-								<span>xxx protein</span>
-								<span>xxx fat</span>
+								<div class="nutrition-fact-item">
+									<span class="nutrition-fact-label">cals</span>
+									<span class="nutrition-fact-val nutrition-fact-val-calories">${food.calories}</span>
+								</div>
+								<div class="nutrition-fact-item">
+									<span class="nutrition-fact-label">carbs</span>
+									<span class="nutrition-fact-val nutrition-fact-val-carbs">${food.carbs}</span>
+								</div>
+								<div class="nutrition-fact-item">
+									<span class="nutrition-fact-label">protein</span>
+									<span class="nutrition-fact-val nutrition-fact-val-protein">${food.protein}</span>
+								</div>
+								<div class="nutrition-fact-item">
+									<span class="nutrition-fact-label">fats</span>
+									<span class="nutrition-fact-val nutrition-fact-val-fat">${food.fats}</span>
+								</div>
 							</div>
 						</div>
-						<button class="plus" title="Add"><span class="material-symbols-outlined">add</span></button>
-					</div>
-					<div class="card">
-						<div class="title">Apple</div>
-						<div class="card-main-section">
-							<img src="./images/mealTracking/food-img/apple.png" alt="food img" class="food-img" />
-							<div class="nutrition-fact">
-								<span>xxx cals</span>
-								<span>xxx carbs</span>
-								<span>xxx protein</span>
-								<span>xxx fat</span>
+						<button class="plus" title="Add">
+							<span class="material-symbols-outlined">add</span>
+						</button>
+
+						<div class="card-select-quantity card">
+							<span class="title food-name select-quantity-title">adding ${food.name}</span>
+							<div class="quantity-selector">
+								<button class="decrease">-</button>
+								<span class="quantity">1</span>
+								<button class="increase">+</button>
 							</div>
+							<button class="plus confirm" title="Add">
+								<span class="material-symbols-outlined">check</span>
+							</button>
 						</div>
-						<button class="plus" title="Add"><span class="material-symbols-outlined">add</span></button>
-					</div>
-					<div class="card">
-						<div class="title">Apple</div>
-						<div class="card-main-section">
-							<img src="./images/mealTracking/food-img/apple.png" alt="food img" class="food-img" />
-							<div class="nutrition-fact">
-								<span>xxx cals</span>
-								<span>xxx carbs</span>
-								<span>xxx protein</span>
-								<span>xxx fat</span>
-							</div>
-						</div>
-						<button class="plus" title="Add"><span class="material-symbols-outlined">add</span></button>
-					</div>
-					<div class="card">
-						<div class="title">Apple</div>
-						<div class="card-main-section">
-							<img src="./images/mealTracking/food-img/apple.png" alt="food img" class="food-img" />
-							<div class="nutrition-fact">
-								<span>xxx cals</span>
-								<span>xxx carbs</span>
-								<span>xxx protein</span>
-								<span>xxx fat</span>
-							</div>
-						</div>
-						<button class="plus" title="Add"><span class="material-symbols-outlined">add</span></button>
-					</div>
-					<div class="card">
-						<div class="title">Apple</div>
-						<div class="card-main-section">
-							<img src="./images/mealTracking/food-img/apple.png" alt="food img" class="food-img" />
-							<div class="nutrition-fact">
-								<span>xxx cals</span>
-								<span>xxx carbs</span>
-								<span>xxx protein</span>
-								<span>xxx fat</span>
-							</div>
-						</div>
-						<button class="plus" title="Add"><span class="material-symbols-outlined">add</span></button>
-					</div>
-					<div class="card">
-						<div class="title">Apple</div>
-						<div class="card-main-section">
-							<img src="./images/mealTracking/food-img/apple.png" alt="food img" class="food-img" />
-							<div class="nutrition-fact">
-								<span>xxx cals</span>
-								<span>xxx carbs</span>
-								<span>xxx protein</span>
-								<span>xxx fat</span>
-							</div>
-						</div>
-						<button class="plus" title="Add"><span class="material-symbols-outlined">add</span></button>
-					</div>
+					</div> -->
 				</div>
 			</section>
 
@@ -141,23 +107,6 @@
 				</a>
 			</div>
 		</div>
-    <script>
-      document.getElementById("mealTrackingBtn").addEventListener("click", () => {
-        window.location.href = "mealTracking.html";
-      });
-
-      document.getElementById("trackAWorkoutBtn").addEventListener("click", () => {
-        window.location.href = "workout.html";
-      });
-
-      document.getElementById("communityPageBtn").addEventListener("click", () => {
-        window.location.href = "community.html";
-      });
-
-      document.getElementById("createAPostBtn").addEventListener("click", () => {
-        sessionStorage.setItem("makeAPostFlag", true);
-        window.location.href = "community.html";
-      });
-    </script>
+		<script src="./js/mealTracking-addFood.js"></script>
 	</body>
 </html>

@@ -40,29 +40,61 @@
 			<!-- Left: main contents -->
 			<div class="panel">
 				<div class="panel-item panel-set-calory">
-					<span class="panel-item-title">set calory:</span>
-					<input type="text" class="panel-item-input panel-item-input-calory" placeholder="Enter your target calory" />
+					<span class="panel-item-title">set calorie (kcal):</span>
+					<input
+						type="text"
+						class="panel-item-input panel-item-input-box panel-item-input-calory"
+						placeholder="Enter your target calory" />
 				</div>
 				<div class="panel-item panel-set-macro">
-					<span class="panel-item-title">set macro:</span>
+					<span class="panel-item-title">set macros:</span>
 					<div class="panel-item-input-macro-container">
-						<div class="panel-item-input-item panel-item-input-macro-carbs">
-							<div class="panel-item-input-item-title">Carbs:</div>
-							<input type="text" class="panel-item-item-macro-input" placeholder="Enter your target carbs" />
-						</div>
-						<div class="panel-item-input-item panel-item-input-macro-protein">
-							<div class="panel-item-input-item-title">Protein:</div>
-							<input type="text" class="panel-item-item-macro-input" placeholder="Enter your target carbs" />
-						</div>
 						<div class="panel-item-input-item panel-item-input-macro-fats">
-							<div class="panel-item-input-item-title">Fats:</div>
-							<input type="text" class="panel-item-item-macro-input" placeholder="Enter your target carbs" />
+							<div class="panel-item-input-item-title">Fats(g):</div>
+							<input
+								type="text"
+								class="panel-item-input-box panel-item-item-macro-input"
+								placeholder="Enter your target carbs" />
+						</div>
+
+						<div class="panel-item-input-item panel-item-input-macro-protein">
+							<div class="panel-item-input-item-title">Protein(g):</div>
+							<input
+								type="text"
+								class="panel-item-input-box panel-item-item-macro-input"
+								placeholder="Enter your target carbs" />
+						</div>
+
+						<div class="panel-item-input-item panel-item-input-macro-carbs">
+							<div class="panel-item-input-item-title">Carbs(g):</div>
+							<input
+								type="text"
+								class="panel-item-input-box panel-item-item-macro-input"
+								placeholder="Enter your target carbs" />
 						</div>
 					</div>
 				</div>
 				<div class="panel-item panel-buttons-container">
 					<button class="panel-button btn panel-button-clear">Clear</button>
 					<button class="panel-button btn panel-button-confirm">Confirm</button>
+				</div>
+
+				<!-- pop up message -->
+				<div class="panel popup">
+					<span class="material-symbols-outlined popup-close"> close </span>
+					<div class="panel-item popup-message-container">
+						<span class="pop-up-message">
+							The default nutrition goals are set to: <br /><br />
+							Calories: 2000 kcal <br />
+							Fats: 60 g <br />
+							Protein: 56 g <br />
+							Carbs: 130 g <br /><br />
+							According to this website:
+							<a href="https://www.medicalnewstoday.com/articles/micros-vs-macros#how-much-you-need" target="_blank">
+								medicalNewsToday
+							</a>
+						</span>
+					</div>
 				</div>
 			</div>
 
@@ -74,23 +106,6 @@
 			</div>
 		</div>
 
-    <script>
-      document.getElementById("mealTrackingBtn").addEventListener("click", () => {
-        window.location.href = "mealTracking.html";
-      });
-  
-      document.getElementById("trackAWorkoutBtn").addEventListener("click", () => {
-        window.location.href = "workout.html";
-      });
-  
-      document.getElementById("communityPageBtn").addEventListener("click", () => {
-        window.location.href = "community.html";
-      });
-  
-      document.getElementById("createAPostBtn").addEventListener("click", () => {
-        sessionStorage.setItem("makeAPostFlag", true);
-        window.location.href = "community.html";
-      });
-    </script>
+		<script src="./js/mealTracking-setGoal.js"></script>
 	</body>
 </html>

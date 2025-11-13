@@ -60,11 +60,13 @@ li {
 	align-items: center;
 	gap: 2rem;
 	padding: 2rem;
+	height: 13rem;
 }
 
 .meter-icon-image {
 	flex: 1;
-	max-width: 30%;
+	max-width: 20%;
+	padding: 2rem;
 }
 
 .meter-info {
@@ -77,13 +79,13 @@ li {
 	color: rgba(40, 44, 75, 0.8);
 }
 
-.meter-cal {
+.meter-calorie {
 	font-size: 2.4rem;
 	font-weight: 600;
 	color: var(--colour-primary-dark);
 }
 
-.meter-user-text {
+.meter-username {
 	font-size: 2rem;
 }
 
@@ -96,10 +98,12 @@ li {
 
 .macro {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	gap: 1rem;
 	padding: 1.2rem;
 	border-radius: 1.2rem;
+	width: 25rem;
 	background: #f3f3f3;
 }
 
@@ -108,8 +112,16 @@ li {
 	padding-bottom: 0.5rem;
 }
 
+.macro-label {
+	flex: 1;
+	margin-left: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 .ring {
-	--progress: 50;
+	--progress: 70;
 	--ring-color: var(--colour-primary-dark);
 	width: 6.4rem;
 	aspect-ratio: 1 / 1;
@@ -169,10 +181,50 @@ li {
 	margin-bottom: 0.5rem;
 }
 
-.entry .input {
-	padding: 1rem 1.4rem;
-	border-radius: 0.8rem;
+.water-intake-count {
+	font-family: 'Silkscreen', monospace;
+	color: #d06609;
+	font-size: 3rem;
+	font-weight: 700;
+}
+
+.water-intake-button-container {
+	display: flex;
+	justify-content: flex-start;
+	gap: 2rem;
+}
+
+.water-intake-button {
+	width: 10rem;
+	height: 6rem;
+	background-color: #f17509;
 	border: none;
+	color: #fff;
+	border-radius: 2rem;
+	font-size: 1.7rem;
+	font-family: 'Silkscreen', monospace;
+	transition: 0.1s;
+	cursor: pointer;
+}
+
+.water-intake-button:hover {
+	transform: translateY(-1rem);
+}
+
+.water-intake-button-cancel {
+	margin-left: 7rem;
+	width: 10rem;
+	height: 6rem;
+	border: none;
+	color: #f17509;
+	border-radius: 2rem;
+	transition: 0.1s;
+	cursor: pointer;
+	font-size: 2rem;
+}
+
+.water-intake-button-cancel:hover {
+	transform: translateY(-1rem);
 }
 
 /* ---------- Greeting ---------- */
@@ -181,6 +233,7 @@ li {
 }
 
 .greet .username {
+	font-family: 'Silkscreen', monospace;
 	color: #d06609;
 }
 
@@ -189,64 +242,33 @@ li {
 	margin-bottom: 0.6rem;
 }
 
-.greet .username {
-	font-family: 'Silkscreen', monospace;
-}
-
 .today {
 	font-size: 1.8rem;
 }
 
+.today .date {
+	font-family: monospace;
+	font-weight: 700;
+	color: #f1faee;
+	font-size: 2rem;
+}
+
 /* ---------- Calendar ---------- */
-.calendar-head {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 1.5rem;
-	background-color: #fff;
-	border-radius: 2rem;
-}
 
-.icon-btn {
-	border: none;
-	width: 3.6rem;
-	height: 3.6rem;
-	border-radius: 50%;
-	display: grid;
-	place-items: center;
-	cursor: pointer;
-}
-
-.month {
-	font-size: 1.8rem;
-}
-
-.calendar-grid {
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
-	gap: 0.6rem;
+.workout-calendar {
 	font-size: 1.3rem;
-	text-align: center;
+	color: #fff;
+	height: 27rem;
+	font-family: 'Silkscreen', monospace;
 }
 
-.dow {
-	color: var(--colour-primary-dark);
-}
-
-.cell {
-	padding: 1.4rem 0.8rem;
-	min-height: 5.4rem;
-	border-radius: 1rem;
-	background: #fff;
+.fc-header-toolbar {
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	justify-content: flex-start !important;
 }
 
-.cell.has-icon {
-	background: #fff;
-	border: 3px solid #f17509;
-	color: var(--colour-accent);
+.fc-toolbar-title {
+	margin-left: 15rem !important;
 }
 
 /* quickview */
@@ -262,9 +284,14 @@ li {
 	flex: 1;
 }
 
+.last-meal-title {
+	margin-bottom: 0.5rem;
+}
+
 .quickview-title {
 	font-size: 2rem;
 }
+
 .meal-row {
 	display: flex;
 	gap: 1.2rem;
