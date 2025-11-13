@@ -113,11 +113,13 @@
   justify-content: center;
   align-items: flex-start;
   gap: 100px; /* space between left and right columns */
-  padding-top: 10px;
+  /* padding-top: 10px; */
   width: 80%;
-  background-color: var(--colour-green);
+  background-color: var(--colour-green-background);
   border-radius: 8px;
-  margin-top: 0px;
+  padding-bottom: 20px;
+
+  /* top:0; */
 
 }
 
@@ -126,7 +128,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: 100px; /* space between left and right columns */
-  margin-top: 40px;
+  /* margin-top: 40px; */
   /* background-color: var(--colour-green); */
 }
 
@@ -136,13 +138,16 @@
   flex: 1;
   max-width: 450px;
   min-height: 400px;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-/* Optional: keep them visually centered and spaced */
+/* separately */
 .leftFields {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  /* gap: 5px; */
 }
 
 .rightFields {
@@ -152,10 +157,18 @@
 }
 
 .rightExerciseContainer{
-    display: flex;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+  gap: 10px;
+  /* background-color: ; */
+  /* background-color: var(--colour-accent); */
+	/* background-color: var(--colour-green);
+  padding-left: 10px;
+  padding-right: 10px;
+    border-radius: 8px; */
+
 }
 
 /* wrapper for exercise and labels */
@@ -163,9 +176,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* keeps label aligned left */
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   width: 100%;
-
+  	background-color: var(--colour-green);
+  /* padding-left: 10px;
+  padding-right: 10px; */
+    border-radius: 8px;
+    padding: 15px;
 }
 
 .exerciseBox {
@@ -174,7 +191,7 @@
     outline-color: var(--colour-background-dark);
     outline-style: solid;
     outline-width: thin;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     position: relative;
     align-items: center;
     display: flex;
@@ -304,12 +321,13 @@
     gap: 4px;
     right: 150px; 
     width: 100%;
+    margin-left: 15px;
 }
 
 .commentLabel {
   right: 150px;
     font-size: 20px;
-  font-weight: 600;
+  font-weight: 900;
   /* padding-left: 10px; */
   color: var(--colour-primary-dark, #333);
 
