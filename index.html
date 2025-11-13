@@ -46,10 +46,10 @@
 		</div>
 	</body>
 	<script>
-		const input = document.getElementById("usernameInput");
+		const usernameInput = document.getElementById("usernameInput");
 		document.getElementById("loginBtn").addEventListener("click", () => {
-			const username = input.value.trim();
-			sessionStorage.setItem("username", username)
+			const username = usernameInput.value.trim();
+			sessionStorage.setItem("username", username);
 			window.location.href = "dashboard.html";
 		});
 

@@ -19,10 +19,15 @@
 			</div>
 		</div>
   <script>
+    const usernameInput = document.getElementById("usernameInput");
     document.getElementById("submitBtn").addEventListener("click", () => {
+      const username = usernameInput.value.trim();
+      sessionStorage.setItem("username", username);
       window.location.href = "dashboard.html";
     });
     document.getElementById("advancedRegistrationBtn").addEventListener("click", () => {
+      const username = usernameInput.value.trim();
+      sessionStorage.setItem("username", username);
       window.location.href = "advancedRegistration.html";
     });
   </script>
