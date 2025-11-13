@@ -83,17 +83,39 @@ body {
 	font-size: 16px;
 	margin-right: 20px;
 	cursor: pointer;
-	/* transition: background-color 0.3s ease; */
+	transition: background-color 0.3s ease;
 }
 
 .logoutButt:hover {
-  background-color: var(--colour-accent-background);
+	background-color: var(--colour-accent);
 }
 
-.profileButt {
-	height: 40px;
-	width: 40px;
-	cursor: pointer;
+.settings-icon {
+	width: 1rem;
+	height: 1rem;
+}
+/*** end of top bar CSS ***/
+
+/* setting popup window */
+.setting-pop-up {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #3f4373;
+	width: 100rem;
+	height: 50rem;
+	z-index: 999;
+	border-radius: 3rem;
+	flex-direction: column;
+}
+
+.setting-pop-up-header {
+	height: 8rem;
+	border-top-left-radius: 3rem;
+	border-top-right-radius: 3rem;
+	background-color: var(--colour-primary);
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
@@ -196,6 +218,14 @@ body {
 	z-index: 998;
 }
 
+/* .menuBtn {
+	position: fixed;
+	bottom: 2%;
+	right: 1.5%;
+	width: 7%;
+	height: auto;
+	cursor: pointer;
+} */
 
 .navBar {
 	display: flex;
