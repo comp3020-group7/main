@@ -18,7 +18,7 @@ html {
 }
 
 .btn:hover {
-	color: #f1750998;
+	color: var(--colour-accent-background);
 }
 
 a {
@@ -32,12 +32,12 @@ li {
 .welcome-msg {
 	font-size: 2.4rem;
 	margin: 2rem;
-	color: var(--colour-primary-dark);
+	color: var(--colour-text);
 }
 
 .go-back-link {
 	text-decoration: underline;
-	color: #8fb798;
+	color: var(--colour-green);
 }
 
 /* layout */
@@ -73,7 +73,7 @@ li {
 	justify-content: space-between;
 	padding: 1rem 3rem 2rem;
 	border-radius: 1rem;
-	background-color: #f0e4d9ae;
+	background-color: var(--colour-grey);
 }
 
 .panel-set-calory {
@@ -86,8 +86,9 @@ li {
 }
 
 .panel-item-input {
+	color: var(--colour-text);
 	width: 80%;
-	background: #fff;
+	background: var(--colour-background);
 	border-radius: 10rem;
 	padding: 0.6rem 1.2rem;
 	border: none;
@@ -116,7 +117,7 @@ li {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #8fb798;
+	background-color: var(--colour-green);
 	border-radius: 2rem;
 }
 
@@ -131,10 +132,11 @@ li {
 	font-size: 2rem;
 	border-top-left-radius: 2rem;
 	border-top-right-radius: 2rem;
-	background-color: #fa7602;
+	background-color: var(--colour-green);
 }
 
 .panel-item-item-macro-input {
+	background-color: var(--colour-accent-background);
 	flex: 0.4;
 	width: 100%;
 	border-bottom-left-radius: 2rem;
@@ -156,17 +158,21 @@ li {
 	border: none;
 }
 
+.panel-button-clear {
+	background-color: var(--colour-green-background);
+}
+
 .panel-button-confirm {
-	background-color: #fa7602;
+	background-color: var(--colour-ring-orange);
 }
 
 .panel-button-clear:hover {
 	background-color: #fa4002;
-	color: #fff;
+	color: var(--colour-on-primary);
 }
 
 .panel-button-confirm:hover {
-	background-color: #8fb798;
+	background-color: var(--colour-green);
 	color: #fff;
 }
 
@@ -182,8 +188,8 @@ li {
 	width: 10rem;
 	height: 8rem;
 	border-radius: 1.8rem;
-	background: #8fb798;
-	color: #fff;
+	background: var(--colour-green);
+	color: var(--colour-on-primary);
 	display: grid;
 	place-items: center;
 	cursor: pointer;
@@ -194,7 +200,7 @@ li {
 }
 
 .back-btn:hover {
-	background-color: #fa7602;
+	background-color: var(--colour-ring-orange);
 }
 
 .popup {
@@ -215,15 +221,15 @@ li {
 }
 
 .popup-close:hover {
-	color: #fff;
+	color: var(--colour-on-primary);
 }
 
 .popup-message-container {
-	background-color: #fff;
+	background-color: var(--colour-background);
 }
 
 .pop-up-message {
 	font-weight: 700;
 	font-size: 1.6rem;
-	color: #676666;
+	color: var(--colour-text);
 }

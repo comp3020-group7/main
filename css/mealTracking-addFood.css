@@ -18,7 +18,7 @@ html {
 }
 
 .btn:hover {
-	color: #f1750998;
+	color: var(--colour-accent-background);
 }
 
 a {
@@ -32,7 +32,7 @@ li {
 .welcome-msg {
 	font-size: 2.4rem;
 	margin: 2rem;
-	color: var(--colour-primary-dark);
+	/* color: var(--colour-primary-dark); */
 }
 
 .welcome-msg-meal-type {
@@ -52,7 +52,7 @@ li {
 
 .go-back-link {
 	text-decoration: underline;
-	color: #8fb798;
+	color: var(--colour-green);
 }
 
 /* layout */
@@ -84,7 +84,7 @@ li {
 	display: flex;
 	gap: 1.2rem;
 	align-items: center;
-	background: #fff;
+	background: var(--colour-background);
 	border-radius: 10rem;
 	padding: 0.6rem 1.2rem;
 }
@@ -112,20 +112,20 @@ li {
 .tab {
 	padding: 0.8rem 1.2rem;
 	border-radius: 999px;
-	background: #fff;
+	background: var(--colour-background);
 	cursor: pointer;
 	font-size: 1.5rem;
 }
 
 .tab:hover {
-	color: #fff;
-	background-color: #fa7602;
+	color: var(--colour-on-primary);
+	background-color: var(--colour-ring-orange);
 }
 
 .tab.active {
-	background: #fa7602;
+	background: var(--colour-ring-orange);
 	border-color: transparent;
-	color: #fff;
+	color: var(--colour-on-primary);
 }
 
 /* grid cards */
@@ -174,7 +174,7 @@ li {
 }
 
 .select-quantity-title {
-	background-color: #fff;
+	background-color: var(--colour-background);
 }
 
 /*  */
@@ -183,7 +183,7 @@ li {
 	align-items: center;
 	gap: 0.8rem;
 	font-size: 1.6rem;
-	background: #fff;
+	background: var(--colour-background);
 	border: 1px solid #ccc;
 	border-radius: 1rem;
 	padding: 0.4rem 0.8rem;
@@ -192,8 +192,8 @@ li {
 
 .quantity-selector button {
 	border: none;
-	background: #8fb798;
-	color: #fff;
+	background: var(--colour-green);
+	color: var(--colour-on-primary);
 	border-radius: 50%;
 	width: 2.5rem;
 	height: 2.5rem;
@@ -203,7 +203,7 @@ li {
 }
 
 .quantity-selector button:hover {
-	background-color: #fa7602;
+	background-color: var(--colour-ring-orange);
 }
 
 .quantity-selector .quantity {
@@ -258,17 +258,17 @@ li {
 	border-radius: 50%;
 	display: grid;
 	place-items: center;
-	background: #8fb798;
+	background: var(--colour-green);
 	border: none;
 	cursor: pointer;
 }
 
 .card .plus:hover {
-	background-color: #fa7602;
+	background-color: var(--colour-ring-orange);
 }
 
 .card .plus.selected {
-	background-color: #fa7602;
+	background-color: var(--colour-ring-orange);
 }
 
 .card:hover {
@@ -293,8 +293,8 @@ li {
 	width: 10rem;
 	height: 8rem;
 	border-radius: 1.8rem;
-	background: #8fb798;
-	color: #fff;
+	background: var(--colour-green);
+	color: var(--colour-on-primary);
 	display: grid;
 	place-items: center;
 	cursor: pointer;
@@ -305,5 +305,5 @@ li {
 }
 
 .back-btn:hover {
-	background-color: #fa7602;
+	background-color: var(--colour-ring-orange);
 }

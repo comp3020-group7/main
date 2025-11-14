@@ -57,7 +57,41 @@
 						<img src="./images/letter-a-2.png" alt="" class="font-size-letter font-size-letter-3" />
 					</div>
 				</div>
-				<span>Change color: </span>
+				<div class="setting-pop-up-change-color">
+					<span>Change color scheme:</span>
+					<div class="setting-color-big-container">
+						<div class="setting-color-container">
+							<div class="color-palette-option color-palette-option-default selected" data-color-option="default">
+								<img src="./images/color-palette/default.png" alt="" class="color-palette color-palette-default" />
+								<span class="color-palette-text">Default</span>
+							</div>
+							<div class="color-palette-option color-palette-option-rgblind" data-color-option="rg-blind">
+								<img src="./images/color-palette/rg-blind.png" alt="" class="color-palette color-palette-rgblind" />
+								<span class="color-palette-text">color blind friendly</span>
+							</div>
+							<div class="color-palette-option color-palette-option-dark" data-color-option="dark">
+								<img src="./images/color-palette/dark.png" alt="" class="color-palette color-palette-dark" />
+								<span class="color-palette-text">Dark theme</span>
+							</div>
+						</div>
+						<div class="info-icon-color-explanation-container">
+							<img src="./images/info.png" alt="" class="info-icon-color-explanation" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="setting-pop-up-overlay"></div>
+			<div class="setting-pop-up-top-level-message">
+				<div class="setting-pop-up-header">
+					<img src="./images/close-btn.png" alt="" class="setting-close-btn setting-second-message-close-btn" />
+				</div>
+				<div class="setting-pop-up-content">
+					* color-blind means "red/green color-blind" here<br /><br />
+					* Color selection for "color-blind friendly" option is from this website:
+					<a href="https://www.nceas.ucsb.edu/sites/default/files/2022-06/Colorblind%20Safe%20Color%20Schemes.pdf"
+						>Colorblind Safe Color Schemes</a
+					>
+				</div>
 			</div>
 		</div>
 
@@ -78,7 +112,7 @@
 							<span class="meter-calorie-goal">2000</span>
 							<span class="meter-calorie-unit">kcal</span>
 						</div>
-						<div class="meter-username">username</div>
+						<!-- <div class="meter-username">username</div> -->
 					</div>
 				</div>
 
@@ -150,7 +184,7 @@
 			<!-- Center column -->
 			<div class="center">
 				<div class="card greet">
-					<h2 class="greet-title">Good morning, <span class="username">username</span>!</h2>
+					<h2 class="greet-title">Good morning, <span class="username">username</span> !</h2>
 					<div class="today">Today is: <span class="date">[DATE]</span></div>
 				</div>
 

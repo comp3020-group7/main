@@ -18,7 +18,7 @@ html {
 }
 
 .btn:hover {
-	color: #f1750998;
+	color: var(--colour-accent-background);
 }
 
 li {
@@ -43,7 +43,7 @@ a {
 .welcome-msg {
 	font-size: 2.4rem;
 	margin: 2rem;
-	color: var(--colour-primary-dark);
+	color: var(--colour-text);
 }
 
 .overview {
@@ -59,7 +59,7 @@ a {
 	justify-content: center;
 	align-items: center;
 	padding: 1rem;
-	color: #fff;
+	color: var(--colour-on-primary);
 	background-color: var(--colour-primary-dark);
 }
 
@@ -103,7 +103,7 @@ a {
 
 .meal-section {
 	padding: 1rem;
-	background-color: #ffffffbf;
+	background-color: var(--colour-grey);
 }
 
 .meal-section-header {
@@ -111,7 +111,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background-color: #fff;
+	background-color: var(--colour-background);
 	border-top-left-radius: 1rem;
 	border-top-right-radius: 1rem;
 }
@@ -142,8 +142,8 @@ a {
 	justify-content: space-between;
 	align-items: center;
 	padding: 1.5rem 1.5rem;
-	background-color: #f1f7f2;
-	color: #3f4373;
+	background-color: var(--colour-grey);
+	color: var(--colour-text);
 }
 
 .macro-summary-item {
@@ -171,7 +171,7 @@ a {
 	align-items: center;
 	border-bottom-left-radius: 1rem;
 	border-bottom-right-radius: 1rem;
-	background-color: #fffffff4;
+	background-color: var(--colour-background);
 	overflow: scroll;
 }
 
@@ -196,7 +196,7 @@ a {
 	font-size: 1.2rem;
 	border-radius: 1rem;
 	padding: 0 1rem;
-	background-color: #8fb7986a;
+	background-color: var(--colour-green-background);
 }
 
 .food-item-name {
@@ -217,19 +217,19 @@ a {
 .food-item-quantity-input {
 	width: 30%;
 	border-radius: 3rem;
-	background-color: #fff;
-	border-color: #fff;
+	background-color: var(--colour-background);
+	border-color: var(--colour-background);
 	padding-left: 1.5rem;
 	text-align: center;
 	opacity: 0.7;
 }
 
 .food-item-quantity-input:focus {
-	color: #8fb7986a;
+	color: var(--colour-green-background);
 }
 
 .food-item-delete-btn:hover {
-	color: #f1750998;
+	color: var(--colour-accent-background);
 }
 
 .food-list-add-food-btn-container {
@@ -239,14 +239,14 @@ a {
 	align-items: center;
 	justify-content: center;
 	border-radius: 3rem;
-	color: #fff;
-	background-color: #3f4373;
+	color: var(--colour-on-primary);
+	background-color: var(--colour-primary-dark);
 	cursor: pointer;
 }
 
 .food-list-add-food-btn-container:hover {
-	background-color: #f1750998;
-	color: #fff;
+	background-color: var(--colour-accent-background);
+	color: var(--colour-on-primary);
 }
 
 .add-food-btn-text {
@@ -312,15 +312,15 @@ a {
 }
 /**************** progress circle ends ****************/
 .circular-value-fat circle.fg {
-	stroke: #81b29a;
+	stroke: var(--colour-ring-green);
 }
 
 .circular-value-protein circle.fg {
-	stroke: #e07a5f;
+	stroke: var(--colour-ring-orange);
 }
 
 .circular-value-carbs circle.fg {
-	stroke: #6c584c;
+	stroke: var(--colour-ring-yellow);
 }
 
 .progress-circle-fat {
@@ -360,7 +360,7 @@ a {
 .progress-circle-label {
 	font-size: 1.5rem;
 	font-style: italic;
-	color: #fff;
+	color: var(--colour-on-primary);
 }
 
 .circular-progress-toggle-bar {
@@ -387,18 +387,18 @@ a {
 	justify-content: center;
 	align-items: center;
 
-	background-color: #fff;
+	background-color: var(--colour-background);
 }
 
 .toggle-bar-item.selected {
-	color: #fff;
+	color: var(--colour-background);
 	font-weight: 700;
-	background-color: var(--colour-primary-dark);
+	background-color: var(--colour-text);
 }
 
 .toggle-bar-item:hover {
-	background-color: var(--colour-primary-dark);
-	color: #fff;
+	background-color: var(--colour-text);
+	color: var(--colour-on-primary);
 }
 
 .set-goal-btn-container {
@@ -414,7 +414,7 @@ a {
 	align-items: center;
 	width: 70%;
 	height: 5rem;
-	color: var(--colour-background);
+	color: var(--colour-on-primary);
 	background-color: var(--colour-primary-dark);
 	font-size: 1.5rem;
 
@@ -423,6 +423,6 @@ a {
 }
 
 .set-goal-btn:hover {
-	background-color: #fff;
+	background-color: var(--colour-background);
 	font-size: 1.8rem;
 }

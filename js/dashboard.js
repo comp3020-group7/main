@@ -17,6 +17,7 @@ const calendarEl = document.getElementById('workoutCalendar');
 const lastMealName = document.querySelector('.meal-name');
 const lastMealCalorie = document.querySelector('.last-meal-count');
 const lastMealImg = document.querySelector('.meal-thumb-img');
+const usernameLabel = document.querySelector('.username');
 
 // #----------- CONSTS -----------#
 const DEFAULT_CALORIE_GOAL = 2000;
@@ -214,6 +215,16 @@ function updateLastMeal() {
 	lastMealCalorie.innerHTML = calorieCount;
 }
 
+function updateUsername() {
+	// 1. get username from sessionStorage(i'll assume there MUST be a username there)
+	const username = sessionStorage.getItem('username');
+
+	// 2. render it
+	usernameLabel.innerHTML = username;
+
+	// !!! render setting popup moved to navbar.js
+}
+
 // #----------- Events -----------#
 document.addEventListener('DOMContentLoaded', () => {
 	updateCalorie();
@@ -222,6 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	updateWater();
 	createCalendar();
 	updateLastMeal();
+	updateUsername();
 });
 
 addWaterBtns.forEach((btn) => {

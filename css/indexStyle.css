@@ -154,7 +154,7 @@ button {
   border: none;
   border-radius: 4px;
   background-color: var(--colour-primary);
-  color: var(--colour-background);
+  color: var(--colour-on-primary);
 }
 
 .login button:hover {
