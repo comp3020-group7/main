@@ -1,133 +1,135 @@
-@import url("palette.css");
+@import url('palette.css');
 
 .workoutHeading {
-  text-align: left;
-  margin-top: 20px;
+	text-align: left;
+	margin-top: 20px;
 }
 
 .workoutHeading h2 {
-  font-size: 2.4rem;
+	font-size: 2.4rem;
 	margin: 2rem;
-  color: var(--colour-primary-dark);
+	color: var(--colour-text);
 }
 
 .search-container {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 .dateLabel {
-  font-size: 1.8rem;
+	font-size: 1.8rem;
 	margin: 1rem;
-  color: var(--colour-primary-dark);
-  display: flex;
-  justify-content: center;
-  font-weight: 700;
+	color: var(--colour-text);
+	display: flex;
+	justify-content: center;
+	font-weight: 700;
 }
 
 .searchBar {
-    width: 50%;
-    height: 50px;
-    display: flex;
-    margin: auto;
-    text-align: center;
-    justify-content: left;
-    align-items: center;
-    position: relative;
-    outline-style: solid;
-    outline-color: var(--colour-primary);
-    background-color: var(--colour-background);
+	width: 50%;
+	height: 50px;
+	display: flex;
+	margin: auto;
+	text-align: center;
+	justify-content: left;
+	align-items: center;
+	position: relative;
+	outline-style: solid;
+	outline-color: var(--colour-primary);
+	background-color: var(--colour-background);
 }
 
 .searchBar img {
-    height: 40px;
-    width: auto;
-    margin-top: 10;
-    margin-left: 10;
-    margin-right: 10;
-    margin-bottom: 10;
-    object-fit: contain;
+	height: 40px;
+	width: auto;
+	margin-top: 10;
+	margin-left: 10;
+	margin-right: 10;
+	margin-bottom: 10;
+	object-fit: contain;
 }
 
 .searchBar input {
-  border: none;
-  outline: none;
-  flex: 1;
-  font-size: 16px;
-  background-color: transparent;
+	border: none;
+	outline: none;
+	flex: 1;
+	font-size: 16px;
+	background-color: transparent;
+
+	/* Jian added this, just to fix the color for dark theme, sorry had to touch your code */
+	color: var(--colour-text);
 }
 
 .exerciseSearch {
-  position: absolute;
-  width: 100%;
-  background-color: var(--colour-background);
-  max-height: 300px;
-  overflow-y: auto;
-  top: calc(100% + 5px);
-  outline-color: var(--colour-background-dark);
-  outline-style: solid;
-  outline-width: thin;
-  text-align: left;
-  z-index: 1000;
+	position: absolute;
+	width: 100%;
+	background-color: var(--colour-background);
+	max-height: 300px;
+	overflow-y: auto;
+	top: calc(100% + 5px);
+	outline-color: var(--colour-background-dark);
+	outline-style: solid;
+	outline-width: thin;
+	text-align: left;
+	z-index: 1000;
 }
 
 .exerciseResult {
-  padding: 8px;
-  cursor: pointer;
+	padding: 8px;
+	cursor: pointer;
 }
 
 .exerciseResult:hover {
-  background-color: var(--colour-background-dark);
+	background-color: var(--colour-background-dark);
 }
 
 /* no exercise match box */
 .noResults {
-  color: var(--colour-text);
-  opacity: 0.7;
-  text-align: center;
-  padding: 10px;
+	color: var(--colour-text);
+	opacity: 0.7;
+	text-align: center;
+	padding: 10px;
 }
 
 .submitBtn {
-    position: fixed;
-    width: 7%;
-    height: 7%;
-    bottom: 3%;
-    right: 2%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 20px;
-    color: var(--colour-background);
-    background-color: var(--colour-primary-dark);
+	position: fixed;
+	width: 7%;
+	height: 7%;
+	bottom: 3%;
+	right: 2%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 20px;
+	color: var(--colour-on-primary);
+	background-color: var(--colour-text);
 }
 
 .submitBtn:hover {
-  background-color: var(--colour-accent-background);
+	background-color: var(--colour-accent-background);
 }
 
 /* Container for both left and right columns */
 .fieldsContainer {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 100px; /* space between left and right columns */
-  /* padding-top: 10px; */
-  width: 80%;
-  background-color: var(--colour-green-background);
-  border-radius: 8px;
-  padding-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 100px; /* space between left and right columns */
+	/* padding-top: 10px; */
+	width: 80%;
+	background-color: var(--colour-green-background);
+	border-radius: 8px;
+	padding-bottom: 20px;
 
-  /* top:0; */
-
+	/* top:0; */
 }
 
 .outerFieldsContainer {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 100px; /* space between left and right columns */
+  /*gap: 100px; /* space between left and right columns */
   /* margin-top: 40px; */
   /* background-color: var(--colour-green); */
 }
@@ -138,51 +140,53 @@
   flex: 1;
   max-width: 450px;
   min-height: 400px;
+  padding: 0, 20px;
   gap: 10px;
+  box-sizing: border-box;
   margin-top: 20px;
 }
 
 /* separately */
 .leftFields {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  /* gap: 5px; */
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	/* gap: 5px; */
 }
 
 .rightFields {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
-.rightExerciseContainer{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  gap: 10px;
-  /* background-color: ; */
-  /* background-color: var(--colour-accent); */
+.rightExerciseContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	gap: 10px;
+	/* background-color: ; */
+	/* background-color: var(--colour-accent); */
 	/* background-color: var(--colour-green);
   padding-left: 10px;
   padding-right: 10px;
     border-radius: 8px; */
-
 }
 
 /* wrapper for exercise and labels */
 .exerciseWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* keeps label aligned left */
-  /* margin-bottom: 20px; */
-  width: 100%;
-  	background-color: var(--colour-green);
-  /* padding-left: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start; /* keeps label aligned left */
+	/* margin-bottom: 20px; */
+	width: 100%;
+	background-color: var(--colour-green);
+	/* padding-left: 10px;
   padding-right: 10px; */
     border-radius: 8px;
     padding: 15px;
+  box-sizing: border-box;
 }
 
 .exerciseBox {
@@ -196,42 +200,50 @@
     align-items: center;
     display: flex;
     background-color: var(--colour-background);
+    justify-content: space-between;
 }
 
-.exerciseBox::after {
+/* .exerciseBox::after {
   content: attr(data-name); 
   font-size: 20px;
   font-weight: 600;
   padding-left: 10px;
   color: var(--colour-primary-dark, #333);
-}
+} */
 
+.exerciseTitle {
+    content: attr(data-name); 
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 10px;
+  color: var(--colour-primary-dark, #333);
+
+}
 
 .setsContainer {
-  margin-top: 5px;
-  display: flex;
-  /* margin-left: 150px; */
-  flex-direction: column;
-  gap: 4px;
+	margin-top: 5px;
+	display: flex;
+	/* margin-left: 150px; */
+	flex-direction: column;
+	gap: 4px;
 }
-
 
 /* Container for labels below box */
 .labelsContainer {
-  margin-top: 5px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  width: 100%;
-  /* margin-left: 150px;  */
+	margin-top: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	width: 100%;
+	/* margin-left: 150px;  */
 }
 
 /* Set label style */
-.setLabel{
-  font-size: 15px;
-  font-weight: bold;
-  color: var(--colour-text, #222);
-  margin-left: 5px;
+.setLabel {
+	font-size: 15px;
+	font-weight: bold;
+	color: var(--colour-text, #222);
+	margin-left: 5px;
 }
 
 /* Layout for each set row */
@@ -243,52 +255,53 @@
   /* margin-left: 5px; */
   background-color: var(--colour-background-dark);
   padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
   /* padding-right: 62px; */
   /* padding-left: 15px; */
-  width: 441px;
+  /* width: 441px; */
   /* outline: thin solid var(--colour-background-dark);
   outline-offset: 5px; */
-  /* outline-color: var(--colour-primary-dark); */
+	/* outline-color: var(--colour-text); */
 }
 
 /* Label styling (Reps, Weight, etc.) */
 .inputLabel {
-  font-size: 14px;
-  color: var(--colour-text, #222);
+	font-size: 14px;
+	color: var(--colour-text, #222);
 }
 
 /* Weights Input box styling */
 .smallInput {
-  width: 55px;
-  height: 25px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  /* padding-left: 5px; */
-  font-size: 14px;
-  justify-items: end;
-
+	width: 55px;
+	height: 25px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	/* padding-left: 5px; */
+	font-size: 14px;
+	justify-items: end;
 }
 
 .smallInput:focus {
-  outline: none;
-  border-color: var(--colour-accent, #007BFF);
-  box-shadow: 0 0 3px rgba(0, 123, 255, 0.4);
+	outline: none;
+	border-color: var(--colour-accent, #007bff);
+	box-shadow: 0 0 3px rgba(0, 123, 255, 0.4);
 }
 
 .cardioInput {
-  width: 100%;
-  height: 25px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  /* padding-left: 5px; */
-  justify-items: end;
-  font-size: 14px;
+	width: 100%;
+	height: 25px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	/* padding-left: 5px; */
+	justify-items: end;
+	font-size: 14px;
 }
 
 .cardioInput:focus {
-  outline: none;
-  border-color: var(--colour-accent, #007BFF);
-  box-shadow: 0 0 3px rgba(0, 123, 255, 0.4);
+	outline: none;
+	border-color: var(--colour-accent, #007bff);
+	box-shadow: 0 0 3px rgba(0, 123, 255, 0.4);
 }
 
 /*wrapper for cardio data */
@@ -302,16 +315,18 @@
   background-color: var(--colour-background-dark);
   /* padding-right: 11px; */
   padding: 5px;
-  width: 441px;
+  /* width: 441px; */
+  width:100%;
+  box-sizing: border-box;
   
 }
 
 .cardioLabel {
-  font-size: 15px;
-  font-weight: bold;
-  color: var(--colour-text, #222);
-  margin-left: 5px;
-  width: 100%;
+	font-size: 15px;
+	font-weight: bold;
+	color: var(--colour-text, #222);
+	margin-left: 5px;
+	width: 100%;
 }
 
 .commentContainer {
@@ -321,23 +336,66 @@
     gap: 4px;
     right: 150px; 
     width: 100%;
-    margin-left: 15px;
+    /* margin-left: 15px; */
 }
 
 .commentLabel {
-  right: 150px;
-    font-size: 20px;
-  font-weight: 900;
-  /* padding-left: 10px; */
-  color: var(--colour-primary-dark, #333);
-
+	right: 150px;
+	font-size: 20px;
+	font-weight: 900;
+	/* padding-left: 10px; */
+	color: var(--colour-text);
 }
 
 .commentBox {
-  width: 100%;
-  height: 300px;
-  border-style:thin;
+	width: 100%;
+	height: 300px;
+	border-style: thin;
+	background-color: var(--colour-background);
+}
+
+.removeExercise {
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  margin-right: 5px;
+  display: flex;
+}
+
+.setControls {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.setButton {
+    width: 25px;
+    height: 25px;
+    background-color: var(--colour-background-dark);
+    color: black;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.setButton:hover{
   background-color: var(--colour-background);
+
+}
+
+.setControlLabel {
+  width: 25px;
+  height: 25px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+
 }
 
 

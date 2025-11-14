@@ -64,6 +64,9 @@ confirmBtn.addEventListener('click', () => {
 	// console.log(nutritionGoal);
 
 	sessionStorage.setItem('nutritionGoal', JSON.stringify(nutritionGoal));
+
+	// added an alert letting user know it's successed!
+	alert('Your nutrition goals have been updated! Good job!!');
 });
 
 closeBtn.addEventListener('click', () => {

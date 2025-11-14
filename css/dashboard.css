@@ -20,7 +20,7 @@ body {
 .greetingMsg {
 	font-size: 2.4rem;
 	margin: 2rem;
-	color: var(--colour-primary-dark);
+	color: var(--colour-text);
 }
 
 a {
@@ -49,7 +49,7 @@ li {
 }
 
 .card {
-	background: #8fb798;
+	background: var(--colour-green);
 	border-radius: 2rem;
 	padding: 2rem;
 }
@@ -104,7 +104,7 @@ li {
 	padding: 1.2rem;
 	border-radius: 1.2rem;
 	width: 25rem;
-	background: #f3f3f3;
+	background: var(--colour-background);
 }
 
 .macros-title {
@@ -126,7 +126,7 @@ li {
 	width: 6.4rem;
 	aspect-ratio: 1 / 1;
 	border-radius: 50%;
-	background: conic-gradient(var(--ring-color) calc(var(--progress) * 1%), #eef1f7 0deg);
+	background: conic-gradient(var(--ring-color) calc(var(--progress) * 1%), var(--colour-grey) 0deg);
 	position: relative;
 }
 
@@ -134,23 +134,23 @@ li {
 	content: '';
 	position: absolute;
 	inset: 0.9rem;
-	background: #fff;
+	background: var(--colour-background);
 	border-radius: 50%;
 }
 
 .ring-carbs {
 	--progress: 50;
-	--ring-color: #128d3f;
+	--ring-color: var(--colour-ring-green);
 }
 
 .ring-protein {
 	--progress: 50;
-	--ring-color: #cd9f76;
+	--ring-color: var(--colour-ring-yellow);
 }
 
 .ring-fat {
 	--progress: 50;
-	--ring-color: #f17509;
+	--ring-color: var(--colour-ring-orange);
 }
 
 .ring-total {
@@ -183,7 +183,7 @@ li {
 
 .water-intake-count {
 	font-family: 'Silkscreen', monospace;
-	color: #d06609;
+	color: var(--colour-ring-orange);
 	font-size: 3rem;
 	font-weight: 700;
 }
@@ -197,9 +197,9 @@ li {
 .water-intake-button {
 	width: 10rem;
 	height: 6rem;
-	background-color: #f17509;
+	background-color: var(--colour-ring-orange);
 	border: none;
-	color: #fff;
+	color: var(--colour-on-primary);
 	border-radius: 2rem;
 	font-size: 1.7rem;
 	font-family: 'Silkscreen', monospace;
@@ -216,7 +216,7 @@ li {
 	width: 10rem;
 	height: 6rem;
 	border: none;
-	color: #f17509;
+	color: var(--colour-ring-orange);
 	border-radius: 2rem;
 	transition: 0.1s;
 	cursor: pointer;
@@ -229,12 +229,12 @@ li {
 
 /* ---------- Greeting ---------- */
 .greet {
-	color: #fff;
+	color: var(--colour-on-primary);
 }
 
 .greet .username {
 	font-family: 'Silkscreen', monospace;
-	color: #d06609;
+	color: var(--colour-ring-orange);
 }
 
 .greet-title {
@@ -249,7 +249,7 @@ li {
 .today .date {
 	font-family: monospace;
 	font-weight: 700;
-	color: #f1faee;
+	color: var(--colour-primary-dark);
 	font-size: 2rem;
 }
 
@@ -257,7 +257,7 @@ li {
 
 .workout-calendar {
 	font-size: 1.3rem;
-	color: #fff;
+	color: var(--colour-on-primary);
 	height: 27rem;
 	font-family: 'Silkscreen', monospace;
 }
@@ -310,7 +310,7 @@ li {
 
 .meal-calories-text {
 	font-size: 1.5rem;
-	color: #fff;
+	color: var(--colour-on-primary);
 }
 
 /* last logged workout */
