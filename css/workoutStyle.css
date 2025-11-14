@@ -3,12 +3,22 @@
 .workoutHeading {
 	text-align: left;
 	margin-top: 20px;
+  font-size: 2.4rem;
+	margin: 2rem;
+	color: var(--colour-text);
 }
 
-.workoutHeading h2 {
+/* .workoutHeading h2 {
 	font-size: 2.4rem;
 	margin: 2rem;
 	color: var(--colour-text);
+} */
+
+.returnLink {
+  color: var(--colour-green);
+  /* font-style: underline; */
+	text-decoration: underline;
+
 }
 
 .search-container {
@@ -25,7 +35,7 @@
 }
 
 .searchBar {
-	width: 50%;
+	width: 70%;
 	height: 50px;
 	display: flex;
 	margin: auto;
@@ -49,22 +59,14 @@
 }
 
 .searchBar input {
-<<<<<<< Updated upstream
 	border: none;
 	outline: none;
 	flex: 1;
-	font-size: 16px;
+	font-size: 1.6rem;
 	background-color: transparent;
 
 	/* Jian added this, just to fix the color for dark theme, sorry had to touch your code */
 	color: var(--colour-text);
-=======
-  border: none;
-  outline: none;
-  flex: 1;
-  font-size: 1.6rem;
-  background-color: transparent;
->>>>>>> Stashed changes
 }
 
 .exerciseSearch {
@@ -109,9 +111,11 @@
 	justify-content: center;
 	border-radius: 8px;
 	cursor: pointer;
-	font-size: 20px;
+	font-size: 2rem;
 	color: var(--colour-on-primary);
-	background-color: var(--colour-text);
+	/* background-color: var(--colour-text); */
+	background-color: var(--colour-primary-dark);
+
 }
 
 .submitBtn:hover {
@@ -138,7 +142,7 @@
   justify-content: center;
   align-items: flex-start;
   /*gap: 100px; /* space between left and right columns */
-  /* margin-top: 40px; */
+  margin-top: 10px;
   /* background-color: var(--colour-green); */
 }
 
@@ -209,6 +213,7 @@
     display: flex;
     background-color: var(--colour-background);
     justify-content: space-between;
+
 }
 
 /* .exerciseBox::after {
@@ -221,10 +226,15 @@
 
 .exerciseTitle {
     content: attr(data-name); 
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 600;
   padding-left: 10px;
-  color: var(--colour-primary-dark, #333);
+  /* color: var(--colour-primary-dark, #333); */
+	/* color: var(--colour-on-primary); */
+	color: var(--colour-text, #222);
+
+  
+
 
 }
 
@@ -248,7 +258,7 @@
 
 /* Set label style */
 .setLabel {
-	font-size: 15px;
+	font-size: 1.5rem;
 	font-weight: bold;
 	color: var(--colour-text, #222);
 	margin-left: 5px;
@@ -275,7 +285,7 @@
 
 /* Label styling (Reps, Weight, etc.) */
 .inputLabel {
-	font-size: 14px;
+	font-size: 1.4rem;
 	color: var(--colour-text, #222);
 }
 
@@ -286,7 +296,7 @@
 	border: 1px solid #ccc;
 	border-radius: 6px;
 	/* padding-left: 5px; */
-	font-size: 14px;
+	font-size: 1.4rem;
 	justify-items: end;
 }
 
@@ -303,7 +313,7 @@
 	border-radius: 6px;
 	/* padding-left: 5px; */
 	justify-items: end;
-	font-size: 14px;
+	font-size: 1.4rem;
 }
 
 .cardioInput:focus {
@@ -330,7 +340,7 @@
 }
 
 .cardioLabel {
-	font-size: 15px;
+	font-size: 1.5rem;
 	font-weight: bold;
 	color: var(--colour-text, #222);
 	margin-left: 5px;
@@ -338,7 +348,7 @@
 }
 
 .commentContainer {
-    margin-top: 5px;
+    /* margin-top: 5px; */
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -349,29 +359,24 @@
 
 .commentLabel {
 	right: 150px;
-	font-size: 20px;
+	font-size: 2rem;
 	font-weight: 900;
 	/* padding-left: 10px; */
 	color: var(--colour-text);
 }
 
 .commentBox {
-<<<<<<< Updated upstream
-	width: 100%;
-	height: 300px;
-	border-style: thin;
-	background-color: var(--colour-background);
-=======
   width: 100%;
   height: 100px;
   border-style:thin;
   background-color: var(--colour-background);
->>>>>>> Stashed changes
 }
 
 .removeExercise {
-  font-size: 20px;
-  color: black;
+  font-size: 2rem;
+  /* color: black; */
+	color: var(--colour-text, #222);
+
   cursor: pointer;
   margin-right: 5px;
   display: flex;
@@ -387,12 +392,13 @@
     width: 25px;
     height: 25px;
     background-color: var(--colour-background-dark);
-    color: black;
+    /* color: black; */
+    color: var(--colour-text);
     border-radius: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 13px;
+    font-size: 1.3rem;
     cursor: pointer;
     font-weight: 900;
 }
@@ -403,13 +409,15 @@
 }
 
 .setControlLabel {
-  width: 25px;
-  height: 25px;
+  width: 2.5rem;
+  height: 2.5rem;
     color: black;
+	/* color: var(--colour-text, #222); */
+
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
+    font-size: 1.5rem;
 
 }
 
