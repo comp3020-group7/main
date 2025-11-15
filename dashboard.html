@@ -170,7 +170,7 @@
 					<div class="entry water-intake">
 						<span class="quick-entries-title water-intake-title">
 							Water Tracker(ml):
-							<span class="water-intake-count">118</span>
+							<span class="water-intake-count">Not suppose to see this!</span>
 						</span>
 						<div class="water-intake-button-container">
 							<div>
@@ -194,6 +194,7 @@
 				<!-- Calendar overview -->
 				<div class="card calendar">
 					<div id="workoutCalendar" class="workout-calendar"></div>
+					<span class="workout-calendar-message">* You may click on workout to see the workout details</span>
 				</div>
 
 				<div class="quickview-container">
@@ -214,16 +215,23 @@
 
 					<!-- last workout -->
 					<div class="card last-workout">
-						<h3 class="quickview-title">Your last workout</h3>
-						<ul class="workout-list">
-							<li>Walk 5km</li>
-							<li>push up 4 sets</li>
-							<li>5 km run</li>
-						</ul>
+						<h3 class="quickview-title">Last workout</h3>
+						<p class="last-workout-date">No workout logged yet.</p>
+						<ul class="workout-list last-workout-list"></ul>
 					</div>
 				</div>
 			</div>
 		</main>
+
+		<div class="workout-detail-overlay" hidden></div>
+		<div class="workout-detail-modal" hidden aria-hidden="true">
+			<div class="workout-detail-card">
+				<button class="workout-detail-close" aria-label="Close workout details">×</button>
+				<h3 class="workout-detail-title">Workout on <span class="workout-detail-date">-</span></h3>
+				<ul class="workout-detail-list"></ul>
+				<p class="workout-detail-empty">You didn't add more details to this workout.</p>
+			</div>
+		</div>
 		<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
 		<script src="./js/dashboard.js"></script>
 		<script src="./js/navbar.js"></script>

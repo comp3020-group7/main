@@ -94,10 +94,8 @@
 
 		<div class="workoutHeading">
 			<a href="dashboard.html" class="returnLink">Dashboard</a> >
-			<span>
-				Track a Workout
-			</span>
-			</h2>
+			<span> Track a Workout </span>
+			<!-- </h2>   FIXME: why is there a h2 label ??-->
 		</div>
 		<label class="dateLabel"> </label>
 		<div class="searchContainer">
@@ -154,6 +152,7 @@
 			const exerciseSearch = document.getElementById('exerciseSearch');
 			const leftFields = document.querySelector('.leftFields');
 			const rightExerciseContainer = document.querySelector('.rightExerciseContainer');
+			const WORKOUT_STORAGE_KEY = 'workouts';
 
 			// Display today's date
 			const dateLabel = document.querySelector('.dateLabel');
@@ -163,7 +162,21 @@
 				month: 'long',
 				day: 'numeric',
 			});
+
+			// do date conversition here (to ISO format: YYYY-MM-DD)
+			// so dashborad can directly get data from storage
+			const isoDate = today.toISOString().split('T')[0];
 			dateLabel.textContent = `Today's workout: ${formattedDate}`;
+			function saveWorkoutSession(workout) {
+				let existing = [];
+				try {
+					existing = JSON.parse(localStorage.getItem(WORKOUT_STORAGE_KEY)) || [];
+				} catch (error) {
+					console.warn('Unable to parse existing workouts, resetting list.', error);
+				}
+				existing.push(workout);
+				localStorage.setItem(WORKOUT_STORAGE_KEY, JSON.stringify(existing));
+			}
 
 			// Search bar behavior
 			exerciseInput.addEventListener('focus', () => {
@@ -384,11 +397,12 @@
 				});
 
 				const workoutData = {
-					date: formattedDate,
+					date: isoDate,
 					exercises: exercisesData,
 				};
 
 				sessionStorage.setItem('workoutData', JSON.stringify(workoutData));
+				saveWorkoutSession(workoutData);
 				console.log('Workout saved:', workoutData);
 				window.location.href = 'dashboard.html';
 			});

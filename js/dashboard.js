@@ -18,6 +18,14 @@ const lastMealName = document.querySelector('.meal-name');
 const lastMealCalorie = document.querySelector('.last-meal-count');
 const lastMealImg = document.querySelector('.meal-thumb-img');
 const usernameLabel = document.querySelector('.username');
+const lastWorkoutDateLabel = document.querySelector('.last-workout-date');
+const lastWorkoutList = document.querySelector('.last-workout-list');
+const workoutDetailOverlay = document.querySelector('.workout-detail-overlay');
+const workoutDetailModal = document.querySelector('.workout-detail-modal');
+const workoutDetailCloseBtn = document.querySelector('.workout-detail-close');
+const workoutDetailDate = document.querySelector('.workout-detail-date');
+const workoutDetailList = document.querySelector('.workout-detail-list');
+const workoutDetailEmpty = document.querySelector('.workout-detail-empty');
 
 // #----------- CONSTS -----------#
 const DEFAULT_CALORIE_GOAL = 2000;
@@ -148,6 +156,99 @@ function readWorkoutHistory() {
 	}
 }
 
+function formatWorkoutDate(date) {
+	if (!date) {
+		return '-';
+	}
+	const parsed = new Date(date);
+
+	// check if parsed date is a valid date or not, if invalid will get a NaH
+	if (Number.isNaN(parsed.getTime())) {
+		return date;
+	}
+	return parsed.toLocaleDateString('en-US', {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	});
+}
+
+function renderWorkoutDetail(workout) {
+	if (!workoutDetailDate || !workoutDetailList || !workoutDetailEmpty) {
+		return;
+	}
+
+	workoutDetailDate.textContent = formatWorkoutDate(workout?.date);
+
+	// clear old content
+	workoutDetailList.innerHTML = '';
+
+	// TODO: error checking, make sure an array exists
+	const exercises = Array.isArray(workout?.exercises) ? workout.exercises : [];
+
+	// if there is nothing to show for details, show this:
+	if (exercises.length === 0) {
+		workoutDetailEmpty.hidden = false;
+		return;
+	}
+
+	// otherwise, there is something to show, hide hidden one:
+	workoutDetailEmpty.hidden = true;
+
+	exercises.forEach((exercise) => {
+		const item = document.createElement('li');
+
+		// if no type, then don't show type
+		const typeLabel = exercise.type ? ` (${exercise.type})` : '';
+		item.textContent = `${exercise.name || 'Exercise'}${typeLabel}`;
+
+		// TODO: format cardio
+		if (exercise.type === 'cardio') {
+			const stats = [];
+			if (exercise.distance) stats.push(`<br />Distance: ${exercise.distance} km `);
+			if (exercise.time) stats.push(`Time: ${exercise.time} min`);
+			if (exercise.avgPace) stats.push(`Avarage Pace: ${exercise.avgPace} min/km`);
+			if (stats.length) item.innerHTML += ` <br /> ${stats.join(' <br /> ')}`;
+		}
+		// TODO: format weight lifting (non-cardio exercies, I think it's called heavy lifting??)
+		else if (Array.isArray(exercise.sets) && exercise.sets.length > 0) {
+			const setsSummary = exercise.sets
+				.map((set, index) => `<br />Set ${index + 1}: ${set.reps ?? 0} reps @ ${set.weight ?? 0} kg`)
+				.join('<br /> ');
+			item.innerHTML += ` <br /> ${setsSummary}`;
+		}
+
+		workoutDetailList.appendChild(item);
+	});
+}
+
+function showWorkoutDetail(workout) {
+	if (!workoutDetailOverlay || !workoutDetailModal) {
+		return;
+	}
+	renderWorkoutDetail(workout);
+	workoutDetailOverlay.hidden = false;
+	workoutDetailModal.hidden = false;
+	workoutDetailModal.setAttribute('aria-hidden', 'false');
+}
+
+function hideWorkoutDetail() {
+	if (!workoutDetailOverlay || !workoutDetailModal) {
+		return;
+	}
+	workoutDetailOverlay.hidden = true;
+	workoutDetailModal.hidden = true;
+	workoutDetailModal.setAttribute('aria-hidden', 'true');
+}
+
+workoutDetailCloseBtn?.addEventListener('click', hideWorkoutDetail);
+workoutDetailOverlay?.addEventListener('click', hideWorkoutDetail);
+document.addEventListener('keydown', (event) => {
+	if (event.key === 'Escape' && workoutDetailModal && !workoutDetailModal.hidden) {
+		hideWorkoutDetail();
+	}
+});
+
 function createCalendar() {
 	const calendar = new FullCalendar.Calendar(calendarEl, {
 		initialView: 'dayGridMonth',
@@ -156,11 +257,24 @@ function createCalendar() {
 			center: 'title',
 			right: '',
 		},
-		events: readWorkoutHistory().map((session) => ({
-			title: (session.exercises || []).map((ex) => ex.name),
-			start: session.date,
-			allDay: true,
-		})),
+		eventClick(info) {
+			info.jsEvent.preventDefault();
+			const workout = info.event.extendedProps.workout;
+			if (workout) {
+				showWorkoutDetail(workout);
+			}
+		},
+		events: readWorkoutHistory().map((session) => {
+			const exerciseNames = (session.exercises || []).map((ex) => ex.name).filter(Boolean);
+			return {
+				title: exerciseNames.length ? exerciseNames.join(', ') : 'Workout',
+				start: session.date,
+				allDay: true,
+				extendedProps: {
+					workout: session,
+				},
+			};
+		}),
 	});
 	calendar.render();
 }
@@ -225,6 +339,37 @@ function updateUsername() {
 	// !!! render setting popup moved to navbar.js
 }
 
+function updateLastWorkout() {
+	if (!lastWorkoutDateLabel || !lastWorkoutList) {
+		return;
+	}
+	const workouts = readWorkoutHistory();
+	lastWorkoutList.innerHTML = '';
+
+	if (workouts.length === 0) {
+		lastWorkoutDateLabel.textContent = 'No workout logged yet.';
+		return;
+	}
+
+	const lastWorkout = workouts[workouts.length - 1];
+	lastWorkoutDateLabel.textContent = `${formatWorkoutDate(lastWorkout.date)}`;
+
+	const exercises = Array.isArray(lastWorkout.exercises) ? lastWorkout.exercises : [];
+	if (exercises.length === 0) {
+		const item = document.createElement('li');
+		item.textContent = 'No exercises recorded.';
+		lastWorkoutList.appendChild(item);
+		return;
+	}
+
+	exercises.forEach((exercise) => {
+		const item = document.createElement('li');
+		const typeLabel = exercise.type ? ` (${exercise.type})` : '';
+		item.textContent = `${exercise.name || 'Exercise'}${typeLabel}`;
+		lastWorkoutList.appendChild(item);
+	});
+}
+
 // #----------- Events -----------#
 document.addEventListener('DOMContentLoaded', () => {
 	updateCalorie();
@@ -234,6 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	createCalendar();
 	updateLastMeal();
 	updateUsername();
+	updateLastWorkout();
 });
 
 addWaterBtns.forEach((btn) => {

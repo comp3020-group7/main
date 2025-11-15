@@ -14,7 +14,12 @@ html {
 }
 
 body {
-	overflow: hidden;
+	overflow: scroll;
+}
+
+body::-webkit-scrollbar {
+	width: 0;
+	height: 0;
 }
 
 .greetingMsg {
@@ -249,7 +254,7 @@ li {
 .today .date {
 	font-family: monospace;
 	font-weight: 700;
-	color: var(--colour-primary-dark);
+	color: var(--colour-on-primary);
 	font-size: 2rem;
 }
 
@@ -271,12 +276,31 @@ li {
 	margin-left: 15rem !important;
 }
 
+.fc-event-title-container {
+	background-color: var(--colour-ring-orange);
+	cursor: pointer;
+}
+
+.fc-event-title-container:hover {
+	transform: translateY(-0.2rem);
+	font-size: 1.3rem;
+}
+
+.workout-calendar-message {
+	display: flex;
+	color: var(--colour-text);
+	font-size: 1.7rem;
+	margin-top: 1rem;
+	margin-right: 2rem;
+	justify-content: flex-end;
+}
+
 /* quickview */
 .quickview-container {
 	display: flex;
 	justify-content: space-between;
 	gap: 1rem;
-	max-height: 13rem;
+	max-height: 10rem;
 }
 
 /* ----------- last logged meal ------------- */
@@ -299,13 +323,13 @@ li {
 }
 
 .meal-thumb-img {
-	width: 7rem;
-	height: 7rem;
+	width: 4rem;
+	height: 4rem;
 	border-radius: 1rem;
 }
 
 .meal-name {
-	font-size: 2rem;
+	font-size: 1.8rem;
 }
 
 .meal-calories-text {
@@ -320,4 +344,73 @@ li {
 
 .workout-list {
 	font-size: 1.5rem;
+}
+
+.last-workout-date {
+	font-size: 1.4rem;
+	margin-bottom: 0.8rem;
+	color: var(--colour-on-primary);
+}
+
+/* workout detail modal */
+.workout-detail-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 100;
+}
+
+.workout-detail-overlay[hidden] {
+	display: none;
+}
+
+.workout-detail-modal {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	z-index: 110;
+}
+
+.workout-detail-modal[hidden] {
+	display: none;
+}
+
+.workout-detail-card {
+	background: var(--colour-background);
+	border-radius: 2rem;
+	padding: 2rem;
+	width: 50rem;
+	position: relative;
+}
+
+.workout-detail-close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	border: none;
+	background: transparent;
+	font-size: 4rem;
+	cursor: pointer;
+}
+.workout-detail-close:hover {
+	color: var(--colour-ring-orange);
+}
+
+.workout-detail-title {
+	font-size: 2.2rem;
+	margin-bottom: 1rem;
+	color: var(--colour-text);
+}
+
+.workout-detail-list {
+	font-size: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+	max-height: 40vh;
+	overflow-y: auto;
+	padding-left: 1.4rem;
 }
