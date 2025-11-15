@@ -149,7 +149,7 @@ function updateWater() {
 
 function readWorkoutHistory() {
 	try {
-		return JSON.parse(localStorage.getItem(WORKOUT_STORAGE_KEY)) || [];
+		return JSON.parse(sessionStorage.getItem(WORKOUT_STORAGE_KEY)) || [];
 	} catch (error) {
 		console.warn('Unable to get workout history', error);
 		return [];

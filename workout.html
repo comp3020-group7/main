@@ -170,12 +170,12 @@
 			function saveWorkoutSession(workout) {
 				let existing = [];
 				try {
-					existing = JSON.parse(localStorage.getItem(WORKOUT_STORAGE_KEY)) || [];
+					existing = JSON.parse(sessionStorage.getItem(WORKOUT_STORAGE_KEY)) || [];
 				} catch (error) {
 					console.warn('Unable to parse existing workouts, resetting list.', error);
 				}
 				existing.push(workout);
-				localStorage.setItem(WORKOUT_STORAGE_KEY, JSON.stringify(existing));
+				sessionStorage.setItem(WORKOUT_STORAGE_KEY, JSON.stringify(existing));
 			}
 
 			// Search bar behavior
