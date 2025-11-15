@@ -43,7 +43,7 @@ li {
 }
 
 .welcome-msg-date {
-	font-family: 'Silkscreen', monospace;
+	/* font-family: 'Silkscreen', monospace; */
 	font-size: 2.8rem;
 	background-color: var(--colour-accent-background);
 	padding: 0 1rem;

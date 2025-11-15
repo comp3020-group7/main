@@ -128,14 +128,13 @@ favoriteBtn.addEventListener('click', () => {
 
 foodSearch.addEventListener('keyup', (e) => {
 	let currValue = e.target.value.toLowerCase();
-	let foods = document.querySelectorAll('.food-name');
+	let cards = document.querySelectorAll('.grid > .card');
 
-	foods.forEach((food) => {
-		if (food.textContent.toLowerCase().includes(currValue)) {
-			food.parentNode.style.display = 'block';
-		} else {
-			food.parentNode.style.display = 'none';
-		}
+	cards.forEach((card) => {
+		const foodName = card.querySelector('.title.food-name');
+		if (!foodName) return;
+		const matches = foodName.textContent.toLowerCase().includes(currValue);
+		card.style.display = matches ? 'block' : 'none';
 	});
 });
 
@@ -173,6 +172,11 @@ grid.addEventListener('click', (event) => {
 		const overlay = confirmBtn.closest('.card-select-quantity');
 		const baseCard = overlay.parentElement;
 		const quantityEl = overlay.querySelector('.quantity');
+		const addBtn = baseCard.querySelector('button.plus:not(.confirm)');
+		if (addBtn) {
+			addBtn.remove();
+			alert('Food successfully added!');
+		}
 
 		const date = sessionStorage.getItem('dateSelected');
 		const meal = sessionStorage.getItem('mealSelected');

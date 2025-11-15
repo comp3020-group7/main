@@ -51,3 +51,8 @@ html[data-theme='dark-theme'] {
 	--colour-ring-orange: #c9723a;
 	--colour-on-primary: #f5f5f5;
 }
+
+/* Note: */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* 1. if want color white that don't change from light theme to dark theme: USE var(color-on-primary) */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!! */

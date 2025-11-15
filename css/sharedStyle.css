@@ -338,7 +338,7 @@ body {
 	color: var(--colour-on-primary);
 	font-size: 1.5rem;
 	padding: 0.5rem 3rem;
-	border-right: 0.2rem solid var(--colour-text);
+	border-right: 0.2rem solid var(--colour-on-primary);
 }
 
 .navbar-link.selected {

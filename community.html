@@ -12,24 +12,88 @@
 		<!-- topBar -->
 		<header class="topBar">
 			<div>
-				<img src="images/activ8logo.png" alt="Activ8 logo" />
+				<img src="images/activ8logo.png" />
 				<h1 class="appName">Activ8</h1>
 			</div>
 			<div class="rightButts">
-				<a href="dashboard.html" class="profileButt">
-					<img src="images/userIcon.png" alt="Profile" />
-				</a>
+				<img src="./images/settings.png" alt="" class="settings-icon" />
+				<!-- <a href="login.html" class="logoutButt">Logout</a> -->
 				<button class="logoutButt" onclick="window.location.href='index.html'">Logout</button>
 			</div>
 		</header>
 
+		<!-- navBar -->
 		<div class="navBar">
-			<a href="./dashboard.html" class="navbar-link">Dashboard</a>
+			<a href="./dashboard.html" class="navbar-link selected">Dashboard</a>
 			<a href="./mealTracking.html" class="navbar-link">Track a Meal</a>
 			<a href="./workout.html" class="navbar-link">Track a Workout</a>
-			<a href="./community.html" class="navbar-link selected">Community Page</a>
+			<a href="./community.html" class="navbar-link">Community Page</a>
+			<!-- <a href="./createPost.html" class="navbar-link">Create a Post</a> -->
 			<a href="./community.html" class="navbar-link" id="createAPostBtn">Create a Post</a>
 		</div>
+
+		<!-- popup window for settings -->
+		<div class="setting-pop-up">
+			<div class="setting-pop-up-header">
+				<img src="./images/close-btn.png" alt="" class="setting-close-btn" />
+			</div>
+			<div class="setting-pop-up-content">
+				<div class="setting-pop-up-change-username">
+					<span>Change username: </span>
+					<div>
+						<input type="text" class="setting-change-username-input" />
+						<button class="setting-change-username-confirm-btn">confirm</button>
+					</div>
+				</div>
+				<div class="setting-pop-up-change-fontsize">
+					<span>Change font size:</span>
+					<div class="setting-font-size-container">
+						<img src="./images/letter-a-2.png" alt="" class="font-size-letter font-size-letter-1" />
+						<img src="./images/letter-a-2.png" alt="" class="font-size-letter font-size-letter-2 selected" />
+						<img src="./images/letter-a-2.png" alt="" class="font-size-letter font-size-letter-3" />
+					</div>
+				</div>
+				<div class="setting-pop-up-change-color">
+					<span>Change color scheme:</span>
+					<div class="setting-color-big-container">
+						<div class="setting-color-container">
+							<div class="color-palette-option color-palette-option-default selected" data-color-option="default">
+								<img src="./images/color-palette/default.png" alt="" class="color-palette color-palette-default" />
+								<span class="color-palette-text">Default</span>
+							</div>
+							<div class="color-palette-option color-palette-option-rgblind" data-color-option="rg-blind">
+								<img src="./images/color-palette/rg-blind.png" alt="" class="color-palette color-palette-rgblind" />
+								<span class="color-palette-text">color blind friendly</span>
+							</div>
+							<div class="color-palette-option color-palette-option-dark" data-color-option="dark">
+								<img src="./images/color-palette/dark.png" alt="" class="color-palette color-palette-dark" />
+								<span class="color-palette-text">Dark theme</span>
+							</div>
+						</div>
+						<div class="info-icon-color-explanation-container">
+							<img src="./images/info.png" alt="" class="info-icon-color-explanation" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="setting-pop-up-overlay"></div>
+			<div class="setting-pop-up-top-level-message">
+				<div class="setting-pop-up-header">
+					<img src="./images/close-btn.png" alt="" class="setting-close-btn setting-second-message-close-btn" />
+				</div>
+				<div class="setting-pop-up-content">
+					* color-blind means "red/green color-blind" here<br /><br />
+					* Color selection for "color-blind friendly" option is from this website:
+					<a
+						href="https://www.nceas.ucsb.edu/sites/default/files/2022-06/Colorblind%20Safe%20Color%20Schemes.pdf"
+						target="_blank">
+						Colorblind Safe Color Schemes
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="overlay" id="overlay"></div>
 
 		<div class="communityLayout">
 			<main class="communityMain">
@@ -129,6 +193,7 @@
 			</div>
 		</div>
 
+		<script src="./js/navbar.js"></script>
 		<script src="./js/community.js"></script>
 	</body>
 </html>

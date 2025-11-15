@@ -182,7 +182,7 @@ li {
 }
 
 .water-intake-count {
-	font-family: 'Silkscreen', monospace;
+	/* font-family: 'Silkscreen', monospace; */
 	color: var(--colour-ring-orange);
 	font-size: 3rem;
 	font-weight: 700;
@@ -233,7 +233,7 @@ li {
 }
 
 .greet .username {
-	font-family: 'Silkscreen', monospace;
+	/* font-family: 'Silkscreen', monospace; */
 	color: var(--colour-ring-orange);
 }
 
@@ -259,7 +259,7 @@ li {
 	font-size: 1.3rem;
 	color: var(--colour-on-primary);
 	height: 27rem;
-	font-family: 'Silkscreen', monospace;
+	/* font-family: 'Silkscreen', monospace; */
 }
 
 .fc-header-toolbar {
