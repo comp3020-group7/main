@@ -1,171 +1,134 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Community Page</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/palette.css" />
-    <link rel="stylesheet" href="./css/sharedStyle.css" />
-    <link rel="stylesheet" href="./css/community.css" />
-    <link rel="stylesheet" href="./css/indexStyle.css" />
-  </head>
-  <body>
-    <!-- topBar -->
-    <header class="topBar">
-      <div>
-        <img src="images/activ8logo.png" alt="Activ8 logo" />
-        <h1 class="appName">Activ8</h1>
-      </div>
-      <div class="rightButts">
-        <a href="dashboard.html" class="profileButt">
-          <img src="images/userIcon.png" alt="Profile" />
-        </a>
-        <button class="logoutButt" onclick="window.location.href='index.html'">
-          Logout
-        </button>
-      </div>
-    </header>
+	<head>
+		<title>Community Page</title>
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+		<link rel="stylesheet" href="./css/palette.css" />
+		<link rel="stylesheet" href="./css/sharedStyle.css" />
+		<link rel="stylesheet" href="./css/community.css" />
+		<link rel="stylesheet" href="./css/indexStyle.css" />
+	</head>
+	<body>
+		<!-- topBar -->
+		<header class="topBar">
+			<div>
+				<img src="images/activ8logo.png" alt="Activ8 logo" />
+				<h1 class="appName">Activ8</h1>
+			</div>
+			<div class="rightButts">
+				<a href="dashboard.html" class="profileButt">
+					<img src="images/userIcon.png" alt="Profile" />
+				</a>
+				<button class="logoutButt" onclick="window.location.href='index.html'">Logout</button>
+			</div>
+		</header>
 
-    <div class="navBar">
-      <a href="./dashboard.html" class="navbar-link">Dashboard</a>
-      <a href="./mealTracking.html" class="navbar-link">Track a Meal</a>
-      <a href="./workout.html" class="navbar-link">Track a Workout</a>
-      <a href="./community.html" class="navbar-link selected">Community Page</a>
-      <a href="./community.html" class="navbar-link" id="createAPostBtn"
-        >Create a Post</a
-      >
-    </div>
+		<div class="navBar">
+			<a href="./dashboard.html" class="navbar-link">Dashboard</a>
+			<a href="./mealTracking.html" class="navbar-link">Track a Meal</a>
+			<a href="./workout.html" class="navbar-link">Track a Workout</a>
+			<a href="./community.html" class="navbar-link selected">Community Page</a>
+			<a href="./community.html" class="navbar-link" id="createAPostBtn">Create a Post</a>
+		</div>
 
-    <div class="communityLayout">
-      <main class="communityMain">
-        <h1 class="pageTitle">Community</h1>
-        <div class="communityContent"></div>
+		<div class="communityLayout">
+			<main class="communityMain">
+				<h1 class="pageTitle">Community</h1>
+				<div class="communityContent"></div>
 
-        <!-- Feed -->
-        <section id="feed" class="feed">
-          <!-- Post 1 -->
-          <article class="post">
-            <div class="post-header">
-              <span class="post-username">@UserNameX</span>
-            </div>
-            <img src="images/foodsample1.avif" alt="Dinner photo" />
-            <div class="content">
-              <h2>Dinner!!</h2>
-              <div class="caption">
-                <h3>
-                  Simple and Satisfying, Home cooked rice and Chicken tonight
-                </h3>
-              </div>
-              <div class="actions">
-                <button class="like">❤️ 12</button>
-                <button class="views">👁️ 3</button>
-              </div>
-            </div>
-          </article>
+				<!-- Feed -->
+				<section id="feed" class="feed">
+					<!-- Post 1 -->
+					<article class="post">
+						<div class="post-header">
+							<span class="post-username">@UserNameX</span>
+						</div>
+						<img src="images/foodsample1.avif" alt="Dinner photo" />
+						<div class="content">
+							<h2>Dinner!!</h2>
+							<div class="caption">
+								<h3>Simple and Satisfying, Home cooked rice and Chicken tonight</h3>
+							</div>
+							<div class="actions">
+								<button class="like">❤️ 12</button>
+								<button class="views">👁️ 3</button>
+							</div>
+						</div>
+					</article>
 
-          <!-- Post 2 -->
-          <article class="post">
-            <div class="post-header">
-              <span class="post-username">@UserNameY</span>
-            </div>
-            <img src="images/gympicture.jpeg" alt="Gym photo" />
-            <div class="content">
-              <h2>Goals...</h2>
-              <div class="caption">
-                <h3>@joane, I am going to look like a dorito if it kills me</h3>
-              </div>
-              <div class="actions">
-                <button class="like">❤️ 56</button>
-                <button class="views">👁️ 345</button>
-              </div>
-            </div>
-          </article>
-        </section>
-      </main>
+					<!-- Post 2 -->
+					<article class="post">
+						<div class="post-header">
+							<span class="post-username">@UserNameY</span>
+						</div>
+						<img src="images/gympicture.jpeg" alt="Gym photo" />
+						<div class="content">
+							<h2>Goals...</h2>
+							<div class="caption">
+								<h3>@joane, I am going to look like a dorito if it kills me</h3>
+							</div>
+							<div class="actions">
+								<button class="like">❤️ 56</button>
+								<button class="views">👁️ 345</button>
+							</div>
+						</div>
+					</article>
+				</section>
+			</main>
 
-      <aside class="communitySideRight">
-        <button class="fab" onclick="openCreateModal()">Add Post</button>
-      </aside>
+			<aside class="communitySideRight">
+				<button class="fab" onclick="openCreateModal()">Add Post</button>
+			</aside>
 
-      <nav class="feed-tabs" aria-label="Feed tabs">
-        <button class="tab-btn" aria-pressed="true">All Posts</button>
-        <button class="tab-btn" aria-pressed="false">My Posts</button>
-      </nav>
-    </div>
+			<nav class="feed-tabs" aria-label="Feed tabs">
+				<button class="tab-btn" aria-pressed="true">All Posts</button>
+				<button class="tab-btn" aria-pressed="false">My Posts</button>
+			</nav>
+		</div>
 
-    <!-- Create Post Popup -->
-    <div id="newPostModal" class="modal" aria-hidden="true">
-      <div class="modal__overlay"></div>
+		<!-- Create Post Popup -->
+		<div id="newPostModal" class="modal" aria-hidden="true">
+			<div class="modal__overlay"></div>
 
-      <div
-        class="modal__dialog"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="np-title"
-      >
-        <header class="modal__header">
-          <h3 id="np-title">New Post</h3>
-          <button class="modal__close" aria-label="Close">×</button>
-        </header>
+			<div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="np-title">
+				<header class="modal__header">
+					<h3 id="np-title">New Post</h3>
+					<button class="modal__close" aria-label="Close">×</button>
+				</header>
 
-        <div class="modal__body">
-          <div class="modal__grid">
-            <!-- Left: media preview (optional) -->
-            <div class="media-uploader">
-              <div
-                id="np-preview"
-                class="preview"
-                aria-label="Media preview"
-              ></div>
+				<div class="modal__body">
+					<div class="modal__grid">
+						<!-- Left: media preview (optional) -->
+						<div class="media-uploader">
+							<div id="np-preview" class="preview" aria-label="Media preview"></div>
 
-              <label class="upload-btn">
-                <input
-                  id="np-file"
-                  type="file"
-                  accept="image/*,video/*"
-                  hidden
-                />
-                <span class="material-symbols-outlined" aria-hidden="true">
-                  add_a_photo
-                </span>
-                Add photo/video (optional)
-              </label>
+							<label class="upload-btn">
+								<input id="np-file" type="file" accept="image/*,video/*" hidden />
+								<span class="material-symbols-outlined" aria-hidden="true"> add_a_photo </span>
+								Add photo/video (optional)
+							</label>
 
-              <small id="np-filename" class="muted"></small>
-            </div>
+							<small id="np-filename" class="muted"></small>
+						</div>
 
-            <!-- Right: fields -->
-            <div class="post-fields">
-              <label for="np-title-input">
-                Title <span class="muted">(required)</span>
-              </label>
-              <input
-                id="np-title-input"
-                type="text"
-                placeholder="Enter a title…"
-              />
+						<!-- Right: fields -->
+						<div class="post-fields">
+							<label for="np-title-input"> Title <span class="muted">(required)</span> </label>
+							<input id="np-title-input" type="text" placeholder="Enter a title…" />
 
-              <label for="np-caption">
-                Caption <span class="muted">(optional)</span>
-              </label>
-              <textarea
-                id="np-caption"
-                rows="6"
-                placeholder="Write your caption…"
-              ></textarea>
-            </div>
-          </div>
-        </div>
+							<label for="np-caption"> Caption <span class="muted">(optional)</span> </label>
+							<textarea id="np-caption" rows="6" placeholder="Write your caption…"></textarea>
+						</div>
+					</div>
+				</div>
 
-        <footer class="modal__footer">
-          <button id="np-cancel" class="btn">Cancel</button>
-          <button id="np-submit" class="btn primary">Post</button>
-        </footer>
-      </div>
-    </div>
+				<footer class="modal__footer">
+					<button id="np-cancel" class="btn">Cancel</button>
+					<button id="np-submit" class="btn primary">Post</button>
+				</footer>
+			</div>
+		</div>
 
-    <script src="./js/community.js"></script>
-  </body>
+		<script src="./js/community.js"></script>
+	</body>
 </html>

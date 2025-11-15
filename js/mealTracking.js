@@ -40,6 +40,7 @@ const MEAL_SECTION_SELECTORS = {
 };
 
 // #----------- functions -----------#
+// TODO: Initializations moved to dashboard, since uses will get to that page first
 // function initializeSomeSessionStorageLOL() {
 // 	if (!sessionStorage.getItem('nutritionGoal')) {
 // 		sessionStorage.setItem(
