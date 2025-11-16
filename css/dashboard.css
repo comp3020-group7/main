@@ -87,7 +87,7 @@ li {
 .meter-calorie {
 	font-size: 2.4rem;
 	font-weight: 600;
-	color: var(--colour-primary-dark);
+	color: var(--colour-on-primary);
 }
 
 .meter-username {

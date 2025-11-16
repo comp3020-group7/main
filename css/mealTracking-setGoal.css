@@ -35,6 +35,11 @@ li {
 	color: var(--colour-text);
 }
 
+.breadcrumb-link {
+	text-decoration: underline;
+	color: var(--colour-green);
+}
+
 .go-back-link {
 	text-decoration: underline;
 	color: var(--colour-green);
@@ -81,7 +86,7 @@ li {
 }
 
 .panel-item-title {
-	font-family: 'Silkscreen', sans-serif;
+	/* font-family: 'Silkscreen', sans-serif; */
 	font-size: 2.8rem;
 }
 

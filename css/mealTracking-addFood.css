@@ -50,6 +50,11 @@ li {
 	border-radius: 3rem;
 }
 
+.breadcrumb-link {
+	text-decoration: underline;
+	color: var(--colour-green);
+}
+
 .go-back-link {
 	text-decoration: underline;
 	color: var(--colour-green);

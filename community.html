@@ -9,27 +9,29 @@
 		<link rel="stylesheet" href="./css/indexStyle.css" />
 	</head>
 	<body>
-		<!-- topBar -->
-		<header class="topBar">
-			<div>
-				<img src="images/activ8logo.png" />
-				<h1 class="appName">Activ8</h1>
-			</div>
-			<div class="rightButts">
-				<img src="./images/settings.png" alt="" class="settings-icon" />
-				<!-- <a href="login.html" class="logoutButt">Logout</a> -->
-				<button class="logoutButt" onclick="window.location.href='index.html'">Logout</button>
-			</div>
-		</header>
+		<div class="topbar-navbar-section">
+			<!-- topBar -->
+			<header class="topBar">
+				<div>
+					<img src="images/activ8logo.png" />
+					<h1 class="appName">Activ8</h1>
+				</div>
+				<div class="rightButts">
+					<img src="./images/settings.png" alt="" class="settings-icon" />
+					<!-- <a href="login.html" class="logoutButt">Logout</a> -->
+					<button class="logoutButt" onclick="window.location.href='index.html'">Logout</button>
+				</div>
+			</header>
 
-		<!-- navBar -->
-		<div class="navBar">
-			<a href="./dashboard.html" class="navbar-link selected">Dashboard</a>
-			<a href="./mealTracking.html" class="navbar-link">Track a Meal</a>
-			<a href="./workout.html" class="navbar-link">Track a Workout</a>
-			<a href="./community.html" class="navbar-link">Community Page</a>
-			<!-- <a href="./createPost.html" class="navbar-link">Create a Post</a> -->
-			<a href="./community.html" class="navbar-link" id="createAPostBtn">Create a Post</a>
+			<!-- navBar -->
+			<div class="navBar">
+				<a href="./dashboard.html" class="navbar-link">Dashboard</a>
+				<a href="./mealTracking.html" class="navbar-link">Track a Meal</a>
+				<a href="./workout.html" class="navbar-link">Track a Workout</a>
+				<a href="./community.html" class="navbar-link selected">Community Page</a>
+				<!-- <a href="./createPost.html" class="navbar-link">Create a Post</a> -->
+				<a href="./community.html" class="navbar-link" id="createAPostBtn">Create a Post</a>
+			</div>
 		</div>
 
 		<!-- popup window for settings -->
@@ -95,9 +97,14 @@
 
 		<div class="overlay" id="overlay"></div>
 
+		<div class="communityBreadcrumb">
+			<a href="dashboard.html" class="returnLink">Dashboard</a> >
+			<span> Community Page </span>
+		</div>
+
 		<div class="communityLayout">
 			<main class="communityMain">
-				<h1 class="pageTitle">Community</h1>
+				<!-- <h1 class="pageTitle">Community</h1> -->
 				<div class="communityContent"></div>
 
 				<!-- Feed -->

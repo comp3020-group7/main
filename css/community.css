@@ -2,15 +2,36 @@ html,
 body {
 	height: auto;
 	min-height: 100%;
-	overflow-y: auto; /* undo any overflow:hidden */
+	overflow-y: scroll;
+	/* undo any overflow:hidden */
+}
+
+body {
+	padding-top: 130px;
 }
 
 .communityLayout {
-	max-width: 1200px;
+	position: relative;
+	top: 0;
+	width: min(1200px, 100%);
 	margin: 2rem auto;
+	padding: 0 1.5rem 4rem;
 	display: flex;
 	align-items: flex-start;
+	justify-content: center;
 	gap: 2rem;
+}
+
+.communityBreadcrumb {
+	font-size: 2.4rem;
+	color: var(--colour-text);
+	width: min(1400px, 100%);
+	margin-left: 2rem;
+}
+
+.communityBreadcrumb .returnLink {
+	color: var(--colour-green);
+	text-decoration: underline;
 }
 
 .pageTitle {
@@ -45,10 +66,11 @@ body {
 .feed {
 	max-width: 880px; /* wider feed like other pages */
 	margin: 2rem auto; /* centered vertically & horizontally */
-	padding: 0 1rem;
+	padding: 3rem 1rem;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem; /* larger space between posts */
+	overflow: hidden;
 }
 
 /* EACH POST CARD */
@@ -282,7 +304,7 @@ body {
 .modal__dialog {
 	position: relative;
 	width: min(720px, 92vw);
-	margin: 6vh auto;
+	margin: 25vh auto;
 	background: var(--colour-background, #fff);
 	border: 2px solid var(--colour-accent);
 	border-radius: 12px;

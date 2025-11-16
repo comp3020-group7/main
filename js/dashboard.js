@@ -178,7 +178,10 @@ function renderWorkoutDetail(workout) {
 		return;
 	}
 
-	workoutDetailDate.textContent = formatWorkoutDate(workout?.date);
+	// workoutDetailDate.textContent = formatWorkoutDate(workout?.date);
+	const workoutObj = JSON.parse(sessionStorage.getItem('workouts'));
+	const date = workoutObj[0].date;
+	workoutDetailDate.textContent = `${date}:`;
 
 	// clear old content
 	workoutDetailList.innerHTML = '';

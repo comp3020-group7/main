@@ -23,6 +23,15 @@ body {
 	color: var(--colour-text);
 }
 
+/* make topbar + navbar area fixed (mostly for community page) */
+.topbar-navbar-section {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+}
+
 /* the whole horizontal bar */
 .topBar {
 	width: 100%;
@@ -133,7 +142,7 @@ body {
 .setting-pop-up-content {
 	padding: 3rem;
 	color: var(--colour-on-primary);
-	font-family: 'Silkscreen', monospace;
+	/* font-family: 'Silkscreen', monospace; */
 	font-size: 3rem;
 	display: flex;
 	flex-direction: column;
@@ -166,7 +175,7 @@ body {
 	width: 10rem;
 	height: 4rem;
 	font-size: 1.5rem;
-	font-family: 'Silkscreen', monospace;
+	/* font-family: 'Silkscreen', monospace; */
 	border-radius: 2rem;
 	cursor: pointer;
 }
@@ -188,7 +197,7 @@ body {
 }
 
 .font-size-letter.selected {
-	border: 0.2rem solid var(--colour-background);
+	border: 0.2rem solid var(--colour-on-primary);
 }
 
 .font-size-letter:hover {

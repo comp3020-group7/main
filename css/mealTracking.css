@@ -46,6 +46,11 @@ a {
 	color: var(--colour-text);
 }
 
+.breadcrumb-link {
+	text-decoration: underline;
+	color: var(--colour-green);
+}
+
 .overview {
 	grid-area: main;
 	display: grid;

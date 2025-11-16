@@ -163,9 +163,12 @@
 				day: 'numeric',
 			});
 
-			// do date conversition here (to ISO format: YYYY-MM-DD)
-			// so dashborad can directly get data from storage
-			const isoDate = today.toISOString().split('T')[0];
+			// convert to YYYY-MM-DD (for the dashboard calendar to use, fullcalendar library needs this format of date for events :)))))
+			const isoDate = [
+				today.getFullYear(),
+				String(today.getMonth() + 1).padStart(2, '0'),
+				String(today.getDate()).padStart(2, '0'),
+			].join('-');
 			dateLabel.textContent = `Today's workout: ${formattedDate}`;
 			function saveWorkoutSession(workout) {
 				let existing = [];
@@ -403,7 +406,11 @@
 
 				sessionStorage.setItem('workoutData', JSON.stringify(workoutData));
 				saveWorkoutSession(workoutData);
-				console.log('Workout saved:', workoutData);
+				// console.log('Workout saved:', workoutData); FIXME: not needed, deleted it (Jian)
+
+				// Letting user know they're being directed to dashboard page
+				alert('Workout successfully added, you may now view it in dashboard calendar!');
+
 				window.location.href = 'dashboard.html';
 			});
 		</script>
