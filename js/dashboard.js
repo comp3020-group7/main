@@ -260,6 +260,12 @@ function createCalendar() {
 			center: 'title',
 			right: '',
 		},
+		// datesSet(info) {
+		// 	const titleEl = calendarEl.querySelector('.fc-toolbar-title');
+		// 	if (titleEl) {
+		// 		titleEl.textContent = `Workout Calendar · ${info.view.title} `;
+		// 	}
+		// },
 		eventClick(info) {
 			info.jsEvent.preventDefault();
 			const workout = info.event.extendedProps.workout;
