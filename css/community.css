@@ -5,9 +5,9 @@ body {
   overflow-y: scroll;
   /* undo any overflow:hidden */
 }
-
+/** yawen changed the padding so the breadcrumb placement would be relatively consistent across all pages**/
 body {
-  padding-top: 130px;
+  padding-top: 113px;
 }
 
 .communityLayout {

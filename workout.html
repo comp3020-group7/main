@@ -4,10 +4,11 @@
 		<link rel="stylesheet" href="css/workoutStyle.css" />
 		<link rel="stylesheet" href="css/sharedStyle.css" />
 		<link rel="stylesheet" href="./css/sharedStyle.css" />
-		<!-- <link rel="stylesheet" href="css/dashboardStyle.css"> -->
 	</head>
 	<body>
 		<!-- topBar -->
+    <div class="topbar-navbar-section">
+	
 		<header class="topBar">
 			<div>
 				<img src="images/activ8logo.png" />
@@ -15,7 +16,6 @@
 			</div>
 			<div class="rightButts">
 				<img src="./images/settings.png" alt="" class="settings-icon" />
-				<!-- <a href="login.html" class="logoutButt">Logout</a> -->
 				<button class="logoutButt" onclick="window.location.href='index.html'">Logout</button>
 			</div>
 		</header>
@@ -28,6 +28,7 @@
 			<a href="./community.html" class="navbar-link">Community Page</a>
 			<a href="./community.html" class="navbar-link" id="createAPostBtn">Create a Post</a>
 		</div>
+	</div>
 
 		<!-- popup window for settings -->
 		<div class="setting-pop-up">
@@ -91,15 +92,14 @@
 		</div>
 
 		<div class="overlay" id="overlay"></div>
-
-		<div class="workoutHeading">
-			<a href="dashboard.html" class="returnLink">Dashboard</a> >
-			<span> Track a Workout </span>
-			<!-- </h2>   FIXME: why is there a h2 label ??-->
-		</div>
+		<h2>
+			<div class="workoutHeading">
+				<a href="dashboard.html" class="returnLink">Dashboard</a> >
+				<span> Track a Workout </span>
+			</div>
+		</h2>
 		<label class="dateLabel"> </label>
 		<div class="searchContainer">
-			<!-- <label class="dateLabel"> </label> -->
 			<div class="searchBar">
 				<img src="images/magnifyingGlass.png" />
 				<input type="text" id="searchInput" placeholder="Search an exercise to add to workout" />
@@ -144,7 +144,7 @@
 			}
 		</script>
 		<script>
-			// Parse JSON embedded in the HTML
+			
 			const exerciseJSON = document.getElementById('exerciseData').textContent;
 			const exercises = JSON.parse(exerciseJSON).exercises;
 
@@ -163,7 +163,7 @@
 				day: 'numeric',
 			});
 
-			// convert to YYYY-MM-DD (for the dashboard calendar to use, fullcalendar library needs this format of date for events :)))))
+			// convert to YYYY-MM-DD (for the dashboard calendar to use, fullcalendar library needs this format of date for events
 			const isoDate = [
 				today.getFullYear(),
 				String(today.getMonth() + 1).padStart(2, '0'),
@@ -181,7 +181,7 @@
 				sessionStorage.setItem(WORKOUT_STORAGE_KEY, JSON.stringify(existing));
 			}
 
-			// Search bar behavior
+			// Search bar implementation
 			exerciseInput.addEventListener('focus', () => {
 				exerciseInput.placeholder = '';
 				if (exerciseInput.value.trim() !== '' && exerciseSearch.innerHTML.trim() !== '') {
@@ -406,7 +406,6 @@
 
 				sessionStorage.setItem('workoutData', JSON.stringify(workoutData));
 				saveWorkoutSession(workoutData);
-				// console.log('Workout saved:', workoutData); FIXME: not needed, deleted it (Jian)
 
 				// Letting user know they're being directed to dashboard page
 				alert('Workout successfully added, you may now view it in dashboard calendar!');

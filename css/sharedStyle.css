@@ -326,14 +326,6 @@ body {
 	z-index: 998;
 }
 
-/* .menuBtn {
-	position: fixed;
-	bottom: 2%;
-	right: 1.5%;
-	width: 7%;
-	height: auto;
-	cursor: pointer;
-} */
 
 .navBar {
 	display: flex;
