@@ -108,7 +108,7 @@ window.MEAL_TRACKING_FOODS = [
 		fats: 50,
 		protein: 21,
 		label: ['favorite'],
-		image: './images/mealTracking/food-img/almond.png',
+		image: './images/mealTracking/food-img/almonds.png',
 	},
 	{
 		id: 10,

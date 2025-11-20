@@ -161,6 +161,7 @@ li {
 	width: 15rem;
 	border-radius: 2rem;
 	border: none;
+	font-family: 'Monaco', 'Courier New', monospace;
 }
 
 .panel-button-clear {
