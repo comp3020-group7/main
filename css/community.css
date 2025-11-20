@@ -72,6 +72,11 @@ body {
   gap: 2rem; /* larger space between posts */
   width: 100%;
   box-sizing: border-box;
+
+  align-items: center;
+}
+.feed {
+  margin-top: 0;
 }
 
 /* EACH POST CARD */
@@ -91,9 +96,10 @@ body {
   transition: 0.2s ease;
   position: relative;
 
-  width: 100%; /* ✅ fill the feed width */
-  max-width: 100%; /* ✅ do not exceed feed width */
-  box-sizing: border-box; /* ✅ include padding + border */
+  width: 100%;
+  max-width: 750px;
+  box-sizing: border-box;
+  height: 320px;
 }
 
 /* Username header bar */
@@ -125,7 +131,7 @@ body {
   grid-column: 1;
 
   width: 100%;
-  height: 220px; /* or 240px if you prefer a taller media area */
+  height: 220px;
   object-fit: cover;
 
   border-radius: 1rem;
@@ -137,7 +143,7 @@ body {
   grid-column: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.8rem;
   padding-right: 0.5rem;
   color: var(--colour-text);
@@ -155,7 +161,7 @@ body {
 /* TITLE */
 .content h2 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: var(--colour-text);
 }
@@ -163,24 +169,23 @@ body {
 .caption {
   margin-top: 0.3rem;
   padding: 0.75rem 1rem;
-
   background: var(--colour-background);
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 8px;
-
   max-height: 140px;
   overflow-y: auto;
+
+  max-width: 100%;
 }
 
 .caption h3 {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 400;
   line-height: 1.4;
   color: var(--colour-text);
 
-  white-space: normal;
-  word-break: break-word;
+  word-wrap: break-word;
   overflow-wrap: anywhere;
 }
 /* ACTION BUTTONS */
@@ -269,11 +274,8 @@ body {
 .fab {
   position: fixed;
   bottom: 50px;
-
-  /* RESPONSIVE RIGHT OFFSET */
   right: 12%;
   transform: translateX(50%);
-
   padding: 15px 25px;
   min-width: 120px;
   display: flex;
@@ -284,7 +286,7 @@ body {
   font-weight: 600;
   font-family: inherit;
   color: white;
-  background-color: var(--colour-accent-background);
+  background-color: var(--colour-accent);
   border: 2px solid var(--colour-accent);
   border-radius: 999px;
   cursor: pointer;
@@ -292,7 +294,6 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
 }
 
-/* Hover should PRESERVE the translateX(20%) */
 .fab:hover {
   transform: translateX(20%) scale(1.05);
   background-color: var(--colour-primary-dark);
@@ -306,41 +307,39 @@ body {
   /* center vertically */
   top: 50%;
   transform: translate(-20%, -50%);
-  /*    translateX(-20%) + translateY(-50%) in one line */
-
-  left: 12%; /* base horizontal anchor */
-
+  left: 12%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   z-index: 50;
 }
 
+/* TAB BUTTONS */
 .tab-btn {
   appearance: none;
-  border: 2px solid var(--colour-accent);
-  background: var(--colour-accent-background);
-  color: white;
+  padding: 10px 18px;
+  border-radius: 999px;
   font-family: inherit;
   font-size: 1rem;
   font-weight: 600;
-  padding: 10px 18px;
-  border-radius: 999px;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  background: var(--colour-background-dark);
+  color: var(--colour-text);
+  border: 3px solid var(--colour-accent);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   transition: 0.15s ease;
 }
 
 .tab-btn:hover {
-  transform: scale(1.03);
-  background: var(--colour-primary-dark);
+  transform: scale(1.04);
 }
 
 .tab-btn[aria-pressed="true"] {
-  background: var(--colour-primary-dark);
-  border-color: var(--colour-primary-dark);
-  color: white;
-  transform: scale(1.03);
+  background: var(--colour-accent);
+  color: var(--colour-on-primary);
+  border: 3px solid var(--colour-on-primary);
+  box-shadow: 0 0 0 4px var(--colour-accent-background);
+  transform: scale(1.06);
 }
 
 /* ===== Modal base ===== */
@@ -363,7 +362,7 @@ body {
 .modal__dialog {
   position: relative;
   width: min(720px, 92vw);
-  margin: 25vh auto;
+  margin: 18vh auto;
   background: var(--colour-background, #fff);
   border: 2px solid var(--colour-accent);
   border-radius: 12px;
@@ -378,10 +377,11 @@ body {
   justify-content: space-between;
   padding: 12px 16px;
   border-bottom: 1px solid var(--colour-background-dark);
+  color: var(--colour-text);
 }
 .modal__header h3 {
   margin: 0;
-  color: var(--colour-primary-dark);
+  color: var(--colour-text);
   font-size: 1.4rem;
   letter-spacing: 0.02em;
 }
@@ -394,6 +394,7 @@ body {
   line-height: 1;
   padding: 4px 8px;
   border-radius: 6px;
+  color: var(--colour-text);
 }
 .modal__close:hover {
   background: var(--colour-background-dark);
@@ -434,7 +435,7 @@ body {
   padding: 10px 12px;
   cursor: pointer;
   border: 2px solid var(--colour-primary-dark);
-  color: var(--colour-primary-dark);
+  color: var(--colour-text);
   border-radius: 999px;
   background: var(--colour-background);
   user-select: none;
@@ -447,16 +448,8 @@ body {
 .post-fields label {
   display: block;
   margin-bottom: 6px;
-  color: var(--colour-primary-dark);
-}
-.post-fields textarea {
-  width: 100%;
-  resize: vertical;
-  min-height: 160px;
-  border: 1px solid var(--colour-background-dark);
-  border-radius: 10px;
-  padding: 10px;
-  font: inherit;
+  font-weight: 600;
+  color: var(--colour-text);
 }
 
 /* Footer */
@@ -467,12 +460,48 @@ body {
   padding: 12px 16px;
   border-top: 1px solid var(--colour-background-dark);
 }
+
+/* Cancel button (ghost) */
+.modal__footer .btn {
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.15s ease;
+  border: 2px solid transparent;
+}
+
+/* Cancel button */
+#np-cancel {
+  background: transparent;
+  color: var(--colour-text);
+  border-color: var(--colour-background-dark);
+}
+
+#np-cancel:hover {
+  background: var(--colour-background-dark);
+}
+
+/* Post button (primary) */
+#np-submit {
+  background: var(--colour-accent);
+  color: var(--colour-on-primary);
+  border-color: var(--colour-accent);
+  border-radius: 12px;
+}
+
+#np-submit:hover {
+  background: var(--colour-accent-background);
+  border-color: var(--colour-accent);
+}
+
 .btn-primary {
   padding: 10px 16px;
   border-radius: 999px;
   border: 2px solid var(--colour-accent);
   background: var(--colour-accent-background);
-  color: var(--colour-text, #000);
+  color: var(--colour-on-primary);
   cursor: pointer;
   font-weight: 600;
 }
@@ -486,36 +515,29 @@ body {
   gap: 10px;
 }
 
-.post-fields label {
-  font-weight: 600;
-  color: var(--colour-primary-dark);
-}
-
-.post-fields input {
-  width: 100%;
-  border: 1px solid var(--colour-background-dark);
-  border-radius: 10px;
-  padding: 10px;
-  font: inherit;
-}
-
+.post-fields input,
 .post-fields textarea {
   width: 100%;
   border: 1px solid var(--colour-background-dark);
   border-radius: 10px;
   padding: 10px;
-  resize: vertical;
   font: inherit;
+  background: var(--colour-background);
+  color: var(--colour-text);
 }
 
-/* Small admin pill next to username */
+.post-fields textarea {
+  resize: vertical;
+  min-height: 160px;
+} /* Small admin pill next to username */
+
 .post-badge-admin {
   margin-left: 0.6rem;
   padding: 2px 10px;
   border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 700;
-  background: var(--colour-accent-background);
+  background: var(--colour-accent);
   border: 1px solid var(--colour-accent);
   color: white;
 }
