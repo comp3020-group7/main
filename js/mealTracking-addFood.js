@@ -58,7 +58,7 @@ function renderFoods(filterFn = () => true) {
 						</button>
 
 						<div class="card-select-quantity card">
-							<span class="title food-name select-quantity-title">adding ${food.name}</span>
+							<span class="title food-name select-quantity-title">Select quantity: </span>
 							<div class="quantity-selector">
 								<button class="decrease">-</button>
 								<span class="quantity">1</span>

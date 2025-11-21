@@ -260,6 +260,17 @@ function createCalendar() {
 			center: 'title',
 			right: '',
 		},
+		// Keep the current day easy to spot by centering it after each render/navigation
+		datesSet() {
+			requestAnimationFrame(() => {
+				const todayCell = calendarEl.querySelector('.fc-day-today');
+				todayCell?.scrollIntoView({
+					behavior: 'smooth',
+					block: 'center',
+					inline: 'center',
+				});
+			});
+		},
 		// datesSet(info) {
 		// 	const titleEl = calendarEl.querySelector('.fc-toolbar-title');
 		// 	if (titleEl) {
