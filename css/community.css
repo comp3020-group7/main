@@ -64,24 +64,17 @@ body {
 
 /* MAIN FEED WRAPPER */
 .feed {
-  max-width: 880px; /* wider feed like other pages */
-  margin: 2rem auto; /* centered vertically & horizontally */
+  max-width: 880px; /* width of whole feed area */
+  margin: 2rem auto 0; /* center horizontally, no extra top gap */
   padding: 3rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem; /* larger space between posts */
+  display: block; /* no flex, simple block */
   width: 100%;
   box-sizing: border-box;
-
-  align-items: center;
-}
-.feed {
-  margin-top: 0;
+  gap: 2rem;
 }
 
 /* EACH POST CARD */
 .post {
-  /* GRID LAYOUT */
   display: grid;
   grid-template-columns: 45% 1fr;
   grid-template-rows: auto 1fr;
@@ -96,10 +89,13 @@ body {
   transition: 0.2s ease;
   position: relative;
 
-  width: 100%;
-  max-width: 750px;
+  width: 100%; /* fill feed width */
+  max-width: 750px; /* but never exceed this */
   box-sizing: border-box;
-  height: 320px;
+  margin: 0 auto; /* center card inside feed */
+
+  min-height: 320px; /* consistent height */
+  height: auto; /* allow vertical growth if needed */
 }
 
 /* Username header bar */
@@ -119,7 +115,6 @@ body {
   color: white;
 }
 
-/* Hover polish (optional) */
 .post:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
@@ -174,8 +169,8 @@ body {
   border-radius: 8px;
   max-height: 140px;
   overflow-y: auto;
-
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .caption h3 {
@@ -184,7 +179,6 @@ body {
   font-weight: 400;
   line-height: 1.4;
   color: var(--colour-text);
-
   word-wrap: break-word;
   overflow-wrap: anywhere;
 }
