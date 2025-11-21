@@ -372,7 +372,17 @@ function updateLastWorkout() {
 	}
 
 	const lastWorkout = workouts[workouts.length - 1];
-	lastWorkoutDateLabel.textContent = `${formatWorkoutDate(lastWorkout.date)}`;
+
+	const date = new Date(lastWorkout.date).toLocaleDateString('en-US', {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+		timeZone: 'UTC',
+	});
+
+	console.log(date);
+
+	lastWorkoutDateLabel.textContent = `${date}`;
 
 	const exercises = Array.isArray(lastWorkout.exercises) ? lastWorkout.exercises : [];
 	if (exercises.length === 0) {

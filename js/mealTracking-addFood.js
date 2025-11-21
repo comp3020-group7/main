@@ -64,8 +64,8 @@ function renderFoods(filterFn = () => true) {
 								<span class="quantity">1</span>
 								<button class="increase">+</button>
 							</div>
-							<button class="plus confirm" title="Add">
-								<span class="material-symbols-outlined">check</span>
+							<button class="plus confirm" title="Log food">
+								log food
 							</button>
 						</div>
 						</div>`
